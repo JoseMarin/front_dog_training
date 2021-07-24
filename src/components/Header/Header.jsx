@@ -3,6 +3,7 @@ import Button from "../Button/Button";
 import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/types";
 import { useHistory } from "react-router-dom";
+import Training from '../Training/Training';
 
 // import logo from "../../assets/logo.png";
 
@@ -36,13 +37,13 @@ const Header2 = (props) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Button path="/toprated" className="header"  destination="TOP RATED"/>
+                <Button path="/commonwall" className="header"  destination="COMMON WALL"/>
               </li>
               <li className="nav-item">
-                <Button path="/upcoming" destination="UPCOMING"/>
+                <Training />
               </li>
               <li className="nav-item">
-                <Button path="/popular" destination="POPULAR"/>
+                <Button path="/contacus" destination="CONTAC US"/>
               </li>
 
             </ul>
@@ -71,18 +72,20 @@ const Header2 = (props) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Button path="/toprated" destination="TOP RATED" onClick={() => llevame()} />
+                <Button path="/aboutus" destination="ABOUT US" onClick={() => llevame()} />
+              </li>
+              <li><a href="{}"><div id="google_translate_element"></div></a></li>
+              <li className="nav-item">
+                {/* <Button path="/contacus" destination="CONTAC US"/> */}
+                <Training />
               </li>
               <li className="nav-item">
-                <Button path="/upcoming" destination="UPCOMING"/>
-              </li>
-              <li className="nav-item">
-                <Button path="/popular" destination="POPULAR"/>
+                <Button path="/trainers" destination="TRAINERS"/>
               </li>
 
             </ul>
-                <Button path="/login" destination="LOGIN"/>
-                <Button path="/register" destination="REGISTER"/>
+                <Button path="/login" destination="LOG IN"/>
+                <Button path="/register" destination="SIGN UP"/>
           </div>
         </div>
       </nav>
