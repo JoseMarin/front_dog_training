@@ -1,0 +1,48 @@
+.vistaLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: -6em;
+
+    .loginCard {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-evenly;
+        height: 33em;
+
+            .errorsText {
+                font-size: 0.7em;
+                color: red;
+            }
+
+            .h2 {
+                margin-top: 1em;
+            }
+    }
+
+    .sendButton{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1.9px solid rgb(104, 104, 104);
+        cursor: pointer;
+        color: #3b3b3d;
+        border-radius: 0.4em;
+        background-color: rgba(235,234,234,255);
+        height: 3em;
+        width: 8em;
+        z-index: 1;
+        margin-bottom: 2em;
+        margin-top: 3em;
+
+        &hover {
+            background-color: rgba(136, 130, 130, 0.103);
+            transition: 0.2s;
+        }
+    }
+}
