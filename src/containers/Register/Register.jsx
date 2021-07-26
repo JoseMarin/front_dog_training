@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
@@ -53,10 +54,7 @@ const Register = () => {
       .post("https://jaug-dog-training.herokuapp.com/users", body)
       .then((res) => {
         setDatosUser(res.data.results);
-        notification.success({
-          message: "Registered User.",
-          description: "We have sent you an email to activate the account.",
-        });
+        notification.success({ message: "Registered User.", description: "We have sent you an email to activate the account.",});
         history.push("/login");
       })
       .catch((err) => {
@@ -69,10 +67,7 @@ const Register = () => {
           });
           setError(JSON.stringify("The email is already registered."));
         } else {
-          notification.warning({
-            message: "Atencion.",
-            description: JSON.stringify(err.response.data.message),
-          });
+          notification.warning({ message: "Atencion.",description: JSON.stringify(err.response.data.message),});
           setError(JSON.stringify(err.response.data.message));
         }
         return Error("Files not Found");
