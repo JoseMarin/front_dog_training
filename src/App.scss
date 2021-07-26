@@ -1,3 +1,19 @@
+
+@import './components/Button/Button.scss';
+@import './components/Header/Header.scss';
+@import './components/Training/Training.scss';
+
+@import './containers/Register/Register.scss';
+@import './containers/Login/Login.scss';
+@import './containers/Obediencia_basica/ObedienciaBasica.scss';
+@import './containers/Buenos_modales/BuenosModales.scss';
+@import './containers/Ejercicios/Ejercicios.scss';
+@import './containers/Perro_nuevo/PerroNuevo.scss';
+
+
+
+
+
 .App {
   text-align: center;
 }
