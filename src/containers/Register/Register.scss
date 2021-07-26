@@ -90,7 +90,7 @@
 }
 .text-nomb {
     position: absolute;
-    bottom: 0.31em;
+    bottom: -1em;
     left: 0;
     transition: all 0.3s ease;
     color: rgb(121, 117, 117);
@@ -98,7 +98,7 @@
 .form input:focus + .lbl-nombre .text-nomb, .form input:valid + .lbl-nombre .text-nomb {
     transform: translateY(-150%);
     font-size: 0.9em;
-    color: #6b6e6e;
+    color: #000000;
 }
 .form input:focus + .lbl-nombre:after, .form input:valid + .lbl-nombre:after {
     transform: translateX(0%);
@@ -145,7 +145,7 @@
 }
 .text-nomb1 {
     position: absolute;
-    bottom: 0.3125em;
+    bottom: -1.1em;
     left: 0em;
     transition: all 0.3s ease;
     color: rgb(121, 117, 117);
@@ -200,7 +200,7 @@
 }
 .text-nomb2 {
     position: absolute;
-    bottom: 0.3125em;
+    bottom: -0.55em;
     left: 0;
     transition: all 0.3s ease;
     color: rgb(121, 117, 117);
@@ -254,7 +254,7 @@
 }
 .text-nomb3 {
     position: absolute;
-    bottom: 0.3125em;
+    bottom: -1.2em;
     left: 0;
     transition: all 0.3s ease;
     color: rgb(121, 117, 117);
@@ -308,7 +308,7 @@
 }
 .text-nomb4 {
     position: absolute;
-    bottom: 0.3125em;
+    bottom: -1em;
     left: 0;
     transition: all 0.4s ease;
     color: rgb(121, 117, 117);
@@ -363,8 +363,8 @@
 }
 .text-nomb5 {
     position: absolute;
-    bottom: 0.3125em;
     left: 0;
+    bottom: 0.13em;
     transition: all 0.5s ease;
     color: rgb(121, 117, 117);
 }
