@@ -36,8 +36,9 @@ const Login = (props) => {
     const checkError = async (arg) => {
         switch (arg) {
         case "email":
-            if (credentials.email.length < 1) {
-            setMensajeError({ ...msgError, eEmail: "Please enter your email" });
+            if (credentials.email.length < 1 || !/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g.test(
+            )) {
+            setMensajeError({ ...msgError, eEmail: "Enter a valid mail" });
             } else {
             setMensajeError({ ...msgError, eEmail: "" });
             }
@@ -63,10 +64,11 @@ const Login = (props) => {
             break;
 
         case "password":
-            if (credentials.password.length < 1) {
+            if (credentials.password.length < 1 || !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm.test(
+            )) {
             setMensajeError({
                 ...msgError,
-                ePassword: "Please enter your password",
+                ePassword: "At least 8 movies, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number.",
             });
             } else {
             setMensajeError({ ...msgError, ePassword: "" });
