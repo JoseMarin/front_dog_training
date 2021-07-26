@@ -68,7 +68,7 @@ const Login = (props) => {
             )) {
             setMensajeError({
                 ...msgError,
-                ePassword: "At least 8 movies, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number.",
+                ePassword: "At least 8 characters, 1 capital letter, and 1 number.",
             });
             } else {
             setMensajeError({ ...msgError, ePassword: "" });
@@ -93,11 +93,11 @@ const Login = (props) => {
         props.dispatch({ type: LOGIN, payload: res.data });
 
         setTimeout(() => {
-            history.push(`/${statusRole.roleStatus}profile`);
+          history.push(`/${statusRole.roleStatus}profile`);
         }, 750);
-        } catch {
+      } catch {
         setMensajeError({ ...msgError, eValidate: "Wrong email or password" });
-        }
+      }
     };
 
   return (
@@ -107,34 +107,34 @@ const Login = (props) => {
         <br />
         <div className="box1">
           <div className="errorsText">{msgError.eEmail}</div>
-          <form className="form1">
+          <form className="form2">
             <input
-              className="input1"
+              className="input2"
               name="email"
               type="text"
               onChange={updateCredentials}
               onBlur={() => checkError("email")}
               required
             />
-            <label className="lbl-nombre1">
-              <span className="text-nomb1">Email</span>
+            <label className="lbl-nombre2">
+              <span className="text-nomb2">Email</span>
             </label>
           </form>
         </div>
 
         <div className="box1">
           <div className="errorsText">{msgError.ePassword}</div>
-          <form className="form3">
+          <form className="form2">
             <input
-              className="input3"
+              className="input2"
               name="password"
               type="password"
               onChange={updateCredentials}
               onBlur={() => checkError("password")}
               required
             />
-            <label className="lbl-nombre3">
-              <span className="text-nomb3">Password</span>
+            <label className="lbl-nombre2">
+              <span className="text-nomb2">Password</span>
             </label>
           </form>
         </div>

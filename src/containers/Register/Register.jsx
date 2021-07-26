@@ -27,6 +27,7 @@ const Register = () => {
     eEmail: "",
   });
 
+  //Salta el aviso de que el email ya esta registrado.
   const [, setError] = useState([]);
 
   useEffect(() => {}, []);
@@ -39,7 +40,6 @@ const Register = () => {
   };
 
   const applyRegister = async () => {
-    // e.preventDefault();
 
     let body = {
       name: datosUser.name,
@@ -50,7 +50,7 @@ const Register = () => {
     };
 
     axios
-      .post("https://back-movie.herokuapp.com/users", body)
+      .post("https://jaug-dog-training.herokuapp.com/users", body)
       .then((res) => {
         setDatosUser(res.data.results);
         notification.success({
@@ -85,9 +85,9 @@ const Register = () => {
         if (
           datosUser.name.length < 2 ||
           !/^[a-z ,.'-]+$/i.test(datosUser.name) ||
-          datosUser.name.length > 20
+          datosUser.name.length > 25
         ) {
-          setErrors({ ...errors, eName: "Enter a valid name" });
+          setErrors({ ...errors, eName: "*" });
         } else {
           setErrors({ ...errors, eName: "" });
         }
@@ -97,9 +97,9 @@ const Register = () => {
         if (
           datosUser.name.length < 2 ||
           !/^[a-z ,.'-]+$/i.test(datosUser.name) ||
-          datosUser.name.length > 20
+          datosUser.name.length > 25
         ) {
-          setErrors({ ...errors, eLastName: "Enter a valid last name" });
+          setErrors({ ...errors, eLastName: "*" });
         } else {
           setErrors({ ...errors, eLastName: "" });
         }
@@ -111,7 +111,7 @@ const Register = () => {
             datosUser.email
           )
         ) {
-          setErrors({ ...errors, eEmail: "Enter a valid mail" });
+          setErrors({ ...errors, eEmail: "*" });
         } else {
           setErrors({ ...errors, eEmail: "" });
         }
@@ -127,7 +127,7 @@ const Register = () => {
           setErrors({
             ...errors,
             ePassword:
-              "At least 8 movies, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number.",
+              "At least 8 characters, 1 capital letter, and 1 number.",
           });
         } else {
           setErrors({ ...errors, ePassword: "" });
@@ -146,9 +146,9 @@ const Register = () => {
         if (
           datosUser.name.length < 2 ||
           !/^[a-z ,.'-]+$/i.test(datosUser.name) ||
-          datosUser.name.length > 20
+          datosUser.name.length > 25
         ) {
-          setErrors({ ...errors, eCity: "Enter a valid City" });
+          setErrors({ ...errors, eCity: "*" });
         } else {
           setErrors({ ...errors, eCity: "" });
         }
@@ -223,7 +223,7 @@ const Register = () => {
         </div>
 
         <div className="box1">
-          <div className="errorsText">{errors.ePassword}</div>
+          <div className="errorsText2">{errors.ePassword}</div>
           <form className="form3">
             <input
               className="input3"
@@ -239,7 +239,7 @@ const Register = () => {
           </form>
         </div>
         <div className="box1">
-          <div className="errorsText">{errors.ePassword2}</div>
+          <div className="errorsText2">{errors.ePassword2}</div>
           <form className="form4">
             <input
               className="input4"
