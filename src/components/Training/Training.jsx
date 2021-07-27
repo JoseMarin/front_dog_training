@@ -19,7 +19,7 @@ const Training = (props) => {
       .then((res) => {
         setComedy(res.data.results);
 
-        history.push("/moviesgenre");
+        // history.push("/moviesgenre");
       })
       .catch(() => {
         throw new Error("Wrong user or password");
