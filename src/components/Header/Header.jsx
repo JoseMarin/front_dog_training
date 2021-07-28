@@ -20,7 +20,7 @@ const Header2 = (props) => {
 
   if (props.credentials.user?.name) {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-dark header">
+      <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top header">
         <div className="container-fluid">
             <img onClick={() => history.push("/")} className="logoHeader" src={{}} alt="logo" height="78em" width="76"/>
           <button
@@ -55,7 +55,7 @@ const Header2 = (props) => {
     );
   } else {
     return(
-        <nav className="navbar navbar-expand-lg navbar-light bg-dark header">
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top header" Style="border: none;">
         <div className="container-fluid">
              <img onClick={() => history.push("/")} className="logoHeader" src={{}} alt="logo" height="78em" width="76"/>
           <button
