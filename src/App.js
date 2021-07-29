@@ -10,6 +10,9 @@ import ObedienciaBasica from './containers/Obediencia_basica/ObedienciaBasica.js
 import BuenosModales from './containers/Buenos_modales/BuenosModales.jsx';
 import Ejercicios from './containers/Ejercicios/Ejercicios.jsx';
 import PerroNuevo from './containers/Perro_nuevo/PerroNuevo.jsx';
+import Admin from './containers/Admin/AdminProfile/Admin.jsx';
+import AllUsers from './containers/Admin/AllUsers/AllUsers.jsx';
+import Profile from './containers/Profile/Profile.jsx';
 
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
           <Route path="/buenosmodales" exact component={BuenosModales}/>
           <Route path="/ejercicios" exact component={Ejercicios}/>
           <Route path="/perronuevo" exact component={PerroNuevo}/>
+          <Route path="/admin" exact component={Admin}/>
+          <Route path="/allusers" exact component={AllUsers}/>
+          <Route path="/profile" exact component={Profile}/>
         </Switch>
 
       </BrowserRouter>

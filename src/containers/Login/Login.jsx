@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
 import { LOGIN } from "../../redux/types.js";
+import {notification} from 'antd';
+
 
 const Login = (props) => {
 
@@ -14,7 +16,6 @@ const Login = (props) => {
         ePassword: "",
         eValidate: "",
     });
-    const [statusRole, setStatusRole] = useState({ roleStatus: "" });
 
     // Esto es un Handler
     const updateCredentials = (e) => {
@@ -42,25 +43,6 @@ const Login = (props) => {
             } else {
             setMensajeError({ ...msgError, eEmail: "" });
             }
-
-            let body = {
-            email: credentials.email,
-            };
-
-            let role = await axios.post("https://backclinic1.herokuapp.com/clients/email",body);
-
-            if (role.data !== null) {
-            setStatusRole({ ...statusRole, roleStatus: "client" });
-            }
-
-            if (role.data == null) {
-
-                role = await axios.post("https://backclinic1.herokuapp.com/dentists/email",body);
-
-                if (role.data !== null) {
-                setStatusRole({ ...statusRole, roleStatus: "dentist" });
-                }
-            }
             break;
 
         case "password":
@@ -81,23 +63,28 @@ const Login = (props) => {
   };
 
     const logeame = async () => {
-        try {
         // A continuamos, generamos el body de datos
         let body = {
             email: credentials.email,
             password: credentials.password,
         };
 
-        let res = await axios.post(`https://jaug-dog-training.herokuapp.com/login/${statusRole.roleStatus}`,body);
+        // Envío por axios
+        axios
+        .post("http://localhost:5000/login", body)
+        .then((res) => {
+          //Guardo en RDX
+          props.dispatch({ type: LOGIN, payload: res.data });
 
-        props.dispatch({ type: LOGIN, payload: res.data });
-
-        setTimeout(() => {
-          history.push(`/${statusRole.roleStatus}profile`);
-        }, 750);
-      } catch {
-        setMensajeError({ ...msgError, eValidate: "Wrong email or password" });
-      }
+          if (!res.data.user.isAdmin) {
+            history.push("/");
+          } else {
+            history.push("/admin");
+          }
+        })
+        .catch((err) => {
+          notification.warning({message:'Atencion.',description: JSON.stringify(err.response.data.message)});
+        });
     };
 
   return (

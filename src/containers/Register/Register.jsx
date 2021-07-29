@@ -51,7 +51,7 @@ const Register = () => {
     };
 
     axios
-      .post("https://jaug-dog-training.herokuapp.com/users", body)
+      .post("http://localhost:5000/users", body)
       .then((res) => {
         setDatosUser(res.data.results);
         notification.success({ message: "Registered User.", description: "We have sent you an email to activate the account.",});
@@ -67,7 +67,7 @@ const Register = () => {
           });
           setError(JSON.stringify("The email is already registered."));
         } else {
-          notification.warning({ message: "Atencion.",description: JSON.stringify(err.response.data.message),});
+          notification.warning({ message: "Error try again",description: JSON.stringify(err.response.data.message),});
           setError(JSON.stringify(err.response.data.message));
         }
         return Error("Files not Found");
