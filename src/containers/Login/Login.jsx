@@ -94,34 +94,34 @@ const Login = (props) => {
         <br />
         <div className="box1">
           <div className="errorsText">{msgError.eEmail}</div>
-          <form className="form2">
+          <form className="form22">
             <input
-              className="input2"
+              className="input22"
               name="email"
               type="text"
               onChange={updateCredentials}
               onBlur={() => checkError("email")}
               required
             />
-            <label className="lbl-nombre2">
-              <span className="text-nomb2">Email</span>
+            <label className="lbl-nombre22">
+              <span className="text-nomb22">Email</span>
             </label>
           </form>
         </div>
 
         <div className="box1">
           <div className="errorsText">{msgError.ePassword}</div>
-          <form className="form2">
+          <form className="form23">
             <input
-              className="input2"
+              className="input23"
               name="password"
               type="password"
               onChange={updateCredentials}
               onBlur={() => checkError("password")}
               required
             />
-            <label className="lbl-nombre2">
-              <span className="text-nomb2">Password</span>
+            <label className="lbl-nombre23">
+              <span className="text-nomb23">Password</span>
             </label>
           </form>
         </div>
