@@ -110,7 +110,6 @@ const Register = () => {
         } else {
           setErrors({ ...errors, eEmail: "" });
         }
-
         break;
 
       case "password":
