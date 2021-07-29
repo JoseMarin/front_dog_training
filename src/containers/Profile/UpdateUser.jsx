@@ -78,7 +78,6 @@ const UpdateUser = (props) => {
         newPassword: passwords.newPassword,
         newPassword2: passwords.newPassword2,
       };
-console.log(body)
       let res = await axios.put(
         "http://localhost:5000/users/updatepassword",
         body,
