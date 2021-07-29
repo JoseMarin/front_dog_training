@@ -1,0 +1,23 @@
+.updateButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    // margin-top: 1em;
+    transition: 0.2s;
+    height: 3em;
+    width: 8em;
+    border: 1.9px solid rgb(104, 104, 104);
+    color: #3b3b3d;
+    border-radius: 0.7em;
+    background-color: rgba(235,234,234,255);
+
+    &updateButton:hover {
+        transition: 0.2s;
+    }
+}
+.errorsText {
+    font-size: 0.7em;
+    color: red;
+    width: 28em;
+}
