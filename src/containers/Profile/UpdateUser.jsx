@@ -23,7 +23,6 @@ const UpdateUser = (props) => {
   });
 
   const [errors, setErrors] = useState({
-    eName: "",
     eEmail: "",
     ePassword: "",
     ePassword2: "",
@@ -43,17 +42,14 @@ const UpdateUser = (props) => {
   const updateUser = async () => {
     try {
       let token = props.credentials?.token;
-      // let user = props.credentials?.user;
 
       let body = {
-        id: updateInfo.user.id,
-        name: updateInfo.name,
+        userId: updateInfo.user.id,
         email: updateInfo.email,
         city: updateInfo.city,
       };
-
       let res = await axios.put(
-        "https://back-movie.herokuapp.com/users/updateuser",
+        "http://localhost:5000/users/updateuser",
         body,
         { headers: { authorization: "Bearer " + token } }
       );
@@ -77,12 +73,14 @@ const UpdateUser = (props) => {
 
       let body = {
         userId: updateInfo.user.id,
+        // id: updateInfo.user.id,
         oldPassword: passwords.oldPassword,
         newPassword: passwords.newPassword,
         newPassword2: passwords.newPassword2,
       };
+console.log(body)
       let res = await axios.put(
-        "https://back-movie.herokuapp.com/users/updatepassword",
+        "http://localhost:5000/users/updatepassword",
         body,
         { headers: { authorization: "Bearer " + token } }
       );
@@ -118,11 +116,10 @@ const UpdateUser = (props) => {
             passwords.newPassword
           )
         ) {
-          // if (updateInfo.password.length < 8){
           setErrors({
             ...errors,
             ePassword:
-              "At least 8 characters, must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number. Can contain special characters",
+              "At least 8 characters, 1 capital letter, and 1 number.",
           });
         } else {
           setErrors({ ...errors, ePassword: "" });
@@ -137,6 +134,18 @@ const UpdateUser = (props) => {
         }
         break;
 
+        case "city":
+        if (
+          updateInfo.city.length < 1 ||
+          !/^[a-z ,.'-]+$/i.test(updateInfo.city) ||
+          updateInfo.city.length > 25
+        ) {
+          setErrors({ ...errors, eCity: "*" });
+        } else {
+          setErrors({ ...errors, eCity: "" });
+        }
+        break;
+
       default:
         break;
     }
@@ -144,17 +153,16 @@ const UpdateUser = (props) => {
 
   if (props.credentials?.token) {
     return (
-      <div className="vistaRegister mt-5">
-        <div className="formulario1">
+      <div className="vistaRegister2">
+        <div className="formulario2">
           <div className="box1">
-            <div className="errorsText2">{errors.ePassword}</div>
+            <div className="errorsText">{errors.ePassword}</div>
             <form className="form3">
               <input
                 className="input3"
-                name="password"
+                name="oldPassword"
                 type="password"
                 onChange={updatePasswordClient}
-                onBlur={() => checkError("password")}
                 required
               />
               <label className="lbl-nombre3">
@@ -164,7 +172,7 @@ const UpdateUser = (props) => {
           </div>
 
           <div className="box1">
-            <div className="errorsText2">{errors.ePassword2}</div>
+            <div className="errorsText">{errors.ePassword2}</div>
             <form className="form3">
               <input
                 className="input3"
@@ -181,11 +189,11 @@ const UpdateUser = (props) => {
           </div>
 
           <div className="box1">
-            <div className="errorsText2">{errors.ePassword2}</div>
+            <div className="errorsText">{errors.ePassword2}</div>
             <form className="form3">
               <input
                 className="input3"
-                name="newPassword3"
+                name="newPassword2"
                 type="password"
                 onChange={updatePasswordClient}
                 onBlur={() => checkError("password2")}
@@ -219,23 +227,23 @@ const UpdateUser = (props) => {
           </div>
           <div className="box1">
             <div className="errorsText">{errors.eCity}</div>
-            <form className="form">
+            <form className="form24">
               <input
-                className="input"
+                className="input24"
                 name="city"
                 type="text"
                 onChange={updateInfoClient}
                 onBlur={() => checkError("city")}
                 required
               />
-              <label className="lbl-nombre">
-                <span className="text-nomb">City</span>
+              <label className="lbl-nombre24">
+                <span className="text-nomb24">City</span>
               </label>
             </form>
+          </div>
             <div className="updateButton" onClick={() => updateUser()}>
               UPDATE
             </div>
-          </div>
         </div>
       </div>
     );
