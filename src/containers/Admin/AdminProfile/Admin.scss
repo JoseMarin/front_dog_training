@@ -1,7 +1,9 @@
 .card {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 16em;
+    font-size: 1em;
+    margin-top: 15em;
+
+    p {
+        color: rgb(0, 0, 201);
+        font-size: x-large;
+    }
 }
