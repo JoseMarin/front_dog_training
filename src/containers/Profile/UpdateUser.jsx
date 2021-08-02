@@ -9,8 +9,6 @@ const UpdateUser = (props) => {
   let history = useHistory();
 
   const [updateInfo, setUpdateInfo] = useState({
-    token: props.credentials?.token,
-    user: props.credentials?.user,
     name: props.credentials?.user.name,
     email: props.credentials?.user.email,
     city: props.credentials?.user.city,
@@ -42,25 +40,28 @@ const UpdateUser = (props) => {
   const updateUser = async () => {
     try {
       let token = props.credentials?.token;
+      let user = props.credentials?.user;
 
       let body = {
-        userId: updateInfo.user.id,
+        userId: user.id,
         email: updateInfo.email,
         city: updateInfo.city,
       };
+
       let res = await axios.put(
-        "http://localhost:5000/users/updateuser",
+        "http://localhost:5000/users",
         body,
         { headers: { authorization: "Bearer " + token } }
       );
 
-      props.dispatch({ type: UPDATE_USER, payload: res.data });
+        props.dispatch({ type: UPDATE_USER, payload: res.data });
 
-      setTimeout(() => {
-        history.push("/login");
-      }, 250);
+        setTimeout(() => {
+          history.push("/profile");
+        }, 250);
     } catch (err) {
-      setErrors({
+        console.log(err.response.data.message, 'Soy err');
+        setErrors({
         ...errors,
         eValidate: "Could not be completed., please try again",
       });
@@ -70,14 +71,15 @@ const UpdateUser = (props) => {
   const updatePassword = async () => {
     try {
       let token = props.credentials?.token;
+      let user = props.credentials?.user;
 
       let body = {
-        userId: updateInfo.user.id,
-        // id: updateInfo.user.id,
+        userId: user.id,
         oldPassword: passwords.oldPassword,
         newPassword: passwords.newPassword,
         newPassword2: passwords.newPassword2,
       };
+
       let res = await axios.put(
         "http://localhost:5000/users/updatepassword",
         body,
