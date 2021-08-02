@@ -15,7 +15,7 @@ const Header2 = (props) => {
     history.push("/");
   };
   const llevame = () => {
-    history.push("/toprated");
+    history.push("/aboutus");
   };
 
   if (props.credentials.user?.name) {
@@ -76,8 +76,7 @@ const Header2 = (props) => {
               </li>
               <li><a href="{}"><div id="google_translate_element"></div></a></li>
               <li className="nav-item">
-                {/* <Button path="/contacus" destination="CONTAC US"/> */}
-                <Training />
+                <Button path="/contacus" destination="CONTAC US"/>
               </li>
               <li className="nav-item">
                 <Button path="/trainers" destination="TRAINERS"/>
