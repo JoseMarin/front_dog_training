@@ -60,7 +60,6 @@ const UpdateUser = (props) => {
           history.push("/profile");
         }, 250);
     } catch (err) {
-        console.log(err.response.data.message, 'Soy err');
         setErrors({
         ...errors,
         eValidate: "Could not be completed., please try again",
@@ -91,7 +90,6 @@ const UpdateUser = (props) => {
         history.push("/profile");
       }, 750);
     } catch (err) {
-      console.log(err.response.data.message);
       setErrors({ ...errors, eValidate: "Wrong password, please try again" });
     }
   };
