@@ -37,8 +37,7 @@ const Login = (props) => {
     const checkError = async (arg) => {
         switch (arg) {
         case "email":
-            if (credentials.email.length < 1 || !/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g.test(
-            )) {
+            if (credentials.email.length < 1 ) {
             setMensajeError({ ...msgError, eEmail: "Enter a valid mail" });
             } else {
             setMensajeError({ ...msgError, eEmail: "" });
@@ -46,11 +45,10 @@ const Login = (props) => {
             break;
 
         case "password":
-            if (credentials.password.length < 1 || !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm.test(
-            )) {
+            if (credentials.password.length < 1 ) {
             setMensajeError({
                 ...msgError,
-                ePassword: "At least 8 characters, 1 capital letter, and 1 number.",
+                ePassword: "Please enter your password.",
             });
             } else {
             setMensajeError({ ...msgError, ePassword: "" });
@@ -62,7 +60,7 @@ const Login = (props) => {
     }
   };
 
-    const logeame = async () => {
+    const logueame = async () => {
         // A continuamos, generamos el body de datos
         let body = {
             email: credentials.email,
@@ -77,13 +75,13 @@ const Login = (props) => {
           props.dispatch({ type: LOGIN, payload: res.data });
 
           if (!res.data.user.isAdmin) {
-            history.push("/");
+            history.push("/commonwall");
           } else {
-            history.push("/admin");
+            history.push("/commonwall");
           }
         })
         .catch((err) => {
-          notification.warning({message:'Atencion.',description: JSON.stringify(err.response.data.message)});
+          notification.warning({message:'Atencion',  style: {top: 76,}, description: JSON.stringify(err.response.data.message)});
         });
     };
 
@@ -126,7 +124,7 @@ const Login = (props) => {
           </form>
         </div>
 
-        <div className="sendButton" onClick={() => logeame()}>
+        <div className="sendButton" onClick={() => logueame()}>
           LOG IN
         </div>
         <div className="errorsText">{msgError.eValidate}</div>

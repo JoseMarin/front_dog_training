@@ -29,7 +29,7 @@ const Register = () => {
   });
 
   //Salta el aviso de que el email ya esta registrado.
-  const [, setError] = useState([]);
+  const [, setNewMessage] = useState([]);
 
   useEffect(() => {}, []);
 
@@ -54,23 +54,19 @@ const Register = () => {
       .post("http://localhost:5000/users", body)
       .then((res) => {
         setDatosUser(res.data.results);
-        notification.success({ message: "Registered User.", description: "We have sent you an email to activate the account.",});
+        notification.success({ message: "Registered User.", style: {top: 76,}, description: "We have sent you an email to activate the account.",});
         history.push("/login");
       })
       .catch((err) => {
         var errorText = err.response.data.message;
 
         if (errorText?.includes("email")) {
-          notification.warning({
-            message: "Attention.",
-            description: JSON.stringify(err.response.data.message),
-          });
-          setError(JSON.stringify("The email is already registered."));
+          notification.warning({message: "Attention.",style: {top: 76,},description: JSON.stringify(err.response.data.message),});
+          setNewMessage(JSON.stringify("The email is already registered."));
         } else {
-          notification.warning({ message: "Error try again",description: JSON.stringify(err.response.data.message),});
-          setError(JSON.stringify(err.response.data.message));
+          notification.warning({ message: "Attention.", style: {top: 76,}, description: JSON.stringify(err.response.data.message),});
+          setNewMessage(JSON.stringify(err.response.data.message));
         }
-        return Error("Files not Found");
       });
   };
 

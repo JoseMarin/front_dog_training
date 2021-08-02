@@ -14,6 +14,7 @@ import Admin from './containers/Admin/AdminProfile/Admin.jsx';
 import AllUsers from './containers/Admin/AllUsers/AllUsers.jsx';
 import Profile from './containers/Profile/Profile.jsx';
 import UpdateUser from './containers/Profile/UpdateUser';
+import CommonWall from './containers/Common/CommonWall.jsx';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/allusers" exact component={AllUsers}/>
           <Route path="/profile" exact component={Profile}/>
           <Route path="/updateuser" exact component={UpdateUser}/>
+          <Route path="/commonwall" exact component={CommonWall}/>
         </Switch>
 
       </BrowserRouter>
