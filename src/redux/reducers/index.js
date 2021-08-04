@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import credentials from './credentials-reducer';
-import infoUser from './infoUser-reducer';
+import data from './data-reducer';
 
 
 const rootReducer = combineReducers({
     // aquí importaremos todos los reducers:
     credentials,
-    infoUser,
+    data
 });
 
 export default rootReducer;
