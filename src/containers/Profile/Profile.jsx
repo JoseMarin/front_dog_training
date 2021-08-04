@@ -37,7 +37,7 @@ const Profile = (props) => {
               </p>
               <div className="text-center">
                 <Link className="updateButton" to={"/allorders"}>
-                  ORDERS
+                  POSTS
                 </Link>
                 &nbsp; &nbsp;
                 <Link className="updateButton" to={"/allusers"}>
