@@ -6,19 +6,21 @@ import axios from "axios";
 const Posts = (props) => {
 
   const [post, setPost] = useState({
+    title: "",
+    content: "",
+    image: "",
     user: props.credentials?.user,
-    token: props.credentials?.token,
     name: props.credentials?.user.name,
     lastName: props.credentials?.user.lastName,
     date: props.credentials?.date,
-    title: "",
-    content: "",
+    token: props.credentials?.token,
   });
 
   const [userPost, setUserPost] = useState([]);
 
   useEffect(() => {
     findPost();
+    setPost();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -44,6 +46,7 @@ const Posts = (props) => {
       .then((res) => {
         setUserPost(res.data.results);
         console.log('posts', res);
+        console.log('estoy en el then');
         // props.dispatch({ type: ADD_POST, payload: res.data });
       })
       .catch((err) => {
