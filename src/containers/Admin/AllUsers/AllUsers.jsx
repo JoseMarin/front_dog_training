@@ -34,6 +34,8 @@ const AllUsers = (props) => {
 
   if (users?.id) {
     return (
+      <div>
+      <h1>Hola</h1>
       <table className="table table-dark mjs">
         <thead>
           <tr>
@@ -47,19 +49,20 @@ const AllUsers = (props) => {
         <tbody>
           {users.map((user, index) => (
           <tr key={index}>
-            <th scope="row">{user.id}</th>
-            <td>{user.name}</td>
-            <td>{user.lastName}</td>
-            <td>{user.email}</td>
-            <td>{user.city}</td>
+            <th scope="row">{user.data.id}</th>
+            <td>{user.data.name}</td>
+            <td>{user.data.lastName}</td>
+            <td>{user.data.email}</td>
+            <td>{user.data.city}</td>
           </tr>
           ))}
         </tbody>
       </table>
+      </div>
     );
   } else {
     return (
-      <div>
+      <div className="return">
         <h1>Cargando Datos...</h1>
       </div>
     );
@@ -69,18 +72,3 @@ const AllUsers = (props) => {
 export default connect((state)=>({
   credentials: state.credentials,
 }))(AllUsers);
-
-//         <div className="card-body" key={index}>
-//           <img className="card-img-top" src=".../100px180/" alt="100x100" />
-//           <h5 className="card-title">{user.name}</h5>
-//           <p className="card-text">{user.email}</p>
-//           <p className="card-text">{user.city}</p>
-//         </div>{/*
-//       ))}
-//     </div>
-//   </div> */}
-//     <div>
-//     <div className="card mjs" Style="width: 18rem;">
-//       {users.map((user, index) => (
-
-

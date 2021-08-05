@@ -72,7 +72,7 @@ const Posts = (props) => {
     );
   } else {
     return (
-      <div>
+      <div className="return">
         <h1>No tienes posts</h1>
       </div>
     );
