@@ -3,11 +3,21 @@ import { useHistory, Link } from "react-router-dom";
 import { connect } from "react-redux";
 // import spinner from "../../assets/spinner2.gif";
 import moment from "moment";
-import Pensando from '../../assets/Buenos_modales/perro-pensando.png';
-
+import Pensando from "../../assets/Buenos_modales/perro-pensando.png";
+import Posts from "../../components/posts/Posts";
 
 const Profile = (props) => {
   let history = useHistory();
+
+  const changeData = () => {
+    switch (props.data) {
+      case "getpost":
+        return <Posts />;
+
+      default:
+        return;
+    }
+  };
 
   if (props.credentials?.token) {
     return (
@@ -17,7 +27,11 @@ const Profile = (props) => {
       >
         <div class="row g-0">
           <div class="col-md-4 m-auto">
-            <img src={Pensando} class="img-fluid rounded-circle  z-depth-2" alt="100x100"/>
+            <img
+              src={Pensando}
+              class="img-fluid rounded-circle  z-depth-2"
+              alt="100x100"
+            />
           </div>
           <div class="col-md-8">
             <div class="card-body">
@@ -36,8 +50,9 @@ const Profile = (props) => {
                 {/*Con 3 LLL te muestra la hora*/}
               </p>
               <div className="text-center">
-                <Link className="updateButton" to={"/allorders"}>
+                <Link className="updateButton" to={"/posts"}>
                   POSTS
+                  {changeData()}
                 </Link>
                 &nbsp; &nbsp;
                 <Link className="updateButton" to={"/allusers"}>
@@ -72,5 +87,5 @@ const Profile = (props) => {
 
 export default connect((state) => ({
   credentials: state.credentials,
-  infoUser: state.infoUser,
+  data: state.data,
 }))(Profile);
