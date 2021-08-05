@@ -12,6 +12,9 @@ const CommonWall = (props) => {
   const [post, setPost] = useState({
     user: props.credentials?.user,
     token: props.credentials?.token,
+    name: props.credentials?.user.name,
+    lastName: props.credentials?.user.lastName,
+    date: new Date(),
     title: "",
     content: "",
   });
@@ -33,7 +36,9 @@ const CommonWall = (props) => {
       title: post.title,
       content: post.content,
       userId: user.id,
-      user: user.name,
+      userName: post.name,
+      lastName : post.lastName,
+      date: post.date,
     };
     console.log(body);
 
