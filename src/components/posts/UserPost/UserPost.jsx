@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import { ADD_POST } from "../../../redux/types";
-// import moment  from 'moment';
+import moment from "moment";
 
 const userPost = (props) => {
   const [userPost, setUserPost] = useState([]);
 
-  const [post,] = useState({
+  const [post] = useState({
     user: props.credentials?.user,
   });
 
@@ -36,7 +36,7 @@ const userPost = (props) => {
       })
       .catch((err) => {
         console.log("Err");
-        console.log(err.response.data);
+        // console.log(err.response.data);
       });
   };
 
@@ -55,10 +55,9 @@ const userPost = (props) => {
                   />
                   <h4 className="card-title">Title {mjs.title}</h4>
                   <p className="card-text">Post {mjs.content}</p>
-                  <p className="card-text">PostId {mjs.id}</p>
+                  <small class="text-muted">User &nbsp; {mjs.userName}</small>&nbsp; &nbsp;
                   <small class="text-muted">
-                    User &nbsp; {mjs.userName} &nbsp; &nbsp; Id &nbsp;{" "}
-                    {mjs.userId}
+                    Date  &nbsp; {moment(mjs.date).format("LLL")}
                   </small>
                 </div>
               </div>
