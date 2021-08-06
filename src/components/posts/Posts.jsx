@@ -33,10 +33,10 @@ const Posts = (props) => {
     let body = {
       title: post.title,
       content: post.content,
-      userId: user.id,
       userName: post.name,
       lastName : post.lastName,
       date: post.date,
+      userId: user.id,
     };
 
     axios
