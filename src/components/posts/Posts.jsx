@@ -32,10 +32,10 @@ const Posts = (props) => {
   if (userPost[0]?.id) {
     return (
       <div className="container">
-        <div className="row row-cols-2 row-cols-md-4 g-4">
-          <div className="row">
+        <div className="row row-cols-3 row-cols-md-2 g-4 mt-lg-5">
+          <div className="row mx-xl-auto mt-lg-5">
             {userPost.map((mjs, index) => (
-              <div className="card ">
+              <div className="card border-dark bg-light p-3 mb-4 mt-lg-5">
                 <div className="card-body" key={index}>
                   <img
                     className="card-img-top"
