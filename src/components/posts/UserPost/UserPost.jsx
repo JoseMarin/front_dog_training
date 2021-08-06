@@ -1,11 +1,16 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import { ADD_POST } from "../../redux/types";
+import { ADD_POST } from "../../../redux/types";
 // import moment  from 'moment';
 
-const Posts = (props) => {
+const userPost = (props) => {
   const [userPost, setUserPost] = useState([]);
+
+  const [post,] = useState({
+    user: props.credentials?.user,
+  });
 
   useEffect(() => {
     findPost();
@@ -15,8 +20,14 @@ const Posts = (props) => {
   const findPost = async () => {
     let token = props.credentials?.token;
 
+    let user = post.user;
+
+    let body = {
+      userId: user.id,
+    };
+
     axios
-      .get("http://localhost:5000/post", {
+      .post("http://localhost:5000/post/userpost", body, {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {
@@ -25,7 +36,7 @@ const Posts = (props) => {
       })
       .catch((err) => {
         console.log("Err");
-        // console.log(err.response.data);
+        console.log(err.response.data);
       });
   };
 
@@ -68,4 +79,4 @@ const Posts = (props) => {
 export default connect((state) => ({
   credentials: state.credentials,
   post: state.post,
-}))(Posts);
+}))(userPost);
