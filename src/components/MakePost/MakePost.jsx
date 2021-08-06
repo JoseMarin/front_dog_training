@@ -6,7 +6,7 @@ import { ADD_POST } from '../../redux/types';
 
 
 
-const CommonWall = (props) => {
+const MakePost = (props) => {
   let history = useHistory();
 
   const [post, setPost] = useState({
@@ -40,7 +40,6 @@ const CommonWall = (props) => {
       date: post.date,
       userId: user.id,
     };
-    console.log(body);
 
     // Envío por axios
     axios
@@ -123,4 +122,4 @@ const CommonWall = (props) => {
 export default connect((state) => ({
   credentials: state.credentials,
   post: state.post,
-}))(CommonWall);
+}))(MakePost);
