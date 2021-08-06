@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
 import { ADD_POST } from "../../../redux/types";
-// import moment  from 'moment';
+import moment  from 'moment';
 
 const Posts = (props) => {
   const [userPost, setUserPost] = useState([]);
@@ -48,6 +48,9 @@ const Posts = (props) => {
                   <small class="text-muted">
                     User &nbsp; {mjs.userName} &nbsp; &nbsp; Id &nbsp;{" "}
                     {mjs.userId}
+                  </small>
+                  <small class="text-muted">
+                    Date  &nbsp; {moment(mjs.date).format("LLL")}
                   </small>
                 </div>
               </div>

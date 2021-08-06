@@ -4,8 +4,6 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { ADD_POST } from '../../redux/types';
 
-
-
 const MakePost = (props) => {
   let history = useHistory();
 
@@ -64,7 +62,9 @@ const MakePost = (props) => {
         console.log("Err");
         // console.log(err.response.data);
       });
-  };
+
+
+    };
 
   return (
     <div className="card col-md-6 offset-md-3">
