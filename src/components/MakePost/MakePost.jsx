@@ -14,7 +14,6 @@ const CommonWall = (props) => {
     token: props.credentials?.token,
     name: props.credentials?.user.name,
     lastName: props.credentials?.user.lastName,
-    // posts: props.credentials?.posts,
     date: new Date(),
     title: "",
     content: "",
@@ -32,16 +31,14 @@ const CommonWall = (props) => {
   const doPost = async () => {
     let token = post.token;
     let user = post.user;
-    // let posts = post.posts;
 
     let body = {
       title: post.title,
       content: post.content,
-      userId: user.id,
       userName: post.name,
       lastName : post.lastName,
-      // postId : posts.id,
       date: post.date,
+      userId: user.id,
     };
     console.log(body);
 
@@ -66,6 +63,7 @@ const CommonWall = (props) => {
       })
       .catch((err) => {
         console.log("Err");
+        // console.log(err.response.data);
       });
   };
 
