@@ -18,7 +18,7 @@ const CommonWall = () => {
     axios
       .get("http://localhost:5000/post")
       .then((res) => {
-        setUserPost(res.data.results);
+        setUserPost(res.data);
         // props.dispatch({ type: ADD_POST, payload: res.data });
         console.log("userPosts", res);
       })
@@ -36,7 +36,7 @@ const CommonWall = () => {
           {userPost.map((mjs, index) => (
             <div className="card-body" key={index}>
               <img className="card-img-top" src=".../100px180/" alt="100x100" />
-              <h5 className="card-title">{mjs.data.title}</h5>
+              <h5 className="card-title">{mjs.title}</h5>
               <p className="card-text">{mjs.content}</p>
               <p className="card-text">User &nbsp; &nbsp; {mjs.name}</p>
             </div>
