@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import { ADD_POST } from '../../redux/types';
+import { ADD_POST } from "../../redux/types";
 // import moment  from 'moment';
 
 const Posts = (props) => {
-
   const [userPost, setUserPost] = useState([]);
 
   useEffect(() => {
@@ -14,16 +13,14 @@ const Posts = (props) => {
   }, []);
 
   const findPost = async () => {
-
     let token = props.credentials?.token;
 
     axios
-      .get("http://localhost:5000/post",  {
+      .get("http://localhost:5000/post", {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {
-        setUserPost(res.data.results);
-        console.log('posts', res);
+        setUserPost(res.data);
         props.dispatch({ type: ADD_POST, payload: res.data });
       })
       .catch((err) => {
@@ -32,18 +29,30 @@ const Posts = (props) => {
       });
   };
 
-  if (userPost?.id) {
+  if (userPost[0]?.id) {
     return (
-      <div className="return">
-        <div className="card mjs" Style="width: 18rem;">
-          {userPost.map((mjs, index) => (
-            <div className="card-body" key={index}>
-              <img className="card-img-top" src=".../100px180/" alt="100x100" />
-              <h5 className="card-title">{mjs.title}</h5>
-              <p className="card-text">{mjs.data.content}</p>
-              <p className="card-text">User &nbsp; &nbsp; {mjs.data.name}</p>
-            </div>
-          ))}
+      <div className="container">
+        <div className="row row-cols-2 row-cols-md-4 g-4">
+          <div className="row">
+            {userPost.map((mjs, index) => (
+              <div className="card ">
+                <div className="card-body" key={index}>
+                  <img
+                    className="card-img-top"
+                    src=".../100px180/"
+                    alt="100x100"
+                  />
+                  <h4 className="card-title">Title {mjs.title}</h4>
+                  <p className="card-text">Post {mjs.content}</p>
+                  <p className="card-text">PostId {mjs.id}</p>
+                  <small class="text-muted">
+                    User &nbsp; {mjs.userName} &nbsp; &nbsp; Id &nbsp;{" "}
+                    {mjs.userId}
+                  </small>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
