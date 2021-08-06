@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 // import spinner from "../../assets/spinner2.gif";
 import moment from "moment";
 import Pensando from "../../assets/Buenos_modales/perro-pensando.png";
-import Posts from "../../components/posts/Posts";
+import UserPost from "../../components/posts/UserPost/UserPost";
 
 const Profile = (props) => {
   let history = useHistory();
@@ -12,7 +12,7 @@ const Profile = (props) => {
   const changeData = () => {
     switch (props.data) {
       case "getpost":
-        return <Posts />;
+        return <UserPost />;
 
       default:
         return;
@@ -50,14 +50,11 @@ const Profile = (props) => {
                 {/*Con 3 LLL te muestra la hora*/}
               </p>
               <div className="text-center">
-                <Link className="updateButton" to={"/posts"}>
+                <Link className="updateButton" to={"/userpost"}>
                   POSTS
                   {changeData()}
                 </Link>
                 &nbsp; &nbsp;
-                <Link className="updateButton" to={"/allusers"}>
-                  USERS{" "}
-                </Link>
                 <Link
                   className="buttonUpdateC"
                   onClick={() => history.push("/updateuser")}
