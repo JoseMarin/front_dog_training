@@ -22,7 +22,7 @@ const AllUsers = (props) => {
       })
 
       .then((res) => {
-        setUsers(res.data.results);
+        setUsers(res);
         console.log("users", res);
         // props.dispatch({ type: ADD_POST, payload: res.data });
       })
@@ -32,9 +32,9 @@ const AllUsers = (props) => {
       });
   };
 
-  if (users?.id) {
+  if (users[0]?.id) {
     return (
-      <div>
+      <div className="return">
       <h1>Hola</h1>
       <table className="table table-dark mjs">
         <thead>
