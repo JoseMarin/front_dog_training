@@ -7,13 +7,12 @@ const AllUsers = (props) => {
 
   useEffect(() => {
     findAllUsers();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {});
 
   const findAllUsers = async () => {
-
     let token = props.credentials?.token;
 
     axios
@@ -22,7 +21,7 @@ const AllUsers = (props) => {
       })
 
       .then((res) => {
-        setUsers(res);
+        setUsers(res.data);
         console.log("users", res);
         // props.dispatch({ type: ADD_POST, payload: res.data });
       })
@@ -34,30 +33,29 @@ const AllUsers = (props) => {
 
   if (users[0]?.id) {
     return (
-      <div className="return">
-      <h1>Hola</h1>
-      <table className="table table-dark mjs">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">User</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">City</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => (
-          <tr key={index}>
-            <th scope="row">{user.data.id}</th>
-            <td>{user.data.name}</td>
-            <td>{user.data.lastName}</td>
-            <td>{user.data.email}</td>
-            <td>{user.data.city}</td>
-          </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="return2 container">
+        <table className="table table-bordered  table-hover border-0 align-items-center flex-column ">
+          <thead  className="thead-dark border-1 ">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">User</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">City</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, index) => (
+              <tr key={index}>
+                <th scope="row">{user.id}</th>
+                <td>{user.name}</td>
+                <td>{user.lastName}</td>
+                <td>{user.email}</td>
+                <td>{user.city}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     );
   } else {
@@ -69,6 +67,6 @@ const AllUsers = (props) => {
   }
 };
 
-export default connect((state)=>({
+export default connect((state) => ({
   credentials: state.credentials,
 }))(AllUsers);
