@@ -31,26 +31,28 @@ const CommonWall = (props) => {
       <MakePost />
       {userPost ? (
         <div className="container">
-          <div className="card-group mt-3">
-            <div className="card">
+          <div className="row justify-content-evenly row-cols-2 row-cols-md-2 g-4 mt-lg-5">
+            <div className="row  mt-lg-5">
               <div className="">
                 {userPost.map((mjs, index) => (
-                  <div className="card-body" key={index}>
-                    <img
-                      className="card-img-top"
-                      src=".../100px180/"
-                      alt="100x100"
-                    />
-                    <h5 className="card-title">{mjs.title}</h5>
-                    <p className="card-text">{mjs.content}</p>
-                    {/* <p className="card-text">User &nbsp; &nbsp; {mjs.name}</p> */}
-                    <small class="text-muted">
-                      By &nbsp; {mjs.userName} &nbsp; {mjs.lastName}
-                    </small>{" "}
-                    &nbsp;
-                    <small class="text-muted">
-                      Date {moment(mjs.date).format("LLL")}
-                    </small>
+                  <div className="card border-dark bg-light p-3 mb-4 mt-lg-5">
+                    <div className="card-body" key={index}>
+                      <img
+                        className="card-img-top"
+                        src=".../100px180/"
+                        alt="100x100"
+                      />
+                      <h5 className="card-title">{mjs.title}</h5>
+                      <p className="card-text">{mjs.content}</p>
+                      {/* <p className="card-text">User &nbsp; &nbsp; {mjs.name}</p> */}
+                      <small class="text-muted">
+                        By &nbsp; {mjs.userName} &nbsp; {mjs.lastName}
+                      </small>{" "}
+                      &nbsp;
+                      <small class="text-muted">
+                        Date {moment(mjs.date).format("LLL")}
+                      </small>
+                    </div>
                   </div>
                 ))}
               </div>
