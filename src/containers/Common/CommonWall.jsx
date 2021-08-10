@@ -5,6 +5,8 @@ import axios from "axios";
 import { ADD_POST } from "../../redux/types";
 import moment from "moment";
 import MakePost from "../../components/MakePost/MakePost";
+import { faUser, faClock } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CommonWall = (props) => {
   const [userPost, setUserPost] = useState([]);
@@ -14,12 +16,15 @@ const CommonWall = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {});
+
   const findPost = async () => {
     axios
       .get("http://localhost:5000/post")
       .then((res) => {
         setUserPost(res.data);
         props.dispatch({ type: ADD_POST, payload: res?.data });
+        window.reload();
       })
       .catch((err) => {
         console.log("Err");
@@ -30,7 +35,7 @@ const CommonWall = (props) => {
     <div>
       <MakePost />
       {userPost ? (
-        <div className="container">
+        <div className="container-fluir">
           <div className="row justify-content-evenly row-cols-2 row-cols-md-2 g-4 mt-lg-5">
             <div className="row  mt-lg-5">
               <div className="">
@@ -46,11 +51,12 @@ const CommonWall = (props) => {
                       <p className="card-text">{mjs.content}</p>
                       {/* <p className="card-text">User &nbsp; &nbsp; {mjs.name}</p> */}
                       <small class="text-muted">
-                        By &nbsp; {mjs.userName} &nbsp; {mjs.lastName}
+                        <FontAwesomeIcon icon={faUser} /> &nbsp; {mjs.userName}{" "}
+                        &nbsp; {mjs.lastName} &nbsp; &nbsp;
                       </small>{" "}
                       &nbsp;
                       <small class="text-muted">
-                        Date {moment(mjs.date).format("LLL")}
+                      <FontAwesomeIcon icon={faClock} /> {moment(mjs.date).format("LLL")}
                       </small>
                     </div>
                   </div>

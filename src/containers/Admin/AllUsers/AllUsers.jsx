@@ -34,7 +34,7 @@ const AllUsers = (props) => {
   if (users[0]?.id) {
     return (
       <div className="return2 container">
-        <table className="table table-bordered  table-hover border-0 align-items-center flex-column ">
+        <table className="table table-bordered table-hover border-0 align-items-center flex-column ">
           <thead  className="thead-dark border-1 ">
             <tr>
               <th scope="col">Id</th>

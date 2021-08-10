@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { ADD_POST } from "../../../redux/types";
 import moment from "moment";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const userPost = (props) => {
@@ -59,7 +59,7 @@ const userPost = (props) => {
                   <p className="card-text">Post {mjs.content}</p>
                   <small class="text-muted"><FontAwesomeIcon icon={faUser} /> &nbsp; {mjs.userName}</small>&nbsp; &nbsp;
                   <small class="text-muted">
-                    Date  &nbsp; {moment(mjs.date).format("LLL")}
+                  <FontAwesomeIcon icon={faClock} /> {moment(mjs.date).format("LLL")}
                   </small>
                 </div>
               </div>
