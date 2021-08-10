@@ -31,38 +31,39 @@ const Posts = (props) => {
 
   if (userPost[0]?.id) {
     return (
-      <div className="container">
-        <div className="row justify-content-evenly row-cols-2 row-cols-md-2 g-4 mt-lg-5">
-          <div className="row  mt-lg-5">
-            {userPost.map((mjs, index) => (
-              <div className="card border-dark bg-light p-3 mb-4 mt-lg-5">
-                <div className="card-body" key={index}>
-                  <img
-                    className="card-img-top"
-                    src=".../100px180/"
-                    alt="100x100"
-                  />
-                  <h4 className="card-title">Title {mjs.title}</h4>
-                  <p className="card-text">Post {mjs.content}</p>
-                  <p className="card-text">PostId {mjs.id}</p>
-                  <small class="text-muted">
-                    User &nbsp; {mjs.userName} &nbsp; &nbsp; Id &nbsp;{" "}
-                    {mjs.userId}
-                  </small>
-                  <small class="text-muted">
-                    Date  &nbsp; {moment(mjs.date).format("LLL")}
-                  </small>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <div className="return2 container">
+      <table className="table table-bordered  table-hover border-0 align-items-center flex-column ">
+        <thead  className="thead-dark border-1 ">
+          <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">User</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Post Id</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {userPost.map((mjs, index) => (
+            <tr key={index}>
+              <th scope="row">{mjs.id}</th>
+              <td>{mjs.userName}</td>
+              <td>{mjs.lastName}</td>
+              <td>{mjs.title}</td>
+              <td>{mjs.content}</td>
+              <td>{mjs.id}</td>
+              <td>{moment(mjs.date).format("LLL")}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
     );
   } else {
     return (
       <div className="return">
-        <h1>No tienes posts</h1>
+        <h1>No tienes acceso</h1>
       </div>
     );
   }
