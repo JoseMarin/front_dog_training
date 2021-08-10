@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import axios from "axios";
 import { ADD_POST } from "../../../redux/types";
 import moment from "moment";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const userPost = (props) => {
   const [userPost, setUserPost] = useState([]);
@@ -55,7 +57,7 @@ const userPost = (props) => {
                   />
                   <h4 className="card-title">Title {mjs.title}</h4>
                   <p className="card-text">Post {mjs.content}</p>
-                  <small class="text-muted">User &nbsp; {mjs.userName}</small>&nbsp; &nbsp;
+                  <small class="text-muted"><FontAwesomeIcon icon={faUser} /> &nbsp; {mjs.userName}</small>&nbsp; &nbsp;
                   <small class="text-muted">
                     Date  &nbsp; {moment(mjs.date).format("LLL")}
                   </small>
