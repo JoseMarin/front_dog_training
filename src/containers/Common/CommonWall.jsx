@@ -45,18 +45,22 @@ const CommonWall = (props) => {
 
     let body = {
       postId: mjs.id,
-      userId: user.id
+      userId: user.id,
     };
-    console.log('postId', body);
-
-    let res = await axios.delete(
+    console.log("postId", body);
+    axios
+    .put(
       "http://localhost:5000/post/deletepost",
       body,
       { headers: { authorization: "Bearer " + token } }
-    );
-
-    setUserPost(res.data);
-    window.location.reload();
+    )
+    findPost()
+    .then((res) => {
+      setUserPost(res.data);
+    })
+    .catch((err) => {
+      console.log('Err');
+    });
   };
 
   return (
@@ -94,7 +98,7 @@ const CommonWall = (props) => {
                       &nbsp; &nbsp;
                       <span
                         className="updateButton"
-                        onClick={() => removePost()}
+                        onClick={() => removePost(mjs)}
                       >
                         <FontAwesomeIcon icon={faTrash} /> REMOVE
                       </span>
