@@ -39,13 +39,15 @@ const CommonWall = (props) => {
       });
   };
 
-  const removePost = async (post) => {
+  const removePost = async (mjs) => {
     let token = props.credentials?.token;
-    // let user = props.credentials?.user;
+    let user = props.credentials?.user;
 
     let body = {
-      postId: post.postId,
+      postId: mjs.id,
+      userId: user.id
     };
+    console.log('postId', body);
 
     let res = await axios.delete(
       "http://localhost:5000/post/deletepost",

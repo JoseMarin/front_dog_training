@@ -55,10 +55,9 @@ const MakePost = (props) => {
           content: "",
         });
 
-        // setTimeout(() => {
-        //   history.push("/commonwall");
-        //   // window.location.reload();
-        // }, 250);
+        setTimeout(() => {
+          history.push("/commonwall");
+        }, 250);
       })
       .catch((err) => {
         console.log("Err");
