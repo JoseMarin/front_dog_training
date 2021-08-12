@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import { ADD_POST } from '../../redux/types';
+import { ADD_POST } from "../../redux/types";
 
 const MakePost = (props) => {
   let history = useHistory();
@@ -34,7 +34,7 @@ const MakePost = (props) => {
       title: post.title,
       content: post.content,
       userName: post.name,
-      lastName : post.lastName,
+      lastName: post.lastName,
       date: post.date,
       userId: user.id,
     };
@@ -45,8 +45,9 @@ const MakePost = (props) => {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {
+        props.dispatch({ type: ADD_POST, payload: res?.data });
+        history.push("/commonwall");
 
-        props.dispatch({ type: ADD_POST, payload: res.data });
 
         //Reset form
         setPost({
@@ -54,17 +55,16 @@ const MakePost = (props) => {
           content: "",
         });
 
-        setTimeout(() => {
-          history.push("/commonwall");
-        }, 250);
+        // setTimeout(() => {
+        //   history.push("/commonwall");
+        //   // window.location.reload();
+        // }, 250);
       })
       .catch((err) => {
         console.log("Err");
         // console.log(err.response.data);
       });
-
-
-    };
+  };
 
   return (
     <div className="card col-md-6 offset-md-3">
@@ -121,5 +121,5 @@ const MakePost = (props) => {
 
 export default connect((state) => ({
   credentials: state.credentials,
-  post: state.post,
+  data: state.data,
 }))(MakePost);

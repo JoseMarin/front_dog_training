@@ -45,9 +45,9 @@ const Posts = (props) => {
           </tr>
         </thead>
         <tbody>
-          {userPost.map((mjs, index) => (
+          {[...userPost].reverse().map((mjs, index) => (
             <tr key={index}>
-              <th scope="row">{mjs.id}</th>
+              <th scope="row">{mjs.userId}</th>
               <td>{mjs.userName}</td>
               <td>{mjs.lastName}</td>
               <td>{mjs.title}</td>
@@ -71,5 +71,5 @@ const Posts = (props) => {
 
 export default connect((state) => ({
   credentials: state.credentials,
-  post: state.post,
+  data: state.data,
 }))(Posts);

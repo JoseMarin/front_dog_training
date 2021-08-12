@@ -47,7 +47,7 @@ const userPost = (props) => {
       <div className="container">
         <div className="row justify-content-evenly row-cols-2 row-cols-md-2 g-4 mt-lg-5">
           <div className="row  mt-lg-5">
-            {userPost.map((mjs, index) => (
+            {[...userPost].reverse().map((mjs, index) => (
               <div className="card border-dark bg-light p-3 mb-4 mt-lg-5">
                 <div className="card-body" key={index}>
                   <img
@@ -79,5 +79,5 @@ const userPost = (props) => {
 
 export default connect((state) => ({
   credentials: state.credentials,
-  post: state.post,
+  data: state.data,
 }))(userPost);
