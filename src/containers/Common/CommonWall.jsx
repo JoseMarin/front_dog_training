@@ -47,7 +47,7 @@ const CommonWall = (props) => {
       postId: mjs.id,
       userId: user.id,
     };
-    console.log("postId", body);
+    // Envío por axios
     axios
     .put(
       "http://localhost:5000/post/deletepost",
