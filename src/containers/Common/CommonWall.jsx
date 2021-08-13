@@ -110,6 +110,7 @@ const CommonWall = (props) => {
                         cancelText="No"
                       >
                       <span
+                        Style="cursor:pointer;"
                         className="updateButton"
                       >
                         <FontAwesomeIcon icon={faTrash} /> REMOVE
