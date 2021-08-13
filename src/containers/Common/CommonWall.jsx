@@ -12,6 +12,7 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Popconfirm, notification } from "antd";
 
 const CommonWall = (props) => {
   const [userPost, setUserPost] = useState([]);
@@ -48,21 +49,27 @@ const CommonWall = (props) => {
       userId: user.id,
     };
     // Envío por axios
-    axios
-    .put(
-      "http://localhost:5000/post/deletepost",
-      body,
-      { headers: { authorization: "Bearer " + token } }
-    )
+    axios.put("http://localhost:5000/post/deletepost", body, {
+      headers: { authorization: "Bearer " + token },
+    })
     findPost()
     .then((res) => {
       setUserPost(res.data);
     })
-    .catch((err) => {
-      console.log('Err');
-    });
+      .catch((err) => {
+        console.log("Err");
+      });
   };
 
+  function confirm(e) {
+    console.log(e);
+    notification.success({ message: "Post was removed.", style: {top: 76,}, description: "Post was removed.",});
+  }
+
+  function cancel(e) {
+    console.log(e);
+    notification.error({ message: "Action canceled.", style: {top: 76,}, description: "Action canceled.",});
+  }
   return (
     <div>
       <MakePost />
@@ -81,7 +88,6 @@ const CommonWall = (props) => {
                       />
                       <h5 className="card-title">{mjs.title}</h5>
                       <p className="card-text">{mjs.content}</p>
-                      {/* <p className="card-text">User &nbsp; &nbsp; {mjs.name}</p> */}
                       <small class="text-muted">
                         <FontAwesomeIcon icon={faUser} /> &nbsp; {mjs.userName}{" "}
                         &nbsp; {mjs.lastName} &nbsp; &nbsp;
@@ -96,12 +102,19 @@ const CommonWall = (props) => {
                         <FontAwesomeIcon icon={faComment} /> COMMENT
                       </span>
                       &nbsp; &nbsp;
+                      <Popconfirm
+                        title="Are you sure to delete this post?"
+                        onConfirm={() => removePost(mjs, confirm)}
+                        onCancel={cancel}
+                        okText="Yes"
+                        cancelText="No"
+                      >
                       <span
                         className="updateButton"
-                        onClick={() => removePost(mjs)}
                       >
                         <FontAwesomeIcon icon={faTrash} /> REMOVE
                       </span>
+                      </Popconfirm>
                     </div>
                   </div>
                 ))}
