@@ -2,15 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import { ADD_POST } from "../../redux/types";
+import { GET_POST, REMOVE_POST } from "../../redux/types";
 import moment from "moment";
 import MakePost from "../../components/MakePost/MakePost";
-import {
-  faUser,
-  faClock,
-  faComment,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUser,faClock,faComment,faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Popconfirm, notification } from "antd";
 
@@ -33,9 +28,11 @@ const CommonWall = (props) => {
       })
       .then((res) => {
         setUserPost(res.data);
-        props.dispatch({ type: ADD_POST, payload: res?.data });
+        props.dispatch({ type: GET_POST, payload: res?.data });
       })
       .catch((err) => {
+        // notification.error({ message: "Action canceled.", style: {top: 76,}, description: "Action canceled.",});
+        // notification.warning({message:'Atencion.',description: JSON.stringify(err.response.data.message)});
         console.log("Err");
       });
   };
@@ -49,26 +46,39 @@ const CommonWall = (props) => {
       userId: user.id,
     };
     // Envío por axios
-    axios.put("http://localhost:5000/post/deletepost", body, {
-      headers: { authorization: "Bearer " + token },
-    })
-    findPost()
-    .then((res) => {
-      setUserPost(res.data);
-    })
+    axios
+      .put("http://localhost:5000/post/deletepost", body, {
+        headers: { authorization: "Bearer " + token },
+      })
+      findPost()
+      .then((res) => {
+        props.dispatch({ type: REMOVE_POST, payload: res?.data });
+        findPost();
+        setUserPost(res.data);
+      })
       .catch((err) => {
+        // console.log(err.response.data);
+        // notification.error({message: "Action canceled", style: { top: 76 }, });
         console.log("Err");
       });
   };
 
   function confirm(e) {
     console.log(e);
-    notification.success({ message: "Post was removed.", style: {top: 76,}, description: "Post was removed.",});
+    notification.success({
+      message: "Post was removed.",
+      style: { top: 76 },
+      description: "Post was removed.",
+    });
   }
 
   function cancel(e) {
     console.log(e);
-    notification.error({ message: "Action canceled.", style: {top: 76,}, description: "Action canceled.",});
+    notification.error({
+      message: "Action canceled.",
+      style: { top: 76 },
+      description: "Action canceled.",
+    });
   }
   return (
     <div>
@@ -109,12 +119,9 @@ const CommonWall = (props) => {
                         okText="Yes"
                         cancelText="No"
                       >
-                      <span
-                        Style="cursor:pointer;"
-                        className="updateButton"
-                      >
-                        <FontAwesomeIcon icon={faTrash} /> REMOVE
-                      </span>
+                        <span Style="cursor:pointer;" className="updateButton">
+                          <FontAwesomeIcon icon={faTrash} /> REMOVE
+                        </span>
                       </Popconfirm>
                     </div>
                   </div>
