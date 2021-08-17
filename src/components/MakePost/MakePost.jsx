@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { ADD_POST } from "../../redux/types";
+import { useHistory } from "react-router";
+
+// hooks react redux
+// import { useDispatch, useSelector } from "react-redux";
+// importamos la acción
+// import { findPost } from "../../Actions/Actions";
 
 const MakePost = (props) => {
-  let history = useHistory();
+  // declaramos displach para llamar a la acción o acciones
+  // const dispatch = useDispatch();
+
+  // const AllPost = useSelector(store => store.data);
+
+  const history = useHistory();
 
   const [post, setPost] = useState({
     user: props.credentials?.user,
@@ -46,18 +56,13 @@ const MakePost = (props) => {
       })
       .then((res) => {
         props.dispatch({ type: ADD_POST, payload: res?.data });
+
         history.push("/commonwall");
-
-
         //Reset form
         setPost({
           title: "",
           content: "",
         });
-
-        setTimeout(() => {
-          history.push("/commonwall");
-        }, 250);
       })
       .catch((err) => {
         console.log("Err");
@@ -101,6 +106,7 @@ const MakePost = (props) => {
               className="btn btn-outline-dark"
               type="submit"
               onClick={() => doPost()}
+              // onSubmit={() => dispatch(findPost())}
             >
               To Post
             </button>
