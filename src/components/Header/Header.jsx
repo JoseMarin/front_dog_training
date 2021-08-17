@@ -43,7 +43,7 @@ const Header2 = (props) => {
                 <Training />
               </li>
               <li className="nav-item">
-                <Button path="/contacus" destination="CONTAC US"/>
+                <Button path="/contact" destination="CONTAC US"/>
               </li>
 
             </ul>
