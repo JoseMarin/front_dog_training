@@ -17,6 +17,7 @@ import UpdateUser from './containers/Profile/UpdateUser';
 import CommonWall from './containers/Common/CommonWall.jsx';
 import Posts from './components/posts/AllPosts/Posts.jsx';
 import UserPost from './components/posts/UserPost/UserPost.jsx';
+import Contact from './containers/Contact/Contact';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/register" exact component={Register}/>
+          <Route path="/contact" exact component={Contact}/>
           <Route path="/login" exact component={Login}/>
           <Route path="/obedienciabasica" exact component={ObedienciaBasica}/>
           <Route path="/buenosmodales" exact component={BuenosModales}/>
