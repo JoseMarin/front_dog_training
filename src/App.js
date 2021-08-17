@@ -15,6 +15,8 @@ import AllUsers from './containers/Admin/AllUsers/AllUsers.jsx';
 import Profile from './containers/Profile/Profile.jsx';
 import UpdateUser from './containers/Profile/UpdateUser';
 import CommonWall from './containers/Common/CommonWall.jsx';
+import Posts from './components/posts/AllPosts/Posts.jsx';
+import UserPost from './components/posts/UserPost/UserPost.jsx';
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
           <Route path="/admin" exact component={Admin}/>
           <Route path="/allusers" exact component={AllUsers}/>
           <Route path="/profile" exact component={Profile}/>
+          <Route path="/posts" exact component={Posts}/>
+          <Route path="/userpost" exact component={UserPost}/>
           <Route path="/updateuser" exact component={UpdateUser}/>
           <Route path="/commonwall" exact component={CommonWall}/>
         </Switch>

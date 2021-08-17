@@ -3,6 +3,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { UPDATE_USER } from "../../redux/types";
+import { notification } from "antd";
 // import spinner from '../../assets/spinner2.gif';
 
 const UpdateUser = (props) => {
@@ -56,6 +57,7 @@ const UpdateUser = (props) => {
 
         props.dispatch({ type: UPDATE_USER, payload: res.data });
 
+        notification.success({message:'Atencion.', style: {top: 76,}, description: "Tus datos han sido actualizados correctamente."});
         setTimeout(() => {
           history.push("/profile");
         }, 250);
@@ -87,6 +89,7 @@ const UpdateUser = (props) => {
       setTimeout(() => {
         props.dispatch({ type: UPDATE_USER, payload: res.data });
 
+        notification.success({message:'Atencion.', style: {top: 76,}, description: "Tus datos han sido actualizados correctamente."});
         history.push("/profile");
       }, 750);
     } catch (err) {

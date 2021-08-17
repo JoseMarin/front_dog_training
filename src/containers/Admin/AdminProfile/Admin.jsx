@@ -1,76 +1,57 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import moment from "moment";
+import Pensando from "../../../assets/Buenos_modales/zyro-image (4).png";
+
 
 const Admin = (props) => {
+
+  let history = useHistory();
+
   if (props.credentials?.user.isAdmin === true) {
     return (
-      <div className="admin">
-        <div className="nombre"></div>
-        <div className="users">
-          <div className="userContent">
-            <h2>Welcome&nbsp; &nbsp; {props.credentials?.user.name}</h2>
-            <p>EMAIL : {props.credentials?.user.email} </p>
-            <p>CITY : {props.credentials?.user.city}</p>
-            <p>
-              CREATECOUNT :{" "}
-              {moment(props.credentials?.user.createdAt).format("LL")}{" "}
-              {/*Con 3 LLL te muestra la hora*/}
-            </p>
-
-            <div className="box2">
-              <Link to={"/updateuser"} className="updateButton">
-                UPDATE
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="orders">
-          <div className="orderContent">
-            <h2 className="titleUpdate">Access</h2>
-            <div className="box2">
-              <Link className="updateButton" to={"/allorders"}>
-                ORDERS
-              </Link>
-              <Link className="updateButton" to={"/allusers"}>
-                USERS{" "}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  } else {
-    return (
       <div
-        class="card  mb-3 rounded mx-auto d-block border-0  card"
+        class="card  mb-3 rounded mx-auto d-block border-0 card"
         Style="max-width: 540px;"
       >
         <div class="row g-0">
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="..." />
+          <div class="col-md-4 m-auto">
+            <img
+              src={Pensando}
+              class="img-fluid rounded-circle  z-depth-2"
+              alt="100x100"
+            />
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title text-center">
                 Welcome&nbsp; &nbsp; {props.credentials?.user.name}
               </h5>
-              <p class="card-text">EMAIL : {props.credentials?.user.email} </p>
-              <p class="card-text">{props.credentials?.user.city}</p>
-              <p class="card-text">
-                CREATECOUNT :{" "}
+              <p class="card-text text-center">
+                Email {props.credentials?.user.email}{" "}
+              </p>
+              <p class="card-text text-center">
+                City <div></div> {props.credentials?.user.city}
+              </p>
+              <p class="card-text text-center">
+                CREATECOUNT <div></div>
                 {moment(props.credentials?.user.createdAt).format("LL")}{" "}
                 {/*Con 3 LLL te muestra la hora*/}
               </p>
               <div className="text-center">
-                <Link className="updateButton" to={"/allorders"}>
-                  ORDERS
+                <Link className="updateButton" to={"/posts"}>
+                  POSTS
                 </Link>
                 &nbsp; &nbsp;
                 <Link className="updateButton" to={"/allusers"}>
                   USERS{" "}
+                </Link>
+                <Link
+                  className="buttonUpdateC"
+                  onClick={() => history.push("/updateuser")}
+                >
+                  UPDATE
                 </Link>
               </div>
             </div>
@@ -78,10 +59,16 @@ const Admin = (props) => {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div>
+        <h1>No tienes acceso</h1>
+      </div>
+    );
   }
 };
 
 export default connect((state) => ({
   credentials: state.credentials,
-  infoUser: state.infoUser,
+  data: state.data,
 }))(Admin);

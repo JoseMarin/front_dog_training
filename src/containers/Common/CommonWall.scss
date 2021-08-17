@@ -1,0 +1,20 @@
+.common {
+  position: relative;
+  display: flex;
+  top: -2em;
+  justify-content: center;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+.border:focus {
+  box-shadow: none !important;
+}
+.mjs {
+  display: flex;
+  position: relative;
+  top: -4em;
+  width: 14em;
+  height: 14em;
+}
