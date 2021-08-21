@@ -1,15 +1,23 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { useHistory } from "react-router";
 import axios from "axios";
-import { GET_POST, REMOVE_POST } from "../../redux/types";
+import { ADD_POST, GET_POST, REMOVE_POST } from "../../redux/types";
 import moment from "moment";
 import MakePost from "../../components/MakePost/MakePost";
-import { faUser,faClock,faComment,faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faClock,
+  faComment,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Popconfirm, notification } from "antd";
 
 const CommonWall = (props) => {
+  let history = useHistory();
+
   const [userPost, setUserPost] = useState([]);
 
   useEffect(() => {
@@ -18,6 +26,11 @@ const CommonWall = (props) => {
   }, []);
 
   useEffect(() => {});
+
+  //Cambio el estado del hook comment a true
+  // const doComment = () => {
+  //   setComment(true);
+  // };
 
   const findPost = async () => {
     let token = props.credentials?.token;
@@ -46,11 +59,10 @@ const CommonWall = (props) => {
       userId: user.id,
     };
     // Envío por axios
-    axios
-      .put("http://localhost:5000/post/deletepost", body, {
-        headers: { authorization: "Bearer " + token },
-      })
-      findPost()
+    axios.put("http://localhost:5000/post/deletepost", body, {
+      headers: { authorization: "Bearer " + token },
+    });
+    findPost()
       .then((res) => {
         props.dispatch({ type: REMOVE_POST, payload: res?.data });
         findPost();
@@ -62,6 +74,12 @@ const CommonWall = (props) => {
         console.log("Err");
       });
   };
+
+  const doComment = (mjs) => {
+    props.dispatch({type: ADD_POST, payload: mjs});
+
+    history.push('/comments');
+  }
 
   function confirm(e) {
     console.log(e);
@@ -80,6 +98,7 @@ const CommonWall = (props) => {
       description: "Action canceled.",
     });
   }
+
   return (
     <div>
       <MakePost />
@@ -108,7 +127,10 @@ const CommonWall = (props) => {
                         {moment(mjs.date).format("LLL")}
                       </small>{" "}
                       &nbsp; &nbsp;
-                      <span className=" m-xxl-5">
+                      <span
+                        className=" m-xxl-5"
+                        onClick={() => doComment(mjs)}
+                      >
                         <FontAwesomeIcon icon={faComment} /> COMMENT
                       </span>
                       &nbsp; &nbsp;
