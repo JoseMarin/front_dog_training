@@ -18,6 +18,7 @@ import CommonWall from './containers/Common/CommonWall.jsx';
 import Posts from './components/posts/AllPosts/Posts.jsx';
 import UserPost from './components/posts/UserPost/UserPost.jsx';
 import Contact from './containers/Contact/Contact';
+import Comments from './containers/Comments/Comments';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path="/userpost" exact component={UserPost}/>
           <Route path="/updateuser" exact component={UpdateUser}/>
           <Route path="/commonwall" exact component={CommonWall}/>
+          <Route path="/comments" exact component={Comments}/>
         </Switch>
 
       </BrowserRouter>
