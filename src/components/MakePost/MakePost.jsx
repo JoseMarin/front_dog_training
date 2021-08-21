@@ -56,7 +56,7 @@ const MakePost = (props) => {
       })
       .then((res) => {
         props.dispatch({ type: ADD_POST, payload: res?.data });
-
+        window.location.reload();
         history.push("/commonwall");
         //Reset form
         setPost({
