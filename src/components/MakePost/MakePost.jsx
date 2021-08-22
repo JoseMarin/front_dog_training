@@ -13,8 +13,6 @@ const MakePost = (props) => {
   // declaramos displach para llamar a la acción o acciones
   // const dispatch = useDispatch();
 
-  // const AllPost = useSelector(store => store.data);
-
   const history = useHistory();
 
   const [post, setPost] = useState({
@@ -56,7 +54,7 @@ const MakePost = (props) => {
       })
       .then((res) => {
         props.dispatch({ type: ADD_POST, payload: res?.data });
-        window.location.reload();
+        // window.location.reload();
         history.push("/commonwall");
         //Reset form
         setPost({

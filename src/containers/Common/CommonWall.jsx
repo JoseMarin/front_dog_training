@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import axios from "axios";
 import { ADD_POST, GET_POST, REMOVE_POST } from "../../redux/types";
@@ -26,6 +26,10 @@ const CommonWall = (props) => {
   }, []);
 
   useEffect(() => {});
+
+  // const post = useSelector( store => store.post );
+  // const userPost = useSelector(store => store.data);
+
 
   //Cambio el estado del hook comment a true
   // const doComment = () => {
