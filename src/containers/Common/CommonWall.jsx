@@ -64,9 +64,9 @@ const CommonWall = (props) => {
     });
     findPost()
       .then((res) => {
+        setUserPost(res.data);
         props.dispatch({ type: REMOVE_POST, payload: res?.data });
         findPost();
-        setUserPost(res.data);
       })
       .catch((err) => {
         // console.log(err.response.data);
