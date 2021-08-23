@@ -35,14 +35,14 @@ const Header2 = (props) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0" Style="cursor:pointer;">
+              <li className="nav-item" Style="cursor:pointer;">
                 <Button path="/commonwall" className="header"  destination="COMMON WALL"/>
               </li>
               <li className="nav-item">
                 <Training />
               </li>
-              <li className="nav-item">
+              <li className="nav-item" Style="cursor:pointer;">
                 <Button path="/contact" destination="CONTAC US"/>
               </li>
 
@@ -71,20 +71,20 @@ const Header2 = (props) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+              <li className="nav-item" Style="cursor:pointer;">
                 <Button path="/aboutus" destination="ABOUT US" onClick={() => llevame()} />
               </li>
               <li><a href="{}"><div id="google_translate_element"></div></a></li>
-              <li className="nav-item">
+              <li className="nav-item" Style="cursor:pointer;">
                 <Button path="/contacus" destination="CONTAC US"/>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" Style="cursor:pointer;">
                 <Button path="/trainers" destination="TRAINERS"/>
               </li>
 
             </ul>
-                <Button path="/login" destination="LOG IN"/>
-                <Button path="/register" destination="SIGN UP"/>
+                <Button path="/login" Style="cursor:pointer;" destination="LOG IN"/>
+                <Button path="/register" Style="cursor:pointer;" destination="SIGN UP"/>
           </div>
         </div>
       </nav>
