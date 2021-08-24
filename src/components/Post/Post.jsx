@@ -80,7 +80,7 @@ const Post = ({ post }) => {
                   &nbsp; &nbsp;
                   <span
                     Style="cursor:pointer;"
-                    onClick={() => confirmRemove(id, userId)}
+                    onClick={ () => confirmRemove(id, userId) }
                     className="updateButton"
                   >
                     <FontAwesomeIcon icon={faTrash} /> REMOVE
