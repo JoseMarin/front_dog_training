@@ -27,6 +27,7 @@ export function createPostAction(body) {
       .then((res) => {
         dispatch(addPostSucce(body) ); //This is to state
         // window.location.reload();
+        console.log('body dopost', body);
         //Alert
         Swal.fire("Correct", "Post was add.", "success");
         // history.push("/commonwall");
@@ -69,11 +70,12 @@ export function getPostAction() {
     dispatch(downloadPost());
 
     await axios
-      .post("http://localhost:5000/post", {
+      .get("http://localhost:5000/post", {
         headers: { authorization: "Bearer " },
       })
       .then((res) => {
-        dispatch(downloadPostSucce()); //Put dispatch if the call is succe
+        dispatch(downloadPostSucce(res.data) ); //Put dispatch if the call is succe
+        console.log('postsss', res.data);
         // window.location.reload();
         // history.push("/commonwall");
       })
@@ -105,23 +107,3 @@ const downloadPostError = () => ({
   type: GET_POST_ERROR,
   payload: true
 });
-
-
-// actions
-// export const findPost = (props) => async (dispatch, getState) => {
-//   let token = props.credentials?.token;
-//   axios
-//     .get("http://localhost:5000/post", {
-//       headers: { authorization: "Bearer " + token },
-//     })
-//     .then((res) => {
-//       dispatch({
-//         type: GET_POST,
-//         payload: res?.data,
-//       });
-//     })
-//     .catch((err) => {
-//       // notification.warning({message:'Atencion.',description: JSON.stringify(err.response.data.message)});
-//       console.log("Err");
-//     });
-// };
