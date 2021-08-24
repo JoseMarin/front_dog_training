@@ -7,6 +7,7 @@ export const ADD_POST_SUCCE = 'add_post_succe';
 export const ADD_POST_ERROR = 'add_post_error';
 
 export const GET_POST = 'get_post';
+export const GET_POST_SUCCE = 'get_post_succe';
 export const GET_POST_ERROR = 'get_post_error';
 
 export const GET_POST_EDIT = 'get_post_edit';
@@ -14,8 +15,8 @@ export const EDIT_POST_SUCCE = 'edit_post_succe';
 export const EDIT_POST_ERROR = 'edit_post_error';
 
 export const REMOVE_POST = 'remove_post';
-export const REMOVE_POST_ERROR = 'remove_post_error';
 export const REMOVE_POST_SUCCE = 'remove_post_succe';
+export const REMOVE_POST_ERROR = 'remove_post_error';
 
 
 export const ADD_COMMENT = 'add_comment';
