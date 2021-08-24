@@ -1,9 +1,10 @@
 import {applyMiddleware, createStore} from 'redux';
 import { save, load } from "redux-localstorage-simple";
 import reducer from './reducers';
-
+import thunk from "redux-thunk";
 
 const createStoreWithMiddleware = applyMiddleware(
+    thunk,
 	save({ states: ['credentials', 'data', 'alert'] })
 )(createStore);
 
@@ -17,3 +18,4 @@ const store = createStoreWithMiddleware(
 );
 
 export default store;
+
