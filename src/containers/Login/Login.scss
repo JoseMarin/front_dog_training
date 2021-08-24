@@ -1,4 +1,4 @@
-body {
+.vistaLogin {
   background-image: url("../../assets/Buenos_modales/educa.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -8,7 +8,7 @@ body {
   margin: 0;
   z-index: -1;
 }
-body:before {
+.vistaLogin:before {
   content: "";
   width: 100vw;
   height: 100vh;
