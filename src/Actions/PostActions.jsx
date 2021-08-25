@@ -5,10 +5,10 @@ import {
   GET_POST,
   GET_POST_SUCCE,
   GET_POST_ERROR,
+  REMOVE_POST,
+  REMOVE_POST_SUCCE,
+  REMOVE_POST_ERROR,
   // ADD_COMMENT,
-  // REMOVE_POST,
-  // REMOVE_POST_SUCCE,
-  // REMOVE_POST_ERROR,
   // GET_POST_EDIT,
   // EDIT_POST_SUCCE,
   // EDIT_POST_ERROR,
@@ -16,21 +16,17 @@ import {
 import axios from "axios";
 import Swal from "sweetalert2";
 
-// Create new products, and we call with useDispatch
 export function createPostAction(body) {
   return async (dispatch) => {
-    dispatch(addPost());
-    axios
+    dispatch(addPost() );
+    await axios
       .post("http://localhost:5000/post", body, {
         headers: { authorization: "Bearer " },
       })
       .then((res) => {
         dispatch(addPostSucce(body) ); //This is to state
-        // window.location.reload();
-        console.log('body dopost', body);
         //Alert
-        Swal.fire("Correct", "Post was add.", "success");
-        // history.push("/commonwall");
+        Swal.fire("Correct", "The post was added successfully.", "success");
       })
       .catch((err) => {
         console.log(err);
@@ -40,8 +36,7 @@ export function createPostAction(body) {
         Swal.fire({
           icon: "error",
           title: "Was a mistake",
-          text: "Was a mistake try again.",
-          // getPostAction: getPostAction()
+          text: "Try again.",
         });
       });
   };
@@ -63,31 +58,28 @@ const addPostError = state => ({
   payload: state,
 });
 
-// Function to download the products from the data base
-export function getPostAction() {
+export function getPostAction(props) {
+  let token = props;
   //Note getPostAction, run the function wownloadProducts
   return async (dispatch) => {
-    dispatch(downloadPost());
+    dispatch(downloadPost() );
 
     await axios
       .get("http://localhost:5000/post", {
-        headers: { authorization: "Bearer " },
+        headers: { authorization: "Bearer " + token },
       })
       .then((res) => {
         dispatch(downloadPostSucce(res.data) ); //Put dispatch if the call is succe
-        console.log('postsss', res.data);
-        // window.location.reload();
-        // history.push("/commonwall");
       })
       .catch((err) => {
         console.log(err);
         //But if there is an error, change the state
-        dispatch(downloadPostError(true));
+        dispatch(downloadPostError() );
         //Alert error
         Swal.fire({
           icon: "error",
           title: "Was a mistake",
-          text: "Was a mistake try again.",
+          text: "Try again.",
         });
       });
   };
@@ -98,12 +90,47 @@ const downloadPost = () => ({
   payload: true,
 });
 
-const downloadPostSucce = () => ({
+const downloadPostSucce = Userposts => ({
   type: GET_POST_SUCCE,
-  payload: true
+  payload: Userposts,
 });
 
 const downloadPostError = () => ({
   type: GET_POST_ERROR,
-  payload: true
+  payload: true,
+});
+
+export function removePostAction(postId, userId) {
+  return async (dispatch) => {
+    //Here we collect the identifiers
+    dispatch(removePost(postId, userId) );
+
+    await axios
+      .put("http://localhost:5000/post/deletepost", { postId, userId })
+      .then((res) => {
+        //If it is eliminated show alert
+        dispatch(removeSucce(postId, userId) );
+        Swal.fire("Deleted!", "Your post has been deleted.", "success");
+      })
+      .catch((err) => {
+        // console.log(err.response.data);
+        console.log(err);
+        dispatch(removeError() );
+      });
+  };
+}
+
+const removePost = (postId, userId) => ({
+  type: REMOVE_POST,
+  payload: ({postId, userId})
+});
+
+const removeSucce = (postId, userId) => ({
+  type: REMOVE_POST_SUCCE,
+  payload: ({postId, userId})
+});
+
+const removeError = () => ({
+  type: REMOVE_POST_ERROR,
+  payload: true,
 });
