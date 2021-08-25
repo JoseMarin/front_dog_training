@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 
 const Home = (props) => {
-  let history = useHistory();
+  const history = useHistory();
 
   const goTo = (path) => {
     history.push(path);

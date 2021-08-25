@@ -8,7 +8,7 @@ import {notification} from 'antd';
 
 const Login = (props) => {
 
-    let history = useHistory();
+    const history = useHistory();
 
     const [credentials, setCredentials] = useState({ email: "", password: "" });
     const [msgError, setMensajeError] = useState({
