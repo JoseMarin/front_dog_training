@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import Swal from "sweetalert2";
 import { connect, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { removePostAction } from "../../Actions/PostActions";
+import { Link, useHistory } from "react-router-dom";
+import { removePostAction, editPost } from "../../Actions/PostActions";
 
 const Post = ({ post }) => {
   const { title, content, lastName, date, userName, id, userId } = post;
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const confirmRemove = (body, userId) => {
     Swal.fire({
@@ -29,6 +30,11 @@ const Post = ({ post }) => {
       }
     });
   };
+
+  const postToEdit = post => {
+    dispatch(editPost(post) );
+    history.push("/editPost");
+  }
 
   return (
     <div>
@@ -66,7 +72,7 @@ const Post = ({ post }) => {
                   <Link
                     Style="cursor:pointer; color:black;"
                     className=" m-xxl-5"
-                    //   onClick={() => editPost(id)}
+                      onClick={ () => postToEdit(id) }
                   >
                     <FontAwesomeIcon icon={faEdit} /> EDIT
                   </Link>
