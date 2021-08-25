@@ -8,10 +8,10 @@ import {
   REMOVE_POST,
   REMOVE_POST_SUCCE,
   REMOVE_POST_ERROR,
+  GET_POST_EDIT,
+  EDIT_POST_SUCCE,
+  EDIT_POST_ERROR,
   // ADD_COMMENT,
-  // GET_POST_EDIT,
-  // EDIT_POST_SUCCE,
-  // EDIT_POST_ERROR,
 } from "../redux/types";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -133,4 +133,15 @@ const removeSucce = (postId, userId) => ({
 const removeError = () => ({
   type: REMOVE_POST_ERROR,
   payload: true,
+});
+
+export function editPost(post) {
+  return (dispatch) => {
+    dispatch(getPostRemove(post) )
+  }
+}
+
+const getPostRemove = post => ({
+  type: GET_POST_EDIT,
+  payload: post
 });
