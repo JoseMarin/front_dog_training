@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  faUser,
-  faClock,
-  faComment,
-  faTrash,
-  faEdit,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUser,faClock,faComment,faTrash,faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import Swal from "sweetalert2";
@@ -15,24 +9,23 @@ import { removePostAction } from "../../Actions/PostActions";
 
 const Post = ({ post }) => {
   const { title, content, lastName, date, userName, id, userId } = post;
-  //   console.log('postIddddd--->',post, 'userId ---->',userId)
 
   const dispatch = useDispatch();
 
   const confirmRemove = (body, userId) => {
     Swal.fire({
-      title: "¿Are you sure?",
+      title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "¡Yes, delete it!",
+      confirmButtonText: "Yes, delete it!",
       cancelButtonText: "Cancel",
     }).then((result) => {
       if (result.isConfirmed) {
         //Take it into action
-        dispatch(removePostAction(body, userId));
+        dispatch(removePostAction(body, userId) );
       }
     });
   };
@@ -65,7 +58,7 @@ const Post = ({ post }) => {
                   <span
                     Style="cursor:pointer;"
                     className=" m-xxl-5"
-                    // onClick={() => confirmRemove(id)}
+                    // onClick={() => doComment(id)}
                   >
                     <FontAwesomeIcon icon={faComment} /> COMMENT
                   </span>
@@ -73,7 +66,7 @@ const Post = ({ post }) => {
                   <Link
                     Style="cursor:pointer; color:black;"
                     className=" m-xxl-5"
-                    //   onClick={() => doComment(id)}
+                    //   onClick={() => editPost(id)}
                   >
                     <FontAwesomeIcon icon={faEdit} /> EDIT
                   </Link>
