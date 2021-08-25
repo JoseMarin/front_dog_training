@@ -1,11 +1,11 @@
 import React from "react";
 import { faUser,faClock,faComment,faTrash,faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment";
-import Swal from "sweetalert2";
 import { connect, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { removePostAction, editPost } from "../../Actions/PostActions";
+import moment from "moment";
+import Swal from "sweetalert2";
 
 const Post = ({ post }) => {
   const { title, content, lastName, date, userName, id, userId } = post;
@@ -30,7 +30,7 @@ const Post = ({ post }) => {
       }
     });
   };
-
+  //Pass the post to RDX
   const postToEdit = post => {
     dispatch(editPost(post) );
     history.push("/editPost");
@@ -72,7 +72,7 @@ const Post = ({ post }) => {
                   <Link
                     Style="cursor:pointer; color:black;"
                     className=" m-xxl-5"
-                      onClick={ () => postToEdit(id) }
+                      onClick={ () => postToEdit(post) }
                   >
                     <FontAwesomeIcon icon={faEdit} /> EDIT
                   </Link>
