@@ -1,158 +1,193 @@
-.vistaLogin{
+.vistaLogin {
+  background-image: url("../../assets/Buenos_modales/educa.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  z-index: -1;
+}
+.vistaLogin:before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(90deg, #162325e3, #474447de);
+  opacity: 0.5;
+  z-index: -1;
+}
+.vistaLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: -9em;
+
+  .loginCard {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    height: 100vh;
-    margin-top: 2em;
+    justify-content: center;
+    justify-content: space-evenly;
+    height: 33em;
 
-    .loginCard {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        justify-content: space-evenly;
-        height: 33em;
-
-            .errorsText {
-                font-size: 0.7em;
-                color: red;
-            }
-
-            .h2 {
-                margin-top: 4em;
-            }
+    .errorsText {
+      font-size: 0.7em;
+      color: red;
     }
 
-    .sendButton{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 1.9px solid rgb(104, 104, 104);
-        cursor: pointer;
-        color: #3b3b3d;
-        border-radius: 0.4em;
-        background-color: rgba(235,234,234,255);
-        height: 3em;
-        width: 8em;
-        z-index: 1;
-        margin-bottom: 2em;
-        margin-top: 3em;
+    .h2 {
+      margin-top: 4em;
+      color: #000000;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+  }
 
-        &hover {
-            background-color: rgba(136, 130, 130, 0.103);
-            transition: 0.2s;
-        }
-    }
+  .sendButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1.9px solid rgb(104, 104, 104);
+    cursor: pointer;
+    color: #c53636;
+    border-radius: 0.4em;
+    background-color: #1d161670;
+    height: 3em;
+    width: 8em;
+    z-index: 1;
+    margin-bottom: 2em;
+    margin-top: 3em;
 
-    .form22 {
-        display: flex;
-        position: relative;
-        overflow: hidden;
-        bottom: 1.1em;
-        width: 100%;
-        height: 3.3em;
-        max-width: 25em;
-        top: -2em;
-    }
-    .form22 .input22 {
-        width: 100%;
-        height: 150%;
-        background: none;
-        color: black;
-        padding: 20px;
-        border: none;
-        outline: 0px;
-    }
-    .form22 .lbl-nombre22 {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        border-bottom: 0.0625em solid #c7c7c7;
-    }
-    .form22 .lbl-nombre22:after{
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -0.0625em;
-        width: 100%;
-        height: 100%;
-        border-bottom: 0.18em solid #474a4a;
-        transform: translateX(-100%);
-        transition: all 0.3s ease;
-    }
-    .text-nomb22 {
-        position: absolute;
-        bottom: 0.22em;
-        left: 0;
-        transition: all 0.3s ease;
-        color: rgb(121, 117, 117);
-    }
-    .form22 .input22:focus + .lbl-nombre22 .text-nomb22, .form22 .input22:valid + .lbl-nombre22 .text-nomb22 {
-        transform: translateY(-150%);
-        font-size: 0.875em;
-        color: black;
-    }
-    .form22 .input22:focus + .lbl-nombre22:after, .form22 .input22:valid + .lbl-nombre22:after {
-        transform: translateX(0%);
+    &:hover {
+      background-color: rgba(141, 51, 51, 0.829);
+      transition: 0.2s;
+      color: #ffffff;
+      transition: 0.5s;
     }
 
-    .form23 {
-        display: flex;
-        position: relative;
-        overflow: hidden;
-        bottom: 1.1em;
-        width: 100%;
-        height: 3.3em;
-        max-width: 25em;
-        top: -2em;
+    .imageLogin {
+      height: 100vh;
     }
-    .form23 .input23 {
-        width: 100%;
-        height: 150%;
-        background: none;
-        color: black;
-        padding: 20px;
-        border: none;
-        outline: 0px;
-    }
-    .form23 .lbl-nombre23 {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        border-bottom: 0.0625em solid #c7c7c7;
-    }
-    .form23 .lbl-nombre23:after{
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -0.0625em;
-        width: 100%;
-        height: 100%;
-        border-bottom: 0.18em solid #474a4a;
-        transform: translateX(-100%);
-        transition: all 0.3s ease;
-    }
-    .text-nomb23 {
-        position: absolute;
-        bottom: 0.22em;
-        left: 0;
-        transition: all 0.3s ease;
-        color: rgb(121, 117, 117);
-    }
-    .form23 .input23:focus + .lbl-nombre23 .text-nomb23, .form23 .input23:valid + .lbl-nombre23 .text-nomb23 {
-        transform: translateY(-150%);
-        font-size: 0.875em;
-        color: black;
-    }
-    .form23 .input23:focus + .lbl-nombre23:after, .form23 .input23:valid + .lbl-nombre23:after {
-        transform: translateX(0%);
-    }
+  }
+
+  .form22 {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    bottom: 1.1em;
+    width: 100%;
+    height: 3.3em;
+    max-width: 25em;
+    top: -2em;
+  }
+  .form22 .input22 {
+    width: 100%;
+    height: 150%;
+    background: none;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    border: none;
+    outline: 0px;
+  }
+  .form22 .lbl-nombre22 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 0.0625em solid #060606;
+  }
+  .form22 .lbl-nombre22:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.0625em;
+    width: 100%;
+    height: 100%;
+    border-bottom: 0.18em solid #f8f9f9;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+  }
+  .text-nomb22 {
+    position: absolute;
+    bottom: 0.22em;
+    left: 0;
+    transition: all 0.3s ease;
+    color: rgb(6, 6, 6);
+  }
+  .form22 .input22:focus + .lbl-nombre22 .text-nomb22,
+  .form22 .input22:valid + .lbl-nombre22 .text-nomb22 {
+    transform: translateY(-150%);
+    font-size: 0.875em;
+    color: black;
+  }
+  .form22 .input22:focus + .lbl-nombre22:after,
+  .form22 .input22:valid + .lbl-nombre22:after {
+    transform: translateX(0%);
+  }
+
+  .form23 {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    bottom: 1.1em;
+    width: 100%;
+    height: 3.3em;
+    max-width: 25em;
+    top: -2em;
+  }
+  .form23 .input23 {
+    width: 100%;
+    height: 150%;
+    background: none;
+    color: black;
+    padding: 20px;
+    border: none;
+    outline: 0px;
+  }
+  .form23 .lbl-nombre23 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 0.0625em solid #000000;
+  }
+  .form23 .lbl-nombre23:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.0625em;
+    width: 100%;
+    height: 100%;
+    border-bottom: 0.18em solid #ffffff;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+  }
+  .text-nomb23 {
+    position: absolute;
+    bottom: 0.22em;
+    left: 0;
+    transition: all 0.3s ease;
+    color: rgb(0, 0, 0);
+  }
+  .form23 .input23:focus + .lbl-nombre23 .text-nomb23,
+  .form23 .input23:valid + .lbl-nombre23 .text-nomb23 {
+    transform: translateY(-150%);
+    font-size: 0.875em;
+    color: black;
+  }
+  .form23 .input23:focus + .lbl-nombre23:after,
+  .form23 .input23:valid + .lbl-nombre23:after {
+    transform: translateX(0%);
+  }
 }

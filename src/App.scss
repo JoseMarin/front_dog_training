@@ -4,6 +4,7 @@
 
 @import './components/Button/Button.scss';
 @import './components/Header/Header.scss';
+@import './containers/Home/Home.scss';
 @import './components/Training/Training.scss';
 @import './components/posts/AllPosts/Posts.scss';
 @import './components/posts/userPost/Userpost.scss';
@@ -20,6 +21,7 @@
 @import './containers/Admin/AllUsers/AllUsers.scss';
 @import './containers/Profile/Profile.scss';
 @import './containers/Profile/UpdateUser.scss';
+@import './containers/Contact/Contact.scss';
 
 
 
@@ -27,6 +29,7 @@
 
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-logo {

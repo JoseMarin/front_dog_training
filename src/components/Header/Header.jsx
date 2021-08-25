@@ -27,28 +27,29 @@ const Header2 = (props) => {
             className="navbar-toggler burguer"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-bs-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+          <div className="collapse navbar-collapse" id="toggleMobileMenu">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" Style="cursor:pointer;">
+              <li className="nav-item" Style="cursor:pointer;">
                 <Button path="/commonwall" className="header"  destination="COMMON WALL"/>
               </li>
               <li className="nav-item">
                 <Training />
               </li>
-              <li className="nav-item">
-                <Button path="/contacus" destination="CONTAC US"/>
+              <li className="nav-item" Style="cursor:pointer;">
+                <Button path="/contact" destination="CONTAC US"/>
               </li>
 
             </ul>
-                <Button path="/profile" destination={props.credentials?.user.name}/>
-                <div className="linkLogout" onClick={() => logOut()}>LOGOUT</div>
+                <div className="text-center text-white" Style="cursor:pointer;" onClick={() => history.push("/profile")}  >{props.credentials?.user.name} &nbsp; &nbsp; </div>
+                <span>&nbsp; &nbsp;</span>
+                <div className="linkLogout text-center" onClick={() => logOut()}>LOGOUT</div>
           </div>
         </div>
       </nav>
@@ -70,21 +71,21 @@ const Header2 = (props) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+            <ul className="navbar-nav text-center me-auto mb-2 mb-lg-0">
+              <li className="nav-item" Style="cursor:pointer;">
                 <Button path="/aboutus" destination="ABOUT US" onClick={() => llevame()} />
               </li>
               <li><a href="{}"><div id="google_translate_element"></div></a></li>
-              <li className="nav-item">
-                <Button path="/contacus" destination="CONTAC US"/>
+              <li className="nav-item" Style="cursor:pointer;">
+                <Button path="/contact" destination="CONTAC US"/>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" Style="cursor:pointer;">
                 <Button path="/trainers" destination="TRAINERS"/>
               </li>
 
             </ul>
-                <Button path="/login" destination="LOG IN"/>
-                <Button path="/register" destination="SIGN UP"/>
+                <div className="text-center text-white" onClick={() => history.push("/login")} Style="cursor:pointer;">LOG IN</div>  &nbsp; &nbsp;
+                <div className="text-center text-white" onClick={() => history.push("/register")} Style="cursor:pointer;">SIGN UP</div>
           </div>
         </div>
       </nav>

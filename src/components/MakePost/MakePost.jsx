@@ -1,23 +1,12 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState } from "react";
-import { connect } from "react-redux";
-import axios from "axios";
-import { ADD_POST } from "../../redux/types";
-import { useHistory } from "react-router";
-
-// hooks react redux
-// import { useDispatch, useSelector } from "react-redux";
-// importamos la acción
-// import { findPost } from "../../Actions/Actions";
+import { connect, useDispatch, useSelector } from "react-redux";
+//ACTIONS OF RDX
+import { createPostAction } from "../../Actions/PostActions";
 
 const MakePost = (props) => {
-  // declaramos displach para llamar a la acción o acciones
-  // const dispatch = useDispatch();
-
-  // const AllPost = useSelector(store => store.data);
-
-  const history = useHistory();
-
-  const [post, setPost] = useState({
+  // const history = useHistory();
+  const [post,] = useState({
     user: props.credentials?.user,
     token: props.credentials?.token,
     name: props.credentials?.user.name,
@@ -27,51 +16,48 @@ const MakePost = (props) => {
     content: "",
   });
 
+  //To create a function
+  const dispatch = useDispatch();
+
+  //Access to the state
+  const loading = useSelector( state => state.data.loading);
+
+  //Here we call the action from PostActions
+  const addPost = body => dispatch(createPostAction(body) );
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+
+  const SubmitPost = (e) => {
+    e.preventDefault();
+
+    //Check the form
+    if (title.trim() === "" || content.trim() === "") {
+      return;
+    }
+
+    let user = post.user;
+    let token = post.token;
+
+    // Create the post
+    addPost({
+      title,
+      content,
+      userName: post.name,
+      lastName: post.lastName,
+      date: new Date(),
+      userId: user.id,
+      token: token,
+    });
+
+    setTitle("");
+    setContent("");
+  };
   const [errors] = useState({
     eValidate: "",
   });
 
-  // Handler to upgrade the input
-  const handleChange = (e) => {
-    setPost({ ...post, [e.target.name]: e.target.value });
-  };
-
-  const doPost = async () => {
-    let token = post.token;
-    let user = post.user;
-
-    let body = {
-      title: post.title,
-      content: post.content,
-      userName: post.name,
-      lastName: post.lastName,
-      date: post.date,
-      userId: user.id,
-    };
-
-    // Envío por axios
-    axios
-      .post("http://localhost:5000/post", body, {
-        headers: { authorization: "Bearer " + token },
-      })
-      .then((res) => {
-        props.dispatch({ type: ADD_POST, payload: res?.data });
-
-        history.push("/commonwall");
-        //Reset form
-        setPost({
-          title: "",
-          content: "",
-        });
-      })
-      .catch((err) => {
-        console.log("Err");
-        // console.log(err.response.data);
-      });
-  };
-
   return (
-    <div className="card col-md-6 offset-md-3">
+    <div className="card carta col-md-6 offset-md-3">
       <h1 className="common">NOTICIAS</h1>
       <div className="card-body">
         <div className="commonWall">
@@ -79,8 +65,8 @@ const MakePost = (props) => {
             type="text"
             className="form-control mb-2 border"
             name="title"
-            onChange={handleChange}
-            value={post.title}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
             placeholder="Title"
             aria-label="Username"
             aria-describedby="addon-wrapping"
@@ -89,24 +75,18 @@ const MakePost = (props) => {
             <textarea
               className="form-control border"
               name="content"
-              onChange={handleChange}
-              value={post.content}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
               placeholder="Leave a comment here"
               id="floatingTextarea"
             ></textarea>
             <label for="floatingTextarea">Post</label>
           </div>
-
-          {/* <div class="input-group mb-3"> AQUI TENGO OTRO MODELO DE BOTON Y INPUT PARA CARAR ARCHIVO
-            <button type="button" className="btn btn-outline-dark mt-4">To Post</button>
-            <input type="file" className="form-control" id="inputGroupFile02"/>
-          </div> */}
           <div class="input-group mt-4">
             <button
               className="btn btn-outline-dark"
               type="submit"
-              onClick={() => doPost()}
-              // onSubmit={() => dispatch(findPost())}
+              onClick={(e) => SubmitPost(e)}
             >
               To Post
             </button>
@@ -117,6 +97,22 @@ const MakePost = (props) => {
               id="inputGroupFile02"
               aria-label="Upload"
             />
+            {loading ? (
+              <div>
+                <div Style="width:55%">
+                  <div Style="height:0;padding-bottom:56.25%;position:relative;width:100%">
+                    <iframe
+                      allowfullscreen=""
+                      frameBorder="0"
+                      height="100%"
+                      src="https://giphy.com/embed/yPpmkMDM0tA2gMShfR/video"
+                      Style="left:0;position:absolute;top:0"
+                      width="100%"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
@@ -126,5 +122,5 @@ const MakePost = (props) => {
 
 export default connect((state) => ({
   credentials: state.credentials,
-  data: state.data,
+  data: state.data.post,
 }))(MakePost);
