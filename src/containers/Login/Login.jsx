@@ -3,8 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
 import { LOGIN } from "../../redux/types.js";
-import {notification} from 'antd';
-
+import Swal from "sweetalert2";
 
 const Login = (props) => {
 
@@ -81,7 +80,11 @@ const Login = (props) => {
           }
         })
         .catch((err) => {
-          notification.warning({message:'Atencion',  style: {top: 76,}, description: JSON.stringify(err.response.data.message)});
+          Swal.fire({
+            icon: "error",
+            title: "Was a mistake",
+            text: "Try again.",
+          });
         });
     };
 
