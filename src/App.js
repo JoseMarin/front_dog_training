@@ -19,6 +19,7 @@ import Posts from './components/posts/AllPosts/Posts.jsx';
 import UserPost from './components/posts/UserPost/UserPost.jsx';
 import Contact from './containers/Contact/Contact';
 import Comments from './containers/Comments/Comments';
+import EditPost from './components/EditPost/EditPost';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/allusers" exact component={AllUsers}/>
           <Route path="/profile" exact component={Profile}/>
           <Route path="/posts" exact component={Posts}/>
+          <Route path="/editpost" exact component={EditPost}/>
           <Route path="/userpost" exact component={UserPost}/>
           <Route path="/updateuser" exact component={UpdateUser}/>
           <Route path="/commonwall" exact component={CommonWall}/>

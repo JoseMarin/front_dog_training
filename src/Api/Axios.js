@@ -1,7 +1,11 @@
-import axios from 'axios';
+import { connect } from "react-redux";
+import axios from "axios";
 
 const clienteAxios = axios.create({
-    baseURL: 'http://localhost:5000/post'
+  baseURL: "http://localhost:5000/post",
 });
 
-export default clienteAxios;
+export default connect((state) => ({
+  credentials: state.credentials,
+  data: state.data.post,
+}))(clienteAxios);
