@@ -41,7 +41,7 @@ export function createPostAction(body) {
         });
       });
   };
-}
+};
 
 const addPost = () => ({
   type: ADD_POST,
@@ -84,7 +84,7 @@ export function getPostAction(props) {
         });
       });
   };
-}
+};
 
 const downloadPost = () => ({
   type: GET_POST,
@@ -110,7 +110,7 @@ export function removePostAction(postId, userId) {
       .put("http://localhost:5000/post/deletepost", { postId, userId })
       .then((res) => {
         //If it is eliminated show alert
-        dispatch(removeSucce(postId, userId));
+        dispatch(removeSucce(postId, userId) );
         Swal.fire("Deleted!", "Your post has been deleted.", "success");
       })
       .catch((err) => {
@@ -119,7 +119,7 @@ export function removePostAction(postId, userId) {
         dispatch(removeError());
       });
   };
-}
+};
 
 const removePost = (postId, userId) => ({
   type: REMOVE_POST,
@@ -141,7 +141,7 @@ export function editPost(post) {
   return (dispatch) => {
     dispatch(getPostRemove(post));
   };
-}
+};
 
 const getPostRemove = (post) => ({
   type: GET_POST_EDIT,
@@ -152,13 +152,13 @@ const getPostRemove = (post) => ({
 export function editPostAction(post, props) {
   let token = props;
   return async (dispatch) => {
-    dispatch(startEdit(post) );
+    dispatch(startEdit(post));
     await axios
-    .put("http://localhost:5000/post/updatepost", post, {
-      headers: { authorization: "Bearer " + token },
-    })
-    .then((res) => {
-        console.log('put-->', res);
+      .put("http://localhost:5000/post/updatepost", post, {
+        headers: { authorization: "Bearer " + token },
+      })
+      .then((res) => {
+        console.log("put-->", res);
         dispatch(downloadPostSucce(res.data)); //Put dispatch if the call is succe
       })
       .catch((err) => {
@@ -173,10 +173,10 @@ export function editPostAction(post, props) {
           text: "Try again.",
         });
       });
-  }
+  };
 }
 
-const startEdit = post => ({
+const startEdit = (post) => ({
   type: START_EDIT_POST,
-  payload: post
+  payload: post,
 });
