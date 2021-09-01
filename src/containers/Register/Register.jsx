@@ -51,7 +51,7 @@ const Register = () => {
     };
 
     axios
-      .post("http://localhost:5000/users", body)
+      .post("https://jaug-dog-training.herokuapp.com/users ", body)
       .then((res) => {
         setDatosUser(res.data.results);
         notification.success({ message: "Registered User.", style: {top: 76,}, description: "We have sent you an email to activate the account.",});

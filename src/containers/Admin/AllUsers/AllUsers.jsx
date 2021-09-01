@@ -16,7 +16,7 @@ const AllUsers = (props) => {
     let token = props.credentials?.token;
 
     axios
-      .get("http://localhost:5000/users", {
+      .get("https://jaug-dog-training.herokuapp.com/users", {
         headers: { authorization: "Bearer " + token },
       })
 
@@ -35,7 +35,7 @@ const AllUsers = (props) => {
     return (
       <div className="return2 container">
         <table className="table table-bordered table-hover border-0 align-items-center flex-column ">
-          <thead  className="thead-dark border-1 ">
+          <thead className="thead-dark border-1 ">
             <tr>
               <th scope="col">Id</th>
               <th scope="col">User</th>
