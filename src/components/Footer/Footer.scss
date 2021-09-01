@@ -1,108 +1,85 @@
-footer {
-  border-bottom: 1.9px solid #c7c7c7;
-  border-top: 1.9px solid #c7c7c7;
-
-  height: 7em;
-}
-.tooth {
-  //   color: rgb(96, 93, 93);
-  width: 20%;
-}
-
 .footerBody {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  background-color: #2a2e33;
-  color: white;
+  color: rgb(0, 0, 0);
   width: 100vw;
-  height: 11em;
-}
-.column1 {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: flex-start;
-
-  width: 30%;
-  margin-left: 3em;
-}
-.parFooter {
-  margin-top: 1em;
-}
-
-.column2 {
-  width: 70%;
-
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.tittle {
-  margin-left: 0.8em;
-  margin-bottom: 0.5em;
-}
-
-.support {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
-
-  width: 15em;
   height: 9em;
-  color: rgb(63, 59, 59);
-  cursor: pointer;
-  margin-right: 3em;
-}
-.phone {
-  width: 12em;
-  margin-left: 1em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-}
-.mail,
-.tlf,
-.social {
-  margin-left: 1em;
-  color: white;
-}
 
-.redes {
-  all: unset;
-  display: flex;
-  flex-direction: row;
-  margin-left: 1em;
-}
+  .column1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
 
-.follow {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-evenly;
+    width: 30%;
+    margin-left: 3em;
 
-  width: 12em;
-  height: 8em;
-  color: rgb(63, 59, 59);
-  cursor: pointer;
-  margin-right: 3em;
-}
+    .parFooter {
+      position: relative;
+      display: flex;
+      top: 1em;
+      font-size: 1.4em;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+  }
 
-.footerContact {
-  color: rgb(58, 55, 55);
-}
+  .column2 {
+    width: 70%;
 
-.buttonContact {
-  color: black;
-  cursor: pointer;
-  font-size: 1.3em;
-}
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
 
-.buttonContact:hover {
-  text-decoration: underline;
+    .support {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+
+      width: 15em;
+      height: 9em;
+      color: rgb(63, 59, 59);
+      cursor: pointer;
+      margin-right: 3em;
+
+      .phone {
+        width: 12em;
+        margin-left: 1em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+
+    .follow {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+
+      width: 12em;
+      height: 8em;
+      color: rgb(63, 59, 59);
+      cursor: pointer;
+      margin-right: 3em;
+
+      .redes {
+        all: unset;
+        display: flex;
+        flex-direction: row;
+        margin-left: 1em;
+      }
+    }
+  }
+  .mail,
+  .tlf,
+  .social {
+    margin-left: 1em;
+    color: rgb(0, 0, 0);
+  }
 }
