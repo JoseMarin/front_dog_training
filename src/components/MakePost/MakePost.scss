@@ -1,13 +1,36 @@
 .common {
-    position: relative;
-    display: flex;
-    top: -2em;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  top: -2em;
+  justify-content: center;
 }
+.contenedor {
+    margin: auto;
+    display: table;
+    width: 100%;
+}
+  .h1Common span {
+    position: absolute;
+    right: 0em;
+    width: 0em;
+    background-color: rgb(165, 165, 165);
+    border-left: 0.0625em solid rgba(0, 0, 0, 0.096);
+    animation: machine 3.5s alternate steps(32);
+    /* animation: maquina 6s infinite alternate steps(32); */
+  }
 
-.btn:focus{
-    box-shadow:none !important;
+  @keyframes machine {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
+  }
+
+.btn:focus {
+  box-shadow: none !important;
 }
-.border:focus{
-    box-shadow:none !important;
+.border:focus {
+  box-shadow: none !important;
 }
