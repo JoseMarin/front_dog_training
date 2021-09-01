@@ -38,38 +38,50 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border: 1.9px solid rgb(104, 104, 104);
+      border: rgb(104, 104, 104);
       cursor: pointer;
       color: #3b3b3d;
       border-radius: 0.4em;
       background-color: rgba(235, 234, 234, 255);
       height: 3em;
       width: 8em;
-      z-index: 1;
       margin-bottom: 2em;
-      margin-top: 4em;
+      top: 4em;
+      transition: all 900ms ease;
 
-      &hover {
-        background-color: rgba(136, 130, 130, 0.103);
-        transition: 0.2s;
+      &:hover {
+        background: rgb(96, 101, 105);
+        background: linear-gradient(
+          343deg,
+          rgba(96, 101, 105, 1) 0%,
+          rgba(213, 31, 116, 1) 75%,
+          rgba(169, 57, 112, 1) 83%,
+          rgba(108, 94, 106, 1) 100%,
+          rgba(223, 25, 117, 1) 100%,
+          rgba(96, 101, 105, 1) 100%
+        );
+        transition: all 900ms ease;
+        color: #fff;
       }
     }
   }
 }
 
 .form {
+  display: flex;
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 3.3em;
+  height: 2.7em;
   max-width: 25em;
-  top: -2.7em;
+  top: -2.4em;
 }
 .form input {
   width: 100%;
   height: 150%;
   background: none;
-  color: black;
+  color: #fd478f;
+  font-size: 1.3rem;
   padding: 1.3em;
   border: none;
   outline: 0em;
@@ -105,7 +117,7 @@
 .form input:valid + .lbl-nombre .text-nomb {
   transform: translateY(-150%);
   font-size: 0.9em;
-  color: #000000;
+  color: #fcfcfc;
 }
 .form input:focus + .lbl-nombre:after,
 .form input:valid + .lbl-nombre:after {
@@ -118,7 +130,7 @@
   overflow: hidden;
   width: 100%;
   bottom: 1.4em;
-  height: 3.4em;
+  height: 3.7em;
   max-width: 25em;
   top: -2.4em;
 }
@@ -126,7 +138,8 @@
   width: 100%;
   height: 150%;
   background: none;
-  color: black;
+  color: #fd478f;
+  font-size: 1.3rem;
   padding: 1.25em;
   border: none;
   outline: 0em;
@@ -156,13 +169,14 @@
   bottom: 0.38em;
   left: 0em;
   transition: all 0.3s ease;
-  color: rgb(121, 117, 117);
+  color: #fd478f;
 }
 .form1 .input1:focus + .lbl-nombre1 .text-nomb1,
 .form1 .input1:valid + .lbl-nombre1 .text-nomb1 {
   transform: translateY(-150%);
-  font-size: 0.875em;
-  color: black;
+  color: rgb(255, 255, 255);
+  font-size: 1.1em;
+  height: 1.1em;
 }
 .form1 .input1:focus + .lbl-nombre1:after,
 .form1 .input1:valid + .lbl-nombre1:after {
@@ -175,7 +189,7 @@
   overflow: hidden;
   bottom: 1.1em;
   width: 100%;
-  height: 3.3em;
+  height: 3.7em;
   max-width: 25em;
   top: -2.3em;
 }
@@ -183,7 +197,8 @@
   width: 100%;
   height: 150%;
   background: none;
-  color: black;
+  color: #fd478f;
+  font-size: 1.3rem;
   padding: 20px;
   border: none;
   outline: 0px;
@@ -213,13 +228,14 @@
   bottom: 0.14em;
   left: 0;
   transition: all 0.3s ease;
-  color: rgb(121, 117, 117);
+  color: #fd478f;
 }
 .form2 .input2:focus + .lbl-nombre2 .text-nomb2,
 .form2 .input2:valid + .lbl-nombre2 .text-nomb2 {
   transform: translateY(-150%);
-  font-size: 0.875em;
-  color: black;
+  color: rgb(255, 255, 255);
+  font-size: 1.1em;
+  height: 1.1em;
 }
 .form2 .input2:focus + .lbl-nombre2:after,
 .form2 .input2:valid + .lbl-nombre2:after {
@@ -232,14 +248,15 @@
   overflow: hidden;
   width: 100%;
   max-width: 25em;
-  top: -2em;
-  height: 3.3em;
+  top: -2.3em;
+  height: 3.7em;
 }
 .form3 .input3 {
   width: 100%;
   height: 150%;
   background: none;
-  color: black;
+  color: #fd478f;
+  font-size: 1.3rem;
   padding: 20px;
   border: none;
   outline: 0px;
@@ -269,13 +286,14 @@
   bottom: 0.21em;
   left: 0;
   transition: all 0.3s ease;
-  color: rgb(121, 117, 117);
+  color: #fd478f;
 }
 .form3 .input3:focus + .lbl-nombre3 .text-nomb3,
 .form3 .input3:valid + .lbl-nombre3 .text-nomb3 {
   transform: translateY(-150%);
-  font-size: 0.875em;
-  color: black;
+  color: rgb(255, 255, 255);
+  font-size: 1.1em;
+  height: 1.32em;
 }
 .form3 .input3:focus + .lbl-nombre3:after,
 .form3 .input3:valid + .lbl-nombre3:after {
@@ -289,14 +307,15 @@
   width: 100%;
   max-width: 25em;
   bottom: 1em;
-  top: -1.9em;
-  height: 3.3em;
+  top: -2.3em;
+  height: 3.7em;
 }
 .form4 .input4 {
   width: 100%;
   height: 150%;
   background: none;
-  color: black;
+  color: #fd478f;
+  font-size: 1.3rem;
   padding: 1.25em;
   border: none;
   outline: 0px;
@@ -326,13 +345,14 @@
   bottom: 0.21em;
   left: 0;
   transition: all 0.4s ease;
-  color: rgb(121, 117, 117);
+  color: #fd478f;
 }
 .form4 .input4:focus + .lbl-nombre4 .text-nomb4,
 .form4 .input4:valid + .lbl-nombre4 .text-nomb4 {
   transform: translateY(-150%);
-  font-size: 0.875em;
-  color: black;
+  color: rgb(255, 255, 255);
+  font-size: 1.1em;
+  height: 1.32em;
 }
 .form4 .input4:focus + .lbl-nombre4:after,
 .form4 .input4:valid + .lbl-nombre4:after {
@@ -353,7 +373,8 @@
   width: 100%;
   height: 150%;
   background: none;
-  color: black;
+  color: #fd478f;
+  font-size: 1.3rem;
   padding: 1.25em;
   border: none;
   outline: 0px;
@@ -383,13 +404,14 @@
   left: 0;
   bottom: -0.2em;
   transition: all 0.5s ease;
-  color: rgb(121, 117, 117);
+  color: #fd478f;
 }
 .form5 .input5:focus + .lbl-nombre5 .text-nomb5,
 .form5 .input5:valid + .lbl-nombre5 .text-nomb5 {
   transform: translateY(-150%);
-  font-size: 0.875em;
-  color: black;
+  color: rgb(255, 255, 255);
+  font-size: 1.1em;
+  height: 1.2em;
 }
 .form5 .input5:focus + .lbl-nombre5:after,
 .form5 .input5:valid + .lbl-nombre5:after {
