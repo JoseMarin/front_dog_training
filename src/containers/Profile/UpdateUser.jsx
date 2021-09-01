@@ -50,7 +50,7 @@ const UpdateUser = (props) => {
       };
 
       let res = await axios.put(
-        "http://localhost:5000/users",
+        "https://jaug-dog-training.herokuapp.com/users",
         body,
         { headers: { authorization: "Bearer " + token } }
       );
@@ -82,7 +82,7 @@ const UpdateUser = (props) => {
       };
 
       let res = await axios.put(
-        "http://localhost:5000/users/updatepassword",
+        "https://jaug-dog-training.herokuapp.com/users/updatepassword",
         body,
         { headers: { authorization: "Bearer " + token } }
       );

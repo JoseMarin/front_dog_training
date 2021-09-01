@@ -1,11 +1,9 @@
 import React from "react";
-import Button from "../Button/Button";
 import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/types";
 import { useHistory } from "react-router-dom";
 import Training from '../Training/Training';
-
-// import logo from "../../assets/logo.png";
+import logo from "../../assets/Buenos_modales/pata1.png";
 
 const Header2 = (props) => {
   let history = useHistory();
@@ -14,15 +12,12 @@ const Header2 = (props) => {
     props.dispatch({ type: LOGOUT });
     history.push("/");
   };
-  const llevame = () => {
-    history.push("/aboutus");
-  };
 
   if (props.credentials.user?.name) {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top header">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top header">
         <div className="container-fluid">
-            <img onClick={() => history.push("/")} className="logoHeader" src={{}} alt="logo" height="78em" width="76"/>
+            <img onClick={() => history.push("/")} className="logoHeader" src={logo} alt="logo" height="78em" width="76"/>
           <button
             className="navbar-toggler burguer"
             type="button"
@@ -37,17 +32,17 @@ const Header2 = (props) => {
           <div className="collapse navbar-collapse" id="toggleMobileMenu">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" Style="cursor:pointer;">
               <li className="nav-item" Style="cursor:pointer;">
-                <Button path="/commonwall" className="header"  destination="COMMON WALL"/>
+              <div className="text-center linkLogout mt-2 header" onClick={() => history.push("/commonwall")}>COMMON WALL&nbsp; &nbsp;</div>
+              </li>
+              <li className="nav-item text" Style="cursor:pointer;">
+              <div className="text-center linkLogout mt-2" onClick={() => history.push("/contact")}>CONTAC US&nbsp; &nbsp;</div>
               </li>
               <li className="nav-item">
-                <Training />
               </li>
-              <li className="nav-item" Style="cursor:pointer;">
-                <Button path="/contact" destination="CONTAC US"/>
-              </li>
+                <Training />&nbsp; &nbsp;
 
             </ul>
-                <div className="text-center text-white" Style="cursor:pointer;" onClick={() => history.push("/profile")}  >{props.credentials?.user.name} &nbsp; &nbsp; </div>
+                <div className="text-center linkLogout" Style="cursor:pointer;" onClick={() => history.push("/profile")}  >{props.credentials?.user.name} &nbsp; &nbsp; </div>
                 <span>&nbsp; &nbsp;</span>
                 <div className="linkLogout text-center" onClick={() => logOut()}>LOGOUT</div>
           </div>
@@ -56,7 +51,7 @@ const Header2 = (props) => {
     );
   } else {
     return(
-    <nav className="navbar navbar-expand-lg navbar-light bg-dark fixed-top header" Style="border: none;">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top header" Style="border: none;">
         <div className="container-fluid">
              <img onClick={() => history.push("/")} className="logoHeader" src={{}} alt="logo" height="78em" width="76"/>
           <button
@@ -73,19 +68,19 @@ const Header2 = (props) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav text-center me-auto mb-2 mb-lg-0">
               <li className="nav-item" Style="cursor:pointer;">
-                <Button path="/aboutus" destination="ABOUT US" onClick={() => llevame()} />
+              <div className="text-center mt-3" onClick={() => history.push("/aboutus")}>ABOUT US&nbsp; &nbsp;</div>
               </li>
               <li><a href="{}"><div id="google_translate_element"></div></a></li>
               <li className="nav-item" Style="cursor:pointer;">
-                <Button path="/contact" destination="CONTAC US"/>
+              <div className="text-center mt-3" onClick={() => history.push("/contact")}>CONTAC US&nbsp; &nbsp;</div>
               </li>
               <li className="nav-item" Style="cursor:pointer;">
-                <Button path="/trainers" destination="TRAINERS"/>
+                <div className="text-center mt-3" onClick={() => history.push("/trainers")}>TRAINERS</div>
               </li>
 
             </ul>
-                <div className="text-center text-white" onClick={() => history.push("/login")} Style="cursor:pointer;">LOG IN</div>  &nbsp; &nbsp;
-                <div className="text-center text-white" onClick={() => history.push("/register")} Style="cursor:pointer;">SIGN UP</div>
+                <div className="text-center text-black" onClick={() => history.push("/login")} Style="cursor:pointer;">LOG IN</div>  &nbsp; &nbsp;
+                <div className="text-center text-black" onClick={() => history.push("/register")} Style="cursor:pointer;">SIGN UP</div>
           </div>
         </div>
       </nav>

@@ -16,7 +16,7 @@ const Posts = (props) => {
     let token = props.credentials?.token;
 
     axios
-      .get("http://localhost:5000/post", {
+      .get("https://jaug-dog-training.herokuapp.com/post", {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {

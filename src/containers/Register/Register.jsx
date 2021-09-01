@@ -51,7 +51,7 @@ const Register = () => {
     };
 
     axios
-      .post("http://localhost:5000/users", body)
+      .post("https://jaug-dog-training.herokuapp.com/users ", body)
       .then((res) => {
         setDatosUser(res.data.results);
         notification.success({ message: "Registered User.", style: {top: 76,}, description: "We have sent you an email to activate the account.",});
@@ -165,6 +165,7 @@ const Register = () => {
         <div className="box1">
           <form className="form">
             <input
+              autoFocus="autoFocus"
               className="input"
               name="name"
               type="text"
@@ -264,6 +265,38 @@ const Register = () => {
         <div className="registerButton" onClick={() => applyRegister()}>
           GET STARTED
         </div>
+      </div>
+      <div id="particle-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
       </div>
     </div>
   );

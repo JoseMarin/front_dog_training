@@ -6,7 +6,7 @@ import { createPostAction } from "../../Actions/PostActions";
 
 const MakePost = (props) => {
   // const history = useHistory();
-  const [post,] = useState({
+  const [post] = useState({
     user: props.credentials?.user,
     token: props.credentials?.token,
     name: props.credentials?.user.name,
@@ -20,10 +20,10 @@ const MakePost = (props) => {
   const dispatch = useDispatch();
 
   //Access to the state
-  const loading = useSelector( state => state.data.loading);
+  const loading = useSelector((state) => state.data.loading);
 
   //Here we call the action from PostActions
-  const addPost = body => dispatch(createPostAction(body) );
+  const addPost = (body) => dispatch(createPostAction(body));
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -58,11 +58,16 @@ const MakePost = (props) => {
 
   return (
     <div className="card carta col-md-6 offset-md-3">
-      <h1 className="common">NOTICIAS</h1>
+      <div className="contenedor">
+        <h1 className="common h1Common">
+          PREGUNTA A LA COMUNIDAD<span>&#160;</span>
+        </h1>
+      </div>
       <div className="card-body">
         <div className="commonWall">
           <input
             type="text"
+            autoFocus="autoFocus"
             className="form-control mb-2 border"
             name="title"
             value={title}

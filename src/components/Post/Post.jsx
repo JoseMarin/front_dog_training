@@ -1,5 +1,11 @@
 import React from "react";
-import { faUser,faClock,faComment,faTrash,faEdit } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faClock,
+  faComment,
+  faTrash,
+  faEdit,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
@@ -26,37 +32,37 @@ const Post = ({ post }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         //Take it into action
-        dispatch(removePostAction(body, userId) );
+        dispatch(removePostAction(body, userId));
       }
     });
   };
   //Pass the post to RDX
-  const postToEdit = post => {
-    dispatch(editPost(post) );
+  const postToEdit = (post) => {
+    dispatch(editPost(post));
     history.push("/editPost");
-  }
+  };
 
   return (
     <div>
       <div className="container-fluir">
         <div className="row justify-content-evenly row-cols-2 row-cols-md-2 g-4 mt-lg-5">
           <div className="row  mt-lg-5">
-            <div className="">
-              <div className="card border-dark bg-light p-3 mb-4 mt-lg-5">
-                <div className="card-body">
+            <div>
+              <div className="card border-0 border-dark bg-light mb-4 mt-lg-5">
+                <div className="card-body carta">
                   <img
                     className="card-img-top"
                     src=".../100px180/"
                     alt="100x100"
                   />
-                  <h5 className="card-title">{title}</h5>
-                  <p className="card-text">{content}</p>
-                  <small className="text-muted">
+                  <h2 className="card-title">{title}</h2>
+                  <p className="card-text parPost">{content}</p>
+                  <small>
                     <FontAwesomeIcon icon={faUser} /> &nbsp; {userName} &nbsp;{" "}
                     {lastName} &nbsp; &nbsp;
                   </small>{" "}
                   &nbsp;
-                  <small className="text-muted">
+                  <small>
                     <FontAwesomeIcon icon={faClock} />{" "}
                     {moment(date).format("LLL")}
                   </small>{" "}
@@ -72,14 +78,14 @@ const Post = ({ post }) => {
                   <Link
                     Style="cursor:pointer; color:black;"
                     className=" m-xxl-5"
-                      onClick={ () => postToEdit(post) }
+                    onClick={() => postToEdit(post)}
                   >
                     <FontAwesomeIcon icon={faEdit} /> EDIT
                   </Link>
                   &nbsp; &nbsp;
                   <span
                     Style="cursor:pointer;"
-                    onClick={ () => confirmRemove(id, userId) }
+                    onClick={() => confirmRemove(id, userId)}
                     className="updateButton"
                   >
                     <FontAwesomeIcon icon={faTrash} /> REMOVE
@@ -90,6 +96,14 @@ const Post = ({ post }) => {
           </div>
         </div>
       </div>
+
+      {/* <div className="burbujas">
+          <div className="burbuja"></div>
+          <div className="burbuja"></div>
+          <div className="burbuja"></div>
+          <div className="burbuja"></div>
+          <div className="burbuja"></div>
+        </div> */}
     </div>
   );
 };

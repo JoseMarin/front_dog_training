@@ -1,22 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
 * {
-    font-family: 'Poppins', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Exo", sans-serif;
 }
+
 body {
-    background-color: rgb(232, 231, 231);
+  background: #59dfc7;
 }
 .cards {
-    font-size: 1em;
-    margin: 0;
-    padding: 0;
-    margin-top: 11em;
+    position: relative;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+  top: 6em;
 
-    p {
-        color: rgb(0, 0, 201);
-        font-size: x-large;
-    }
+  p {
+    color: rgb(0, 0, 0);
+    font-size: x-large;
+  }
 
-    h4 {
-        font-weight: bold;
-    }
+  h4 {
+    font-weight: bold;
+  }
 }
