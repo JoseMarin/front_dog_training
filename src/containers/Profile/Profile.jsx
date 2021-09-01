@@ -157,52 +157,6 @@ const Profile = (props) => {
             </div>
           </div>
         </div>
-
-        {/* <div
-        className="card  mb-3 rounded mx-auto d-block border-0 card fixed-top"
-        Style="max-width: 540px;"
-      >
-        <div className="row g-0">
-          <div className="col-md-4 m-auto">
-            <img
-              src={Pensando}
-              className="img-fluid rounded-circle  z-depth-2"
-              alt="100x100"
-            />
-          </div>
-          <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title text-center">
-                Welcome&nbsp; &nbsp; {props.credentials?.user.name}
-              </h5>
-              <p className="card-text text-center">
-                Email {props.credentials?.user.email}{" "}
-              </p>
-              <p className="card-text text-center">
-                City <div></div> {props.credentials?.user.city}
-              </p>
-              <p className="card-text text-center">
-                CREATECOUNT <div></div>
-                {moment(props.credentials?.user.createdAt).format("LL")}{" "}
-                {/*Con 3 LLL te muestra la hora*/}
-        {/* </p>
-              <div className="text-center">
-                <Link className="updateButton" to={"/userpost"}>
-                  POSTS
-                  {changeData()}
-                </Link>
-                &nbsp; &nbsp;
-                <Link
-                  className="buttonUpdateC"
-                  onClick={() => history.push("/updateuser")}
-                >
-                  UPDATE
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        {/* </div> */}
       </div>
     );
   } else {
