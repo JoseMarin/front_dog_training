@@ -6,8 +6,9 @@ import Post from "../../components/Post/Post";
 
 //ACTIONS OF RDX
 import { getPostAction } from "../../Actions/PostActions";
+import Spinner from "../../components/Spinner/Spinner";
 
-const CommonWall = (props) => {
+const CommonWall = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,22 +27,10 @@ const CommonWall = (props) => {
       <MakePost />
       {loading ? (
         <div className="spinnerContainer">
-          <div Style="width:55%">
-            <div Style="height:0;padding-bottom:56.25%;position:relative;width:100%">
-              <iframe
-                allowfullscreen=""
-                frameBorder="0"
-                height="100%"
-                src="https://giphy.com/embed/yPpmkMDM0tA2gMShfR/video"
-                Style="left:0;position:absolute;top:0"
-                width="100%"
-              ></iframe>
-            </div>
-          </div>
+           <Spinner/>
         </div>
       ) : null}
       {post.length === 0 ? (
-        // eslint-disable-next-line react/jsx-no-comment-textnodes
         <div className="spinnerContainer">
           <div Style="width:55%">
             <div Style="height:0;padding-bottom:56.25%;position:relative;width:100%">
