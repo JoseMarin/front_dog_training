@@ -1,6 +1,15 @@
-
+* {
+    margin: 0;
+    padding: 0;
+}
 .header {
+    // background: linear-gradient(rgb(138, 218, 135), rgba(110, 186, 236, 0.8));
+    // background: #022E43;
     border: none;
+
+}
+.text {
+    color: black;
 }
 .logoHeader{
     border-radius: 0.8em;
@@ -8,7 +17,9 @@
 }
 .linkLogout {
     cursor: pointer;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 .burguer {
     background-color: white;

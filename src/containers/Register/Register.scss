@@ -1,385 +1,397 @@
-.vistaRegister{
+.vistaRegister {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+
+  .formulario1 {
     display: flex;
-    box-sizing: border-box;
-    justify-content: center;
+    position: relative;
     flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
     align-items: center;
-    height: 90vh;
+    height: 55em;
+    top: 12em;
 
-    .formulario1{
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        justify-content: center;
-        box-sizing: border-box;
-        align-items: center;
-        height: 55em;
-        top: 12em;
-
-        .errorsText {
-            font-size: 0.9em;
-            margin-left: 11em;
-            color: red;
-        }
-        .errorsText2 {
-            font-size: 0.9em;
-            color: red;
-        }
-
-        .box1 {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .registerButton{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 1.9px solid rgb(104, 104, 104);
-            cursor: pointer;
-            color: #3b3b3d;
-            border-radius: 0.4em;
-            background-color: rgba(235,234,234,255);
-            height: 3em;
-            width: 8em;
-            z-index: 1;
-            margin-bottom: 2em;
-            margin-top: 4em;
-
-            &hover {
-                background-color: rgba(136, 130, 130, 0.103);
-                transition: 0.2s;
-            }
-        }
+    .errorsText {
+      font-size: 0.9em;
+      margin-left: 11em;
+      color: red;
     }
+    .errorsText2 {
+      font-size: 0.9em;
+      color: red;
+    }
+
+    .box1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .registerButton {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1.9px solid rgb(104, 104, 104);
+      cursor: pointer;
+      color: #3b3b3d;
+      border-radius: 0.4em;
+      background-color: rgba(235, 234, 234, 255);
+      height: 3em;
+      width: 8em;
+      z-index: 1;
+      margin-bottom: 2em;
+      margin-top: 4em;
+
+      &hover {
+        background-color: rgba(136, 130, 130, 0.103);
+        transition: 0.2s;
+      }
+    }
+  }
 }
 
 .form {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 3.3em;
-    max-width: 25em;
-    top: -2.7em;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 3.3em;
+  max-width: 25em;
+  top: -2.7em;
 }
 .form input {
-    width: 100%;
-    height: 150%;
-    background: none;
-    color: black;
-    padding: 1.3em;
-    border: none;
-    outline: 0em;
+  width: 100%;
+  height: 150%;
+  background: none;
+  color: black;
+  padding: 1.3em;
+  border: none;
+  outline: 0em;
 }
 .form .lbl-nombre {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 0.07em solid #c7c7c7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 0.07em solid #c7c7c7;
 }
-.form .lbl-nombre:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -0.07em;
-    width: 100%;
-    height: 100%;
-    border-bottom: 0.18em solid #474a4a;
-    transform: translateX(-100%);
-    transition: all 0.3s ease;
+.form .lbl-nombre:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.07em;
+  width: 100%;
+  height: 100%;
+  border-bottom: 0.18em solid #474a4a;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
 }
 .text-nomb {
-    position: absolute;
-    bottom: 0.12em;
-    left: 0;
-    transition: all 0.3s ease;
-    color: rgb(121, 117, 117);
+  position: absolute;
+  bottom: 0.12em;
+  left: 0;
+  transition: all 0.3s ease;
+  color: rgb(121, 117, 117);
 }
-.form input:focus + .lbl-nombre .text-nomb, .form input:valid + .lbl-nombre .text-nomb {
-    transform: translateY(-150%);
-    font-size: 0.9em;
-    color: #000000;
+.form input:focus + .lbl-nombre .text-nomb,
+.form input:valid + .lbl-nombre .text-nomb {
+  transform: translateY(-150%);
+  font-size: 0.9em;
+  color: #000000;
 }
-.form input:focus + .lbl-nombre:after, .form input:valid + .lbl-nombre:after {
-    transform: translateX(0%);
+.form input:focus + .lbl-nombre:after,
+.form input:valid + .lbl-nombre:after {
+  transform: translateX(0%);
 }
 
 .form1 {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    bottom: 1.4em;
-    height: 3.4em;
-    max-width: 25em;
-    top: -2.4em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  bottom: 1.4em;
+  height: 3.4em;
+  max-width: 25em;
+  top: -2.4em;
 }
 .form1 .input1 {
-    width: 100%;
-    height: 150%;
-    background: none;
-    color: black;
-    padding: 1.25em;
-    border: none;
-    outline: 0em;
+  width: 100%;
+  height: 150%;
+  background: none;
+  color: black;
+  padding: 1.25em;
+  border: none;
+  outline: 0em;
 }
 .form1 .lbl-nombre1 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 0.0625em solid #c7c7c7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 0.0625em solid #c7c7c7;
 }
-.form1 .lbl-nombre1:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -0.0625em;
-    width: 100%;
-    height: 100%;
-    border-bottom: 0.18em solid #474a4a;
-    transform: translateX(-100%);
-    transition: all 0.3s ease;
+.form1 .lbl-nombre1:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.0625em;
+  width: 100%;
+  height: 100%;
+  border-bottom: 0.18em solid #474a4a;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
 }
 .text-nomb1 {
-    position: absolute;
-    bottom: 0.38em;
-    left: 0em;
-    transition: all 0.3s ease;
-    color: rgb(121, 117, 117);
+  position: absolute;
+  bottom: 0.38em;
+  left: 0em;
+  transition: all 0.3s ease;
+  color: rgb(121, 117, 117);
 }
-.form1 .input1:focus + .lbl-nombre1 .text-nomb1, .form1 .input1:valid + .lbl-nombre1 .text-nomb1 {
-    transform: translateY(-150%);
-    font-size: 0.875em;
-    color: black;
+.form1 .input1:focus + .lbl-nombre1 .text-nomb1,
+.form1 .input1:valid + .lbl-nombre1 .text-nomb1 {
+  transform: translateY(-150%);
+  font-size: 0.875em;
+  color: black;
 }
-.form1 .input1:focus + .lbl-nombre1:after, .form1 .input1:valid + .lbl-nombre1:after {
-    transform: translateX(0%);
+.form1 .input1:focus + .lbl-nombre1:after,
+.form1 .input1:valid + .lbl-nombre1:after {
+  transform: translateX(0%);
 }
 
 .form2 {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    bottom: 1.1em;
-    width: 100%;
-    height: 3.3em;
-    max-width: 25em;
-    top: -2.3em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  bottom: 1.1em;
+  width: 100%;
+  height: 3.3em;
+  max-width: 25em;
+  top: -2.3em;
 }
 .form2 .input2 {
-    width: 100%;
-    height: 150%;
-    background: none;
-    color: black;
-    padding: 20px;
-    border: none;
-    outline: 0px;
+  width: 100%;
+  height: 150%;
+  background: none;
+  color: black;
+  padding: 20px;
+  border: none;
+  outline: 0px;
 }
 .form2 .lbl-nombre2 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 0.0625em solid #c7c7c7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 0.0625em solid #c7c7c7;
 }
-.form2 .lbl-nombre2:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -0.0625em;
-    width: 100%;
-    height: 100%;
-    border-bottom: 0.18em solid #474a4a;
-    transform: translateX(-100%);
-    transition: all 0.3s ease;
+.form2 .lbl-nombre2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.0625em;
+  width: 100%;
+  height: 100%;
+  border-bottom: 0.18em solid #474a4a;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
 }
 .text-nomb2 {
-    position: absolute;
-    bottom: 0.14em;
-    left: 0;
-    transition: all 0.3s ease;
-    color: rgb(121, 117, 117);
+  position: absolute;
+  bottom: 0.14em;
+  left: 0;
+  transition: all 0.3s ease;
+  color: rgb(121, 117, 117);
 }
-.form2 .input2:focus + .lbl-nombre2 .text-nomb2, .form2 .input2:valid + .lbl-nombre2 .text-nomb2 {
-    transform: translateY(-150%);
-    font-size: 0.875em;
-    color: black;
+.form2 .input2:focus + .lbl-nombre2 .text-nomb2,
+.form2 .input2:valid + .lbl-nombre2 .text-nomb2 {
+  transform: translateY(-150%);
+  font-size: 0.875em;
+  color: black;
 }
-.form2 .input2:focus + .lbl-nombre2:after, .form2 .input2:valid + .lbl-nombre2:after {
-    transform: translateX(0%);
+.form2 .input2:focus + .lbl-nombre2:after,
+.form2 .input2:valid + .lbl-nombre2:after {
+  transform: translateX(0%);
 }
 
 .form3 {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 25em;
-    top: -2em;
-    height: 3.3em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 25em;
+  top: -2em;
+  height: 3.3em;
 }
 .form3 .input3 {
-    width: 100%;
-    height: 150%;
-    background: none;
-    color: black;
-    padding: 20px;
-    border: none;
-    outline: 0px;
+  width: 100%;
+  height: 150%;
+  background: none;
+  color: black;
+  padding: 20px;
+  border: none;
+  outline: 0px;
 }
 .form3 .lbl-nombre3 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 1px solid #c7c7c7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #c7c7c7;
 }
-.form3 .lbl-nombre3:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 100%;
-    border-bottom: 0.18em solid #474a4a;
-    transform: translateX(-100%);
-    transition: all 0.3s ease;
+.form3 .lbl-nombre3:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 0.18em solid #474a4a;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
 }
 .text-nomb3 {
-    position: absolute;
-    bottom: 0.21em;
-    left: 0;
-    transition: all 0.3s ease;
-    color: rgb(121, 117, 117);
+  position: absolute;
+  bottom: 0.21em;
+  left: 0;
+  transition: all 0.3s ease;
+  color: rgb(121, 117, 117);
 }
-.form3 .input3:focus + .lbl-nombre3 .text-nomb3, .form3 .input3:valid + .lbl-nombre3 .text-nomb3 {
-    transform: translateY(-150%);
-    font-size: 0.875em;
-    color: black;
+.form3 .input3:focus + .lbl-nombre3 .text-nomb3,
+.form3 .input3:valid + .lbl-nombre3 .text-nomb3 {
+  transform: translateY(-150%);
+  font-size: 0.875em;
+  color: black;
 }
-.form3 .input3:focus + .lbl-nombre3:after, .form3 .input3:valid + .lbl-nombre3:after {
-    transform: translateX(0%);
+.form3 .input3:focus + .lbl-nombre3:after,
+.form3 .input3:valid + .lbl-nombre3:after {
+  transform: translateX(0%);
 }
 
 .form4 {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 25em;
-    bottom: 1em;
-    top: -1.9em;
-    height: 3.3em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 25em;
+  bottom: 1em;
+  top: -1.9em;
+  height: 3.3em;
 }
 .form4 .input4 {
-    width: 100%;
-    height: 150%;
-    background: none;
-    color: black;
-    padding: 1.25em;
-    border: none;
-    outline: 0px;
+  width: 100%;
+  height: 150%;
+  background: none;
+  color: black;
+  padding: 1.25em;
+  border: none;
+  outline: 0px;
 }
 .form4 .lbl-nombre4 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 0.0625em solid #c7c7c7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 0.0625em solid #c7c7c7;
 }
-.form4 .lbl-nombre4:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -0.0625em;
-    width: 100%;
-    height: 100%;
-    border-bottom: 0.18em solid #474a4a;
-    transform: translateX(-100%);
-    transition: all 0.4s ease;
+.form4 .lbl-nombre4:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.0625em;
+  width: 100%;
+  height: 100%;
+  border-bottom: 0.18em solid #474a4a;
+  transform: translateX(-100%);
+  transition: all 0.4s ease;
 }
 .text-nomb4 {
-    position: absolute;
-    bottom: 0.21em;
-    left: 0;
-    transition: all 0.4s ease;
-    color: rgb(121, 117, 117);
+  position: absolute;
+  bottom: 0.21em;
+  left: 0;
+  transition: all 0.4s ease;
+  color: rgb(121, 117, 117);
 }
-.form4 .input4:focus + .lbl-nombre4 .text-nomb4, .form4 .input4:valid + .lbl-nombre4 .text-nomb4 {
-    transform: translateY(-150%);
-    font-size: 0.875em;
-    color: black;
+.form4 .input4:focus + .lbl-nombre4 .text-nomb4,
+.form4 .input4:valid + .lbl-nombre4 .text-nomb4 {
+  transform: translateY(-150%);
+  font-size: 0.875em;
+  color: black;
 }
-.form4 .input4:focus + .lbl-nombre4:after, .form4 .input4:valid + .lbl-nombre4:after {
-    transform: translateX(0%);
+.form4 .input4:focus + .lbl-nombre4:after,
+.form4 .input4:valid + .lbl-nombre4:after {
+  transform: translateX(0%);
 }
 
 .form5 {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 3.3em;
-    max-width: 25em;
-    top: -2em;
-    height: 3.3em;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 3.3em;
+  max-width: 25em;
+  top: -2em;
+  height: 3.3em;
 }
 .form5 .input5 {
-    width: 100%;
-    height: 150%;
-    background: none;
-    color: black;
-    padding: 1.25em;
-    border: none;
-    outline: 0px;
+  width: 100%;
+  height: 150%;
+  background: none;
+  color: black;
+  padding: 1.25em;
+  border: none;
+  outline: 0px;
 }
 .form5 .lbl-nombre5 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 0.0625em solid #c7c7c7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 0.0625em solid #c7c7c7;
 }
-.form5 .lbl-nombre5:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -0.0625em;
-    width: 100%;
-    height: 100%;
-    border-bottom: 0.18em solid #474a4a;
-    transform: translateX(-100%);
-    transition: all 0.5s ease;
+.form5 .lbl-nombre5:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.0625em;
+  width: 100%;
+  height: 100%;
+  border-bottom: 0.18em solid #474a4a;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
 }
 .text-nomb5 {
-    position: absolute;
-    left: 0;
-    bottom: -0.2em;
-    transition: all 0.5s ease;
-    color: rgb(121, 117, 117);
+  position: absolute;
+  left: 0;
+  bottom: -0.2em;
+  transition: all 0.5s ease;
+  color: rgb(121, 117, 117);
 }
-.form5 .input5:focus + .lbl-nombre5 .text-nomb5, .form5 .input5:valid + .lbl-nombre5 .text-nomb5 {
-    transform: translateY(-150%);
-    font-size: 0.875em;
-    color: black;
+.form5 .input5:focus + .lbl-nombre5 .text-nomb5,
+.form5 .input5:valid + .lbl-nombre5 .text-nomb5 {
+  transform: translateY(-150%);
+  font-size: 0.875em;
+  color: black;
 }
-.form5 .input5:focus + .lbl-nombre5:after, .form5 .input5:valid + .lbl-nombre5:after {
-    transform: translateX(0%);
+.form5 .input5:focus + .lbl-nombre5:after,
+.form5 .input5:valid + .lbl-nombre5:after {
+  transform: translateX(0%);
 }
