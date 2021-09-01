@@ -58,12 +58,16 @@ const MakePost = (props) => {
 
   return (
     <div className="card carta col-md-6 offset-md-3">
-      <h1 className="common">NOTICIAS</h1>
+      <div className="contenedor">
+        <h1 className="common h1Common">
+          PREGUNTA A LA COMUNIDAD<span>&#160;</span>
+        </h1>
+      </div>
       <div className="card-body">
         <div className="commonWall">
           <input
             type="text"
-            autofocus="autofocus"
+            autoFocus="autoFocus"
             className="form-control mb-2 border"
             name="title"
             value={title}
