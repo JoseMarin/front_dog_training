@@ -4,7 +4,7 @@
   justify-content: flex-start;
   align-items: center;
   color: rgb(0, 0, 0);
-  width: 100vw;
+  width: 100%;
   height: 9em;
 
   .column1 {
@@ -12,7 +12,6 @@
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
-
     width: 30%;
     margin-left: 3em;
 
@@ -81,5 +80,68 @@
   .social {
     margin-left: 1em;
     color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1rem;
+
+    &:hover {
+      color: rgb(96, 101, 105);
+      color: linear-gradient(
+        343deg,
+        rgba(96, 101, 105, 1) 0%,
+        rgba(213, 31, 116, 1) 75%,
+        rgba(169, 57, 112, 1) 83%,
+        rgba(108, 94, 106, 1) 100%,
+        rgba(223, 25, 117, 1) 100%,
+        rgba(96, 101, 105, 1) 100%
+      );
+      transition: all 300ms ease;
+      color: rgba(213, 31, 116, 1);
+      transform: translateY(0.3em);
+    }
+  }
+
+  /* MOBILE */
+  @media (max-width: 375px) {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20.5em;
+
+    .parFooter,
+    .h3 {
+      visibility: hidden;
+    }
+    .column2 {
+      width: 60%;
+    }
+
+    .mail,
+    .tlf,
+    .social {
+      margin-left: 1em;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+    }
+  }
+
+  /* MOBILE */
+  @media (max-width: 414px) {
+    width: 100%;
+    height: 100%;
+
+    .parFooter,
+    .h3 {
+      visibility: hidden;
+    }
+    .column2 {
+      width: 60%;
+    }
+
+    .mail,
+    .tlf,
+    .social {
+      margin-left: 1em;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+    }
   }
 }
