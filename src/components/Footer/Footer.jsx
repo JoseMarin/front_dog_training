@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
-// import logo from "../../assets/Buenos_modales/masotas Logo.png";
+
 const Footer = () => {
   return (
     <div>
@@ -10,16 +10,13 @@ const Footer = () => {
         <div className="containerAll bg-light">
           <div className="footerBody">
             <div className="column1">
-              <h3 className="linkLogout h3">
+              <h3 className="linkLogout h3" Style="cursor:initial;">
                 D O G T R A I N I N G
               </h3>
               <p className="parFooter">
                 With more than 10 years of experience
               </p>
             </div>
-            {/* <div className="tooth">
-                            <img src={logo} alt="logo"  width="70"/>
-                        </div> */}
             <div className="column2">
               <div className="support">
                 <div className="phone">
