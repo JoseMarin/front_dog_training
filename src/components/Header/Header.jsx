@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/types";
 import { useHistory } from "react-router-dom";
 import Training from '../Training/Training';
-import logo from "../../assets/Buenos_modales/masotas Logo.png";
+import logo from "../../assets/Buenos_modales/pata1.png";
 
 const Header2 = (props) => {
   let history = useHistory();
