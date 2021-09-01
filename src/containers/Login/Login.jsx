@@ -68,7 +68,7 @@ const Login = (props) => {
 
         // Envío por axios
         axios
-        .post("http://localhost:5000/login", body)
+        .post("https://jaug-dog-training.herokuapp.com/login", body)
         .then((res) => {
           //Guardo en RDX
           props.dispatch({ type: LOGIN, payload: res.data });
@@ -98,6 +98,7 @@ const Login = (props) => {
           <form className="form22">
             <input
               className="input22"
+              autoFocus="autoFocus"
               name="email"
               type="text"
               onChange={updateCredentials}
