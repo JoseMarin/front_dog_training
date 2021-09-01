@@ -21,7 +21,7 @@ export function createPostAction(body) {
   return async (dispatch) => {
     dispatch(addPost());
     await axios
-      .post("http://localhost:5000/post", body, {
+      .post("https://jaug-dog-training.herokuapp.com/post", body, {
         headers: { authorization: "Bearer " },
       })
       .then((res) => {
@@ -66,7 +66,7 @@ export function getPostAction(props) {
     dispatch(downloadPost());
 
     await axios
-      .get("http://localhost:5000/post", {
+      .get("https://jaug-dog-training.herokuapp.com/post", {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {
@@ -107,7 +107,7 @@ export function removePostAction(postId, userId) {
     dispatch(removePost(postId, userId));
 
     await axios
-      .put("http://localhost:5000/post/deletepost", { postId, userId })
+      .put("https://jaug-dog-training.herokuapp.com/post/deletepost", { postId, userId })
       .then((res) => {
         //If it is eliminated show alert
         dispatch(removeSucce(postId, userId) );
@@ -154,7 +154,7 @@ export function editPostAction(post, props) {
   return async (dispatch) => {
     dispatch(startEdit(post));
     await axios
-      .put("http://localhost:5000/post/updatepost", post, {
+      .put("https://jaug-dog-training.herokuapp.com/post/updatepost", post, {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {
