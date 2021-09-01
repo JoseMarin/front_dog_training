@@ -1,6 +1,5 @@
-// import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
-// import axios from "axios";
 import { useHistory } from "react-router";
 
 const Training = (props) => {
@@ -10,11 +9,12 @@ const Training = (props) => {
   }
 
   return (
-    <div class="dropdown training">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown" id="dmenu">
+    <div className="dropdown training">
+      <ul className="navbar-nav">
+        <li className="nav-item dropdown" id="dmenu">
           <div
-            className="nav-link dropdown-toggle text-white"
+            className="nav-link linkLogout  dropdown-toggle text"
+            Style="color:black; font-size: 1.3em;"
             id="navbarDarkDropdownMenuLink"
             role="button"
             data-bs-toggle="dropdown"
@@ -24,12 +24,12 @@ const Training = (props) => {
             TRAINING
           </div>
           <ul
-            class="dropdown-menu text-center dropdown-menu-dark"
+            className="dropdown-menu text-center dropdown-menu-dark"
             aria-labelledby="navbarDarkDropdownMenuLink"
           >
             <li>
               <div
-                class="dropdown-item"
+                className="dropdown-item"
                 onClick={() => history.push("/buenosmodales")}
               >
                 Buenos Modales
@@ -37,7 +37,7 @@ const Training = (props) => {
             </li>
             <li>
               <div
-                class="dropdown-item"
+                className="dropdown-item"
                 onClick={() => history.push("/obedienciabasica")}
               >
                 Obediencia Básica
@@ -45,7 +45,7 @@ const Training = (props) => {
             </li>
             <li>
               <div
-                class="dropdown-item"
+                className="dropdown-item"
                 onClick={() => history.push("/ejercicios")}
               >
                 Ejercicios
@@ -53,7 +53,7 @@ const Training = (props) => {
             </li>
             <li>
               <div
-                class="dropdown-item"
+                className="dropdown-item"
                 onClick={() => history.push("/perronuevo")}
               >
                 Perro Nuevo
