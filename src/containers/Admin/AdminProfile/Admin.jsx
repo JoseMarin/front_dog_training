@@ -63,7 +63,7 @@ const Admin = (props) => {
                             <h4 className="m-b-20 f-w-600">City</h4>
                             <h6>{props.credentials?.user.city}</h6>
                           </div>
-                          <div className="col-sm-6">
+                          <div className="col-sm-6 offset-md-3">
                             <h4 className="m-b-20 f-w-600">CREATE COUNT</h4>
                             <h6 className="f-w-400">
                               {moment(props.credentials?.user.createdAt).format(
@@ -72,6 +72,7 @@ const Admin = (props) => {
                             </h6>
                           </div>
                         </div>
+                        <br />
                         <br />
                         <h4 className="m-b-20 m-t-20 p-b-5 b-b-default f-w-600">
                           Settings
@@ -82,12 +83,22 @@ const Admin = (props) => {
                             <h4
                               className="m-b-10 f-w-600"
                               Style="cursor:pointer;"
-                              onClick={() => history.push("/userpost")}
+                              onClick={() => history.push("/posts")}
                             >
                               POSTS
                             </h4>
                           </div>
                           <div className="col-sm-6">
+                            <h4
+                              className="m-b-10 f-w-600"
+                              Style="cursor:pointer;"
+                              onClick={() => history.push("/allusers")}
+                            >
+                              USERS
+                            </h4>
+                          </div>
+                          <br/>
+                          <div className="col-sm-6 offset-md-3">
                             <h4
                               className="m-b-10 f-w-600"
                               Style="cursor:pointer;"
