@@ -24,7 +24,7 @@ const Profile = (props) => {
           <li></li>
         </ul>
 
-        <div className="page-content page-container " id="page-content">
+        <div className="page-content page-container" id="page-content">
           <div className="padding ">
             <div className="row container d-flex justify-content-center">
               <div className="col-ms-6 col-md-12">

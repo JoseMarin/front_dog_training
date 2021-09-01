@@ -27,23 +27,12 @@ const CommonWall = () => {
       <MakePost />
       {loading ? (
         <div className="spinnerContainer">
-           <Spinner/>
+          <Spinner />
         </div>
       ) : null}
       {post.length === 0 ? (
         <div className="spinnerContainer">
-          <div Style="width:55%">
-            <div Style="height:0;padding-bottom:56.25%;position:relative;width:100%">
-              <iframe
-                allowfullscreen=""
-                frameBorder="0"
-                height="100%"
-                src="https://giphy.com/embed/yPpmkMDM0tA2gMShfR/video"
-                Style="left:0;position:absolute;top:0"
-                width="100%"
-              ></iframe>
-            </div>
-          </div>
+          <Spinner />
         </div>
       ) : (
         [...post].reverse().map((post) => <Post key={post.id} post={post} />)
