@@ -3,9 +3,9 @@ import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import moment from "moment";
 import Pensando from "../../assets/Buenos_modales/perro-pensando.png";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Profile = (props) => {
-
   let history = useHistory();
 
   if (props.credentials?.token) {
@@ -24,10 +24,7 @@ const Profile = (props) => {
           <li></li>
         </ul>
 
-        <div
-          className="page-content page-container "
-          id="page-content"
-        >
+        <div className="page-content page-container " id="page-content">
           <div className="padding ">
             <div className="row container d-flex justify-content-center">
               <div className="col-ms-6 col-md-12">
@@ -53,23 +50,21 @@ const Profile = (props) => {
                         <h3 className="m-b-20 p-b-5 b-b-default f-w-600 text-center">
                           Information
                         </h3>
-                        <br/>
+                        <br />
                         <div className="row">
                           <div className="col-xl-6">
                             <h4 className="m-b-20  f-w-600">Email</h4>
                             <h6 className="f-w-400">
                               {props.credentials?.user.email}
                             </h6>
-                          <br/>
+                            <br />
                           </div>
                           <div className="col-sm-6">
                             <h4 className="m-b-20 f-w-600">City</h4>
                             <h6>{props.credentials?.user.city}</h6>
                           </div>
                           <div className="col-sm-6">
-                            <h4 className="m-b-20 f-w-600">
-                             CREATE COUNT
-                            </h4>
+                            <h4 className="m-b-20 f-w-600">CREATE COUNT</h4>
                             <h6 className="f-w-400">
                               {moment(props.credentials?.user.createdAt).format(
                                 "LL"
@@ -77,11 +72,11 @@ const Profile = (props) => {
                             </h6>
                           </div>
                         </div>
-                        <br/>
+                        <br />
                         <h4 className="m-b-20 m-t-20 p-b-5 b-b-default f-w-600">
                           Settings
                         </h4>
-                        <br/>
+                        <br />
                         <div className="row">
                           <div className="col-sm-6">
                             <h4
@@ -165,10 +160,8 @@ const Profile = (props) => {
     }, 250);
 
     return (
-      <div className="spinnerContainer">
-        <div className="spinnerC">
-          <img src={{}} alt="spinner" width="60" />
-        </div>
+      <div className="">
+        <Spinner />
       </div>
     );
   }
