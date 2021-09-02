@@ -1,33 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import axios from "axios";
-import { ADD_POST } from "../../../redux/types";
+import React, { useEffect } from "react";
 import moment  from 'moment';
 
-const Posts = (props) => {
-  const [userPost, setUserPost] = useState([]);
+//ACTIONS OF RDX
+import { connect, useDispatch, useSelector } from "react-redux";
+import { getPostAction } from "../../../Actions/PostActions";
 
-  useEffect(() => {
+const Posts = () => {
+  const dispatch = useDispatch();
+
+   //Access to the states
+   const userPost = useSelector((state) => state.data.post);
+
+   useEffect(() => {
+    //Consult the API
+    const findPost = (props) => dispatch(getPostAction(props));
     findPost();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const findPost = async () => {
-    let token = props.credentials?.token;
-
-    axios
-      .get("https://jaug-dog-training.herokuapp.com/post", {
-        headers: { authorization: "Bearer " + token },
-      })
-      .then((res) => {
-        setUserPost(res.data);
-        props.dispatch({ type: ADD_POST, payload: res.data });
-      })
-      .catch((err) => {
-        console.log("Err");
-        // console.log(err.response.data);
-      });
-  };
+  }, [dispatch]);
 
   if (userPost[0]?.id) {
     return (
