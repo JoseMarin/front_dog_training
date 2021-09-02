@@ -3,16 +3,17 @@
 @import './components/Button/Button.scss';
 @import './components/Header/Header.scss';
 @import './components/MakePost/MakePost.scss';
-@import './containers/Home/Home.scss';
 @import './components/Training/Training.scss';
 @import './components/Post/Post.scss';
 @import './components/posts/AllPosts/Posts.scss';
+
 @import './components/posts/userPost/Userpost.scss';
 @import './components/EditPost/EditPost.scss';
 @import './components/Footer/Footer.scss';
 @import './components/Spinner/Spinner.scss';
 @import './components/403/Forbidden.scss';
 
+@import './containers/Home/Home.scss';
 @import './containers/Register/Register.scss';
 @import './containers/Login/Login.scss';
 @import './containers/Obediencia_basica/ObedienciaBasica.scss';
