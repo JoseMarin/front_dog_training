@@ -1,5 +1,4 @@
 .carta {
-  background: #f352924b;
   background: linear-gradient(rgba(168, 161, 163, 0.255), rgba(179, 129, 154, 0.233));
   border-radius: 0.3em;
 
@@ -9,69 +8,3 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 }
-
-
-/* Burbujas*/
-// .burbuja {
-//   border-radius: 50%;
-//   background: rgba(190, 186, 186, 0.728);
-//   opacity: 0.3;
-
-//   position: absolute;
-//   bottom: -150;
-//   z-index: -1;
-//   animation: burbujas 17s linear infinite;
-// }
-
-// .burbuja:nth-child(1) {
-//   width: 80px;
-//   height: 80px;
-//   left: 5%;
-//   animation-duration: 7s;
-//   animation-delay: 7s;
-// }
-// .burbuja:nth-child(2) {
-//   width: 100px;
-//   height: 100px;
-//   left: 35%;
-//   animation-duration: 7s;
-//   animation-delay: 7s;
-// }
-// .burbuja:nth-child(3) {
-//   width: 30px;
-//   height: 30px;
-//   left: 15%;
-//   animation-duration: 7s;
-//   animation-delay: 7s;
-// }
-// .burbuja:nth-child(4) {
-//   width: 50px;
-//   height: 50px;
-//   left: 90%;
-//   animation-duration: 7s;
-//   animation-delay: 7s;
-// }
-// .burbuja:nth-child(5) {
-//   width: 40px;
-//   height: 40px;
-//   left: 70%;
-//   animation-duration: 7s;
-//   animation-delay: 7s;
-// }
-
-// @keyframes burbujas {
-//   0% {
-//     bottom: 0;
-//     opacity: 0;
-//   }
-//   30% {
-//     transform: translateX(30px);
-//   }
-//   50% {
-//     opacity: 0.4;
-//   }
-//   100% {
-//     bottom: 100vh;
-//     opacity: 0;
-//   }
-// }

@@ -74,19 +74,8 @@ const EditPost = () => {
               aria-label="Upload"
             />
             {/* {loading ? (
-              <div>
-                <div Style="width:55%">
-                  <div Style="height:0;padding-bottom:56.25%;position:relative;width:100%">
-                    <iframe
-                      allowfullscreen=""
-                      frameBorder="0"
-                      height="100%"
-                      src="https://giphy.com/embed/yPpmkMDM0tA2gMShfR/video"
-                      Style="left:0;position:absolute;top:0"
-                      width="100%"
-                    ></iframe>
-                  </div>
-                </div>
+               <div className="spinnerContainer">
+                <Spinner />
               </div>
             ) : null} */}
           </div>
