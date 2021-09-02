@@ -1,41 +1,26 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { connect } from "react-redux";
+import React, { useEffect } from "react";
+import Forbidden from '../../../components/403/Forbidden';
+//ACTIONS OF RDX
+import { connect, useDispatch, useSelector } from "react-redux";
+import { getUserActions } from "../../../Actions/UserActions";
 
 const AllUsers = (props) => {
-  const [users, setUsers] = useState({});
+  const dispatch = useDispatch(props.credentials?.token);
+
+  //Access to the states
+  const users = useSelector((state) => state.data.post);
 
   useEffect(() => {
-    findAllUsers();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {});
-
-  const findAllUsers = async () => {
-    let token = props.credentials?.token;
-
-    axios
-      .get("https://jaug-dog-training.herokuapp.com/users", {
-        headers: { authorization: "Bearer " + token },
-      })
-
-      .then((res) => {
-        setUsers(res.data);
-        console.log("users", res);
-        // props.dispatch({ type: ADD_POST, payload: res.data });
-      })
-      .catch((err) => {
-        console.log("Err");
-        // console.log(err.response.data);
-      });
-  };
+    //Consult the API
+    const findUsers = (token) => dispatch(getUserActions(token));
+    findUsers();
+  }, [dispatch]);
 
   if (users[0]?.id) {
     return (
-      <div className="return2 container">
+      <div className="returnPosts container">
         <table className="table table-bordered table-hover border-0 align-items-center flex-column ">
-          <thead className="thead-dark border-1 ">
+          <thead className="thead-dark border-1 bg-dark text-white">
             <tr>
               <th scope="col">Id</th>
               <th scope="col">User</th>
@@ -60,9 +45,7 @@ const AllUsers = (props) => {
     );
   } else {
     return (
-      <div className="return">
-        <h1>Cargando Datos...</h1>
-      </div>
+      <Forbidden />
     );
   }
 };
