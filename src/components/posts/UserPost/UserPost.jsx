@@ -6,6 +6,7 @@ import { ADD_POST } from "../../../redux/types";
 import moment from "moment";
 import { faUser, faClock, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Spinner from '../../Spinner/Spinner';
 
 const userPost = (props) => {
   const [userPost, setUserPost] = useState([]);
@@ -79,7 +80,7 @@ const userPost = (props) => {
   } else {
     return (
       <div className="return">
-        <h1>No tienes posts</h1>
+        <Spinner />
       </div>
     );
   }
