@@ -52,7 +52,7 @@ const userPost = (props) => {
       <div className="container mt-5">
         <div className="row row-cols-1 row-cols-md-4">
           {[...userPost].reverse().map((mjs, index) => (
-            <div className="card offset-md-1 carta" Style="min-width: 18rem; width: 33rem;">
+            <div className="card offset-md-1 cartaUser" Style="min-width: 18rem; width: 33rem;">
               <img
                 className="card-img-top"
                 src=".././100px180/"
