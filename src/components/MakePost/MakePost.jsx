@@ -91,7 +91,7 @@ const MakePost = (props) => {
             </div>
             <div class="input-group mt-4">
               <button
-                className="btn btn-outline-dark"
+                className="btn"
                 type="submit"
                 onClick={(e) => SubmitPost(e)}
               >
@@ -100,7 +100,7 @@ const MakePost = (props) => {
               <div className="errorsText">{errors.eValidate}</div>
               <input
                 type="file"
-                className="form-control"
+                className="form-control btn"
                 id="inputGroupFile02"
                 aria-label="Upload"
               />
