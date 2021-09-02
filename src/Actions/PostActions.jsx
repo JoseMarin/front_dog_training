@@ -16,6 +16,8 @@ import {
 } from "../redux/types";
 import axios from "axios";
 import Swal from "sweetalert2";
+import store from '../redux/store';
+
 
 export function createPostAction(body) {
   return async (dispatch) => {
@@ -59,8 +61,8 @@ const addPostError = (state) => ({
   payload: state,
 });
 
-export function getPostAction(props) {
-  let token = props;
+export function getPostAction() {
+  const  token = store.getState().credentials.token;
   //Note getPostAction, run the function wownloadProducts
   return async (dispatch) => {
     dispatch(downloadPost());
@@ -102,12 +104,15 @@ const downloadPostError = () => ({
 });
 
 export function removePostAction(postId, userId) {
+  const token = store.getState().credentials.token;
   return async (dispatch) => {
     //Here we collect the identifiers
     dispatch(removePost(postId, userId));
 
     await axios
-      .put("https://jaug-dog-training.herokuapp.com/post/deletepost", { postId, userId })
+      .put("https://jaug-dog-training.herokuapp.com/post/deletepost", { postId, userId }, {
+        headers: { authorization: "Bearer " + token },
+      })
       .then((res) => {
         //If it is eliminated show alert
         dispatch(removeSucce(postId, userId) );
@@ -149,8 +154,8 @@ const getPostRemove = (post) => ({
 });
 
 //Edit a record in the API and status
-export function editPostAction(post, props) {
-  let token = props;
+export function editPostAction(post) {
+  const  token = store.getState().credentials.token;
   return async (dispatch) => {
     dispatch(startEdit(post));
     await axios
