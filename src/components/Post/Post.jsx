@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  faUser,
-  faClock,
-  faComment,
-  faTrash,
-  faEdit,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUser,faClock,faComment,faTrash,faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { connect, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
@@ -48,7 +42,7 @@ const Post = ({ post }) => {
         <div className="row justify-content-evenly row-cols-2 row-cols-md-2 g-4 mt-lg-5">
           <div className="row  mt-lg-5">
             <div>
-              <div className="card border-0 border-dark bg-light mb-4 mt-lg-5">
+              <div className="card carta border-0 border-dark mb-4 mt-lg-5">
                 <div className="card-body carta">
                   <img
                     className="card-img-top"
@@ -56,7 +50,9 @@ const Post = ({ post }) => {
                     alt="100x100"
                   />
                   <h2 className="card-title">{title}</h2>
+                  <hr />
                   <p className="card-text parPost">{content}</p>
+                  <hr />
                   <small>
                     <FontAwesomeIcon icon={faUser} /> &nbsp; {userName} &nbsp;{" "}
                     {lastName} &nbsp; &nbsp;
@@ -74,7 +70,6 @@ const Post = ({ post }) => {
                   >
                     <FontAwesomeIcon icon={faComment} /> COMMENT
                   </span>
-                  &nbsp; &nbsp;
                   <Link
                     Style="cursor:pointer; color:black;"
                     className=" m-xxl-5"
@@ -96,14 +91,6 @@ const Post = ({ post }) => {
           </div>
         </div>
       </div>
-
-      {/* <div className="burbujas">
-          <div className="burbuja"></div>
-          <div className="burbuja"></div>
-          <div className="burbuja"></div>
-          <div className="burbuja"></div>
-          <div className="burbuja"></div>
-        </div> */}
     </div>
   );
 };
