@@ -6,7 +6,7 @@ import { ADD_POST } from "../../../redux/types";
 import moment from "moment";
 import { faUser, faClock, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Spinner from '../../Spinner/Spinner';
+import Spinner from "../../Spinner/Spinner";
 
 const userPost = (props) => {
   const [userPost, setUserPost] = useState([]);
@@ -45,35 +45,33 @@ const userPost = (props) => {
 
   if (userPost[0]?.id) {
     return (
-      <div className="container">
-        <div className="row justify-content-evenly row-cols-2 row-cols-md-2 g-4 mt-lg-5">
-          <div className="row  mt-lg-5">
+      <div className="container mt-5">
+        <div className="row row-cols-1 row-cols-md-4">
             {[...userPost].reverse().map((mjs, index) => (
-              <div className="card border-dark bg-light p-3 mb-4 mt-lg-5">
-                <div className="card-body" key={index}>
+              <div className="card offset-md-1">
                   <img
                     className="card-img-top"
-                    src=".../100px180/"
+                    src=".././100px180/"
                     alt="100x100"
                   />
+                <div className="card-body" key={index}>
                   <h4 className="card-title">Title {mjs.title}</h4>
                   <p className="card-text">Post {mjs.content}</p>
-                  <small class="text-muted">
+                  <small className="text-muted">
                     <FontAwesomeIcon icon={faUser} /> &nbsp; {mjs.userName}
                   </small>
                   &nbsp; &nbsp;
-                  <small class="text-muted">
+                  <small className="text-muted">
                     <FontAwesomeIcon icon={faClock} />{" "}
                     {moment(mjs.date).format("LLL")}
                   </small>
                   &nbsp; &nbsp;
                   <span Style="cursor:pointer;" className="updateButton">
-                    <FontAwesomeIcon icon={faTrash} /> Edit
+                    <FontAwesomeIcon icon={faTrash} /> Remove
                   </span>
                 </div>
               </div>
             ))}
-          </div>
         </div>
       </div>
     );
