@@ -1,77 +1,93 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import axios from "axios";
-import { ADD_POST } from "../../../redux/types";
+import React, { useEffect } from "react";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import moment from "moment";
-import { faUser, faClock, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faUser,faClock,faTrash,faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Spinner from "../../Spinner/Spinner";
+import Swal from "sweetalert2";
+
+//ACTIONS OF RDX
+import { removePostAction, editPost, getPostAction } from "../../../Actions/PostActions";
 
 const userPost = (props) => {
-  const [userPost, setUserPost] = useState([]);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-  const [post] = useState({
-    user: props.credentials?.user,
-  });
+   //Access to the states
+   const userPost = useSelector((state) => state.data.post);
 
-  useEffect(() => {
+   useEffect(() => {
+    //Consult the API
+    const findPost = (props) => dispatch(getPostAction(props));
     findPost();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const findPost = async () => {
-    let token = props.credentials?.token;
-
-    let user = post.user;
-
-    let body = {
-      userId: user.id,
-    };
-
-    axios
-      .post("https://jaug-dog-training.herokuapp.com/post/userpost", body, {
-        headers: { authorization: "Bearer " + token },
-      })
-      .then((res) => {
-        setUserPost(res.data);
-        props.dispatch({ type: ADD_POST, payload: res.data });
-      })
-      .catch((err) => {
-        console.log("Err");
-        // console.log(err.response.data);
-      });
+  const confirmRemove = (body, userId) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        //Take it into action
+        dispatch(removePostAction(body, userId));
+      }
+    });
   };
 
+  const postToEdit = (post) => {
+    dispatch(editPost(post));
+    history.push("/editPost");
+  };
   if (userPost[0]?.id) {
     return (
       <div className="container mt-5">
         <div className="row row-cols-1 row-cols-md-4">
-            {[...userPost].reverse().map((mjs, index) => (
-              <div className="card offset-md-1">
-                  <img
-                    className="card-img-top"
-                    src=".././100px180/"
-                    alt="100x100"
-                  />
-                <div className="card-body" key={index}>
-                  <h4 className="card-title">Title {mjs.title}</h4>
-                  <p className="card-text">Post {mjs.content}</p>
-                  <small className="text-muted">
-                    <FontAwesomeIcon icon={faUser} /> &nbsp; {mjs.userName}
-                  </small>
-                  &nbsp; &nbsp;
-                  <small className="text-muted">
-                    <FontAwesomeIcon icon={faClock} />{" "}
-                    {moment(mjs.date).format("LLL")}
-                  </small>
-                  &nbsp; &nbsp;
-                  <span Style="cursor:pointer;" className="updateButton">
-                    <FontAwesomeIcon icon={faTrash} /> Remove
-                  </span>
-                </div>
+          {[...userPost].reverse().map((mjs, index) => (
+            <div className="card offset-md-1 carta" Style="min-width: 18rem; width: 33rem;">
+              <img
+                className="card-img-top"
+                src=".././100px180/"
+                alt="100x100"
+              />
+              <div className="card-body" key={index}>
+                <h2 className="card-title">Title {mjs.title}</h2>
+                <hr/>
+                <h4 className="card-text">Post {mjs.content}</h4>
+                <hr/>
+                <small>
+                  <FontAwesomeIcon icon={faUser} /> &nbsp; {mjs.userName}
+                </small>
+                &nbsp; &nbsp; &nbsp;
+                <small>
+                  <FontAwesomeIcon icon={faClock} />{" "}
+                  {moment(mjs.date).format("LLL")}
+                </small>
+                <Link
+                  Style="cursor:pointer; color:black;"
+                  className=" m-xxl-5"
+                  onClick={() => postToEdit(userPost)}
+                >
+                  <FontAwesomeIcon icon={faEdit} /> EDIT
+                </Link>
+                <span
+                  Style="cursor:pointer;"
+                  onClick={() => confirmRemove(mjs, mjs.userId)}
+                  className="updateButton"
+                >
+                  <FontAwesomeIcon icon={faTrash} /> Remove
+                </span>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
     );
