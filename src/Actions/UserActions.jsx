@@ -1,39 +1,55 @@
-import { GET_USER, GET_USER_SUCCE, GET_USER_ERROR, LOGIN, LOGOUT, UPDATE_USER } from "../redux/types";
+import {
+  GET_USER,
+  GET_USER_SUCCE,
+  GET_USER_ERROR,
+  LOGIN,
+  LOGOUT,
+  UPDATE_USER,
+} from "../redux/types";
 import axios from "axios";
 import Swal from "sweetalert2";
 import store from "../redux/store";
+import { useHistory } from "react-router-dom";
 
-export function logueameAction(body) {
+export function handleSubmit(body) {
   return async (dispatch) => {
-    dispatch(loginIn());
+    // dispatch(loginIn());
     await axios
-      .post("https://jaug-dog-training.herokuapp.com/login", body)
+      .post("http://localhost:5000/login", body)
       .then((res) => {
-        dispatch(loginIn(body)); //This is to state
+        dispatch(loginIn(res.data)); //This is to state
+        setTimeout(() => {
+
+          const history = useHistory();
+          if (!res.data.user.isAdmin) {
+            history.push("/commonwall");
+          } else {
+            history.push("/commonwall");
+          }
+        }, 250);
       })
       .catch((err) => {
+        // console.log(err.response.data);
         console.log(err);
         //Alert error
         Swal.fire({
           icon: "error",
-          title: "Was a mistake",
-          text: "Try again.",
+          title: "Oops...",
+          text: "Something went wrong!",
         });
       });
   };
-};
+}
 
-const loginIn = (body) => ({
+const loginIn = (res) => ({
   type: LOGIN,
-  payload: {body}
+  payload: res.data,
 });
 //If the product is saved in the database and modificate the state
 const logout = (body) => ({
   type: LOGOUT,
-  payload: { body }
+  payload: { body },
 });
-
-
 
 export function getUserActions() {
   const token = store.getState().credentials.token;
@@ -51,7 +67,6 @@ export function getUserActions() {
       })
       .catch((err) => {
         console.log(err);
-        // console.log(err.response.data);
         //But if there is an error, change the state
         dispatch(downloadUserError());
         //Alert error
@@ -62,7 +77,7 @@ export function getUserActions() {
         });
       });
   };
-};
+}
 
 const downloadUsers = () => ({
   type: GET_USER,
