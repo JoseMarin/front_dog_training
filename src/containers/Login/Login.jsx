@@ -4,8 +4,10 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { LOGIN } from "../../redux/types.js";
 import Swal from "sweetalert2";
+// import { handleSubmit } from '../../Actions/UserActions';
 
 const Login = (props) => {
+  // const dispatch = useDispatch();
 
     const history = useHistory();
 
@@ -58,6 +60,18 @@ const Login = (props) => {
             break;
     }
   };
+
+  //Here we call the action from PostActions
+  // const login = (body) => dispatch(handleSubmit(body));
+  // const logueame = (e) => {
+  //   e.preventDefault();
+
+  //   login({
+  //     email: credentials.email,
+  //     password: credentials.password,
+  //   });
+  // };
+
 
     const logueame = async () => {
         // A continuamos, generamos el body de datos
