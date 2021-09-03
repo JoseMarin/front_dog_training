@@ -1,41 +1,30 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import axios from "axios";
-import { ADD_POST } from "../../../redux/types";
+import React, { useEffect } from "react";
 import moment  from 'moment';
 
-const Posts = (props) => {
-  const [userPost, setUserPost] = useState([]);
+//ACTIONS OF RDX
+import { connect, useDispatch, useSelector } from "react-redux";
+import { getPostAction } from "../../../Actions/PostActions";
+import Forbidden from '../../403/Forbidden';
 
-  useEffect(() => {
+const Posts = () => {
+  const dispatch = useDispatch();
+
+   //Access to the states
+   const userPost = useSelector((state) => state.data.post);
+
+   useEffect(() => {
+    //Consult the API
+    const findPost = (props) => dispatch(getPostAction(props));
     findPost();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const findPost = async () => {
-    let token = props.credentials?.token;
-
-    axios
-      .get("https://jaug-dog-training.herokuapp.com/post", {
-        headers: { authorization: "Bearer " + token },
-      })
-      .then((res) => {
-        setUserPost(res.data);
-        props.dispatch({ type: ADD_POST, payload: res.data });
-      })
-      .catch((err) => {
-        console.log("Err");
-        // console.log(err.response.data);
-      });
-  };
+  }, [dispatch]);
 
   if (userPost[0]?.id) {
     return (
-      <div className="return2 container">
-      <table className="table table-bordered  table-hover border-0 align-items-center flex-column ">
-        <thead  className="thead-dark border-1 ">
+      <div className="returnPosts container">
+      <table className="table table-bordered table-hover border-0 align-items-center flex-column ">
+        <thead  className="thead-dark border-1 bg-dark text-white">
           <tr>
-            <th scope="col">User Id</th>
+            <th scope="col" className="bg-black">User Id</th>
             <th scope="col">User</th>
             <th scope="col">Last Name</th>
             <th scope="col">Title</th>
@@ -62,9 +51,7 @@ const Posts = (props) => {
     );
   } else {
     return (
-      <div className="return">
-        <h1>No tienes acceso</h1>
-      </div>
+      <Forbidden />
     );
   }
 };

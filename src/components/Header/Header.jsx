@@ -53,7 +53,7 @@ const Header2 = (props) => {
     return(
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top header" Style="border: none;">
         <div className="container-fluid">
-             <img onClick={() => history.push("/")} className="logoHeader" src={{}} alt="logo" height="78em" width="76"/>
+            <img onClick={() => history.push("/")} className="logoHeader" src={logo} alt="logo" height="78em" width="76"/>
           <button
             className="navbar-toggler burguer"
             type="button"

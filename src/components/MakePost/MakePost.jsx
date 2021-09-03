@@ -58,56 +58,58 @@ const MakePost = (props) => {
   });
 
   return (
-    <div className="card carta col-md-6 offset-md-3">
-      <div className="contenedor">
-        <h1 className="common h1Common">
-          PREGUNTA A LA COMUNIDAD<span>&#160;</span>
-        </h1>
-      </div>
-      <div className="card-body">
-        <div className="commonWall">
-          <input
-            type="text"
-            autoFocus="autoFocus"
-            className="form-control mb-2 border"
-            name="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title"
-            aria-label="Username"
-            aria-describedby="addon-wrapping"
-          />
-          <div className="form-floating">
-            <textarea
-              className="form-control border"
-              name="content"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              placeholder="Leave a comment here"
-              id="floatingTextarea"
-            ></textarea>
-            <label for="floatingTextarea">Post</label>
-          </div>
-          <div class="input-group mt-4">
-            <button
-              className="btn btn-outline-dark"
-              type="submit"
-              onClick={(e) => SubmitPost(e)}
-            >
-              To Post
-            </button>
-            <div className="errorsText">{errors.eValidate}</div>
+    <div className="container">
+      <div className="card lol col-md-8 offset-md-2">
+      <div className="text-center tipeado">
+          <h1 className="mt-5 tipeadoTitle">
+            PREGUNTA A LA COMUNIDAD<span className="span">&#160;</span>
+          </h1>
+        </div>
+        <div className="card-body">
+          <div className="commonWall">
             <input
-              type="file"
-              className="form-control"
-              id="inputGroupFile02"
-              aria-label="Upload"
+              type="text"
+              autoFocus="autoFocus"
+              className="form-control mb-2 border"
+              name="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Title"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
             />
-            {loading ? (
-              <div className="spinnerContainer">
-                <Spinner />
-              </div>
-            ) : null}
+            <div className="form-floating">
+              <textarea
+                className="form-control border"
+                name="content"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                placeholder="Leave a comment here"
+                id="floatingTextarea"
+              ></textarea>
+              <label for="floatingTextarea">Post</label>
+            </div>
+            <div class="input-group mt-4">
+              <button
+                className="btn"
+                type="submit"
+                onClick={(e) => SubmitPost(e)}
+              >
+                To Post
+              </button>
+              <div className="errorsText">{errors.eValidate}</div>
+              <input
+                type="file"
+                className="form-control btn"
+                id="inputGroupFile02"
+                aria-label="Upload"
+              />
+              {loading ? (
+                <div className="spinnerContainer">
+                  <Spinner />
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>

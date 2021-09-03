@@ -1,42 +1,62 @@
-.common {
-  position: relative;
+.tipeado {
+  margin: auto;
+  display: table;
   display: flex;
-  top: -2em;
   justify-content: center;
+  width: 100%;
+}
+.tipeadoTitle {
+  float: left;
+  position: relative;
+  font-weight: bold;
+  color: #1f2021e3;
+  font-size: 2.5em;
+}
+.lol {
+  background: #59dfc7;
+  box-shadow: 0em 0em 1.25em 0em black;
+}
+.tipeadoTitle .span {
+  position: absolute;
+  right: 0em;
+  width: 0em;
+  background: #59dfc7;
+  border-left: 0.0625em solid rgba(0, 0, 0, 0.096);
+  animation: machine 3.5s alternate steps(32);
 }
 
-.contenedor {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  left: 23em;
-  top: 13em;
-    margin: auto;
-    display: table;
+@keyframes machine {
+  from {
+    align-items: center;
     width: 100%;
+  }
+  to {
+    width: 0;
+  }
 }
-  .h1Common span {
-    position: absolute;
-    right: 0em;
-    width: 0em;
-    background-color: rgb(165, 165, 165);
-    border-left: 0.0625em solid rgba(0, 0, 0, 0.096);
-    animation: machine 3.5s alternate steps(32);
-    /* animation: maquina 6s infinite alternate steps(32); */
+.btn {
+  &:hover {
+    background: rgb(96, 101, 105);
+    background: linear-gradient(
+      343deg,
+      rgba(96, 101, 105, 1) 0%,
+      rgba(213, 31, 116, 1) 75%,
+      rgba(169, 57, 112, 1) 83%,
+      rgba(108, 94, 106, 1) 100%,
+      rgba(223, 25, 117, 1) 100%,
+      rgba(96, 101, 105, 1) 100%
+    );
+    transition: all 900ms ease;
+    color: #fff;
   }
-
-  @keyframes machine {
-    from {
-      width: 100%;
-    }
-    to {
-      width: 0;
-    }
-  }
-
+}
 .btn:focus {
   box-shadow: none !important;
 }
 .border:focus {
   box-shadow: none !important;
 }
+.btn2 {
+  background: none;
+}
+

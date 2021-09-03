@@ -32,15 +32,18 @@ const Profile = (props) => {
                   <div className="row m-l-0 m-r-0">
                     <div className="col-sm-12 bg-c-lite-green user-profile">
                       <div className="card-block text-center text-black">
-                        <div className="m-b-25">
-                          {" "}
+                        <div class="profile-img perfil">
                           <img
                             src={Pensando}
-                            className="img-fluid rounded-circle"
+                            className="profile-img"
                             alt="100x100"
                           />{" "}
+                          <div class="file btn btn-lg" Style="cursor:pointer;">
+                            Change Photo
+                            <input type="file" name="file" />
+                          </div>
                         </div>
-                        <h4 className="f-w-600">
+                        <h4 className="f-w-600 mt-4 ant-col-md-offset-1">
                           Welcome&nbsp; &nbsp; {props.credentials?.user.name}
                         </h4>
                       </div>

@@ -10,6 +10,10 @@ export const GET_POST = 'get_post';
 export const GET_POST_SUCCE = 'get_post_succe';
 export const GET_POST_ERROR = 'get_post_error';
 
+export const GET_USER = 'get_user';
+export const GET_USER_SUCCE = 'get_user_succe';
+export const GET_USER_ERROR = 'get_user_error';
+
 export const GET_POST_EDIT = 'get_post_edit';
 export const START_EDIT_POST = 'start_edit_post';
 export const EDIT_POST_SUCCE = 'edit_post_succe';

@@ -161,6 +161,7 @@ const UpdateUser = (props) => {
             <div className="errorsText">{errors.ePassword}</div>
             <form className="form3">
               <input
+              autoFocus="autofocus"
                 className="input3"
                 name="oldPassword"
                 type="password"
