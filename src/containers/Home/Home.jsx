@@ -1,5 +1,5 @@
 import React from "react";
-import home from "../../assets/Buenos_modales/educa.png";
+import home from "../../assets/Buenos_modales/mascotas.png";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -27,7 +27,7 @@ const Home = () => {
             Escríbenos
           </div>
         </div>
-        <img className="fondo" src={home} alt="home" />
+        <img className="fondo" src={home} alt="home"  />
       </div>
 
       <div className="optionsHome">
