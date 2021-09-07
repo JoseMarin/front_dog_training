@@ -11,18 +11,71 @@ body {
   background: #59dfc7;
 }
 .cards {
-    position: relative;
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
   font-size: 2em;
   margin: 0;
   padding: 0;
-  top: 6em;
+  top: 5.1em;
+  margin-bottom: 0.54em;
 
   p {
     color: rgb(0, 0, 0);
     font-size: x-large;
   }
-
   h4 {
     font-weight: bold;
+  }
+  .h1Modales {
+    color: rgba(213, 31, 116, 1);
+    font-weight: bold;
+  }
+
+  .lobo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -4.5em;
+  }
+  .solo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 0.54em;
+  }
+}
+
+@media (max-width: 414px) {
+  .solo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -3.7em;
+  }
+
+  .cards {
+    height: 100%;
+    top: 1.4em;
+  }
+}
+@media (max-width: 1024px) {
+  .solo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 3.9em;
+  }
+
+  .cards {
+    height: 100%;
+    // top: -1.4em;
+  }
+  .lobo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -5.1em;
   }
 }
