@@ -3,7 +3,7 @@ import React from "react";
 import Choco from "../../assets/Buenos_modales/educa.png";
 import Castigado from "../../assets/Buenos_modales/castigados.png";
 import Pensando from "../../assets/Buenos_modales/zyro-image (4).png";
-import Pensador from "../../assets/Buenos_modales/perro-pensando.png";
+import solo from "../../assets/Buenos_modales/solo.png";
 
 const BuenosModales = () => {
   return (
@@ -11,7 +11,9 @@ const BuenosModales = () => {
       <div className="col">
         <div className="card-border-0">
           <div className="card-body">
-            <h1 className="card-title text-center">Educar a tu cachorro</h1>
+            <h1 className="card-title text-center h1Modales">
+              Educar a tu cachorro
+            </h1>
             <br />
             <p className="card-text">
               <h4 className="text-center">
@@ -54,7 +56,7 @@ const BuenosModales = () => {
       <div className="col">
         <div className="card-border-0">
           <div className="card-body">
-            <h1 className="card-title text-center">
+            <h1 className="card-title text-center h1Modales">
               ¿Debo regañar a mi cachorro?
             </h1>
             <br />
@@ -92,7 +94,7 @@ const BuenosModales = () => {
       <div className="col">
         <div className="card-border-0">
           <div className="card-body">
-            <h1 className="card-title text-center">
+            <h1 className="card-title text-center h1Modales">
               Hacer sus necesidades en el lugar correcto
             </h1>
             <br />
@@ -135,17 +137,16 @@ const BuenosModales = () => {
               <br />
             </p>
           </div>
-          <img
-            src={Pensando}
-            className="img-fluid card-img-bottom "
-            alt="..."
-          />
+          <pre>
+          &nbsp; &nbsp; &nbsp;
+          </pre>
+          <img src={Pensando} className="img-fluid lobo" alt="..." />
         </div>
       </div>
       <div className="col">
         <div className="card-borde-0">
           <div className="card-body">
-            <h1 className="card-title text-center">
+            <h1 className="card-title text-center h1Modales">
               ¿Cómo acostumbrarlo a quedarse solo?
             </h1>
             <br />
@@ -174,13 +175,16 @@ const BuenosModales = () => {
               momentos especiales. Así conseguimos que no les den importancia,
               recuerda tampoco debemos hacerlo nosotros.
               <br />
-              <br />- Cuando vuelvas a casa mantén la calma e intenta no
+              <br /> - Cuando vuelvas a casa mantén la calma e intenta no
               emocionarte por verlo. Este tipo de comportamiento predispone a tu
               perro a generar estrés por separación. Lo que le llevará a
               portarse mal.
             </p>
           </div>
-          <img src={Pensador} className="card-img-top" alt="..." />
+          <pre>
+          &nbsp; &nbsp; &nbsp;
+          </pre>
+          <img src={solo} className=" img-fluid solo" alt="..." />
         </div>
       </div>
     </div>
