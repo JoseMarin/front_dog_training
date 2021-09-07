@@ -26,7 +26,7 @@ const About_us = () => {
         <span className="spanTitle">Sobre Nosotros</span>
       </header>
       <main className="containerAbout">
-        <section className="card cardAbout">
+        <section className="card cardAbout" data-aos="flip-right">
           <img className="fondo" src={pataText} alt="institutoPatitas" />
           <div>
             <h3 className="tlf">Adiestramiento Canino</h3>
