@@ -21,6 +21,7 @@ import Contact from "./containers/Contact/Contact";
 import Comments from "./containers/Comments/Comments";
 import EditPost from "./components/EditPost/EditPost";
 import Footer from "./components/Footer/Footer";
+import About_us from './containers/About_us/About_us';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/obedienciabasica" exact component={ObedienciaBasica} />
           <Route path="/buenosmodales" exact component={BuenosModales} />
+          <Route path="/aboutus" exact component={About_us} />
           <Route path="/ejercicios" exact component={Ejercicios} />
           <Route path="/perronuevo" exact component={PerroNuevo} />
           <Route path="/admin" exact component={Admin} />
