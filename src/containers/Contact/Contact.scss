@@ -7,7 +7,7 @@
   margin-bottom: 20.5em;
 
   .h1Contact {
-    color: #f7f1f4;
+    color: rgb(226, 24, 122);
     font-size: 3rem;
     font-weight: bold;
   }
@@ -112,6 +112,7 @@
 }
 .form input:focus + .lbl-nombre .text-nomb,
 .form input:valid + .lbl-nombre .text-nomb {
+  color: rgb(0, 0, 0);
   transform: translateY(-150%);
   font-size: 1.1em;
   height: 1.1em;
