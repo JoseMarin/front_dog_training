@@ -60,7 +60,8 @@ body {
     top: 1.4em;
   }
 }
-@media (max-width: 1024px) {
+
+@media (min-width: 1024px) {
   .solo {
     display: flex;
     justify-content: center;
@@ -70,7 +71,7 @@ body {
 
   .cards {
     height: 100%;
-    // top: -1.4em;
+    // top: 5em;
   }
   .lobo {
     display: flex;
