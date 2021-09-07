@@ -1,34 +1,34 @@
 .vistaLogin {
-  background-image: url("../../assets/Buenos_modales/educa.png");
+  background-image: url("../../assets/Buenos_modales/login.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   height: 100vh;
   margin: 0;
-  z-index: -1;
 }
 .vistaLogin:before {
   content: "";
-  width: 100vw;
-  height: 100vh;
   position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
 
+  // opacity: 90%;
   background: linear-gradient(90deg, #162325e3, #474447de);
-  opacity: 0.5;
-  z-index: -1;
 }
 .vistaLogin {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   height: 100vh;
-  margin-top: -9em;
+  top: 0em;
 
   .loginCard {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -42,8 +42,11 @@
     }
 
     .h2 {
-      margin-top: 4em;
-      color: #000000;
+      position: relative;
+      display: flex;
+      top: -1em;
+      font-size: 2.3em;
+      color: #ffffff;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     }
@@ -54,22 +57,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1.9px solid rgb(104, 104, 104);
     cursor: pointer;
-    color: #c53636;
+    border: 1px solid rgb(104, 104, 104);
+    color: #000000;
     border-radius: 0.4em;
-    background-color: #1d161670;
-    height: 3em;
-    width: 8em;
+    height: 3.3em;
+    width: 7em;
     z-index: 1;
     margin-bottom: 2em;
     margin-top: 3em;
 
     &:hover {
-      background-color: rgba(141, 51, 51, 0.829);
-      transition: 0.2s;
-      color: #ffffff;
-      transition: 0.5s;
+      background: linear-gradient(
+        343deg,
+        rgba(96, 101, 105, 1) 0%,
+        rgba(213, 31, 116, 1) 75%,
+        rgba(169, 57, 112, 1) 83%,
+        rgba(108, 94, 106, 1) 100%,
+        rgba(223, 25, 117, 1) 100%,
+        rgba(96, 101, 105, 1) 100%
+      );
+      transition: all 900ms ease;
+      color: #fff;
     }
 
     .imageLogin {
@@ -83,14 +92,16 @@
     overflow: hidden;
     bottom: 1.1em;
     width: 100%;
-    height: 3.3em;
+    height: 6.3em;
     max-width: 25em;
     top: -2em;
   }
   .form22 .input22 {
+    position: relative;
     width: 100%;
     height: 150%;
     background: none;
+    font-size: 2rem;
     color: rgb(255, 255, 255);
     padding: 20px;
     border: none;
@@ -112,13 +123,13 @@
     bottom: -0.0625em;
     width: 100%;
     height: 100%;
-    border-bottom: 0.18em solid #f8f9f9;
+    border-bottom: 0.22em solid #f8f9f9;
     transform: translateX(-100%);
     transition: all 0.3s ease;
   }
   .text-nomb22 {
     position: absolute;
-    bottom: 0.22em;
+    bottom: -1.6em;
     left: 0;
     transition: all 0.3s ease;
     color: rgb(6, 6, 6);
@@ -126,8 +137,9 @@
   .form22 .input22:focus + .lbl-nombre22 .text-nomb22,
   .form22 .input22:valid + .lbl-nombre22 .text-nomb22 {
     transform: translateY(-150%);
-    font-size: 0.875em;
+    font-size: 1.1rem;
     color: black;
+    position: relative;
   }
   .form22 .input22:focus + .lbl-nombre22:after,
   .form22 .input22:valid + .lbl-nombre22:after {
@@ -140,14 +152,16 @@
     overflow: hidden;
     bottom: 1.1em;
     width: 100%;
-    height: 3.3em;
+    height: 6.3em;
     max-width: 25em;
     top: -2em;
   }
   .form23 .input23 {
+    position: relative;
     width: 100%;
     height: 150%;
     background: none;
+    font-size: 2rem;
     color: black;
     padding: 20px;
     border: none;
@@ -169,22 +183,23 @@
     bottom: -0.0625em;
     width: 100%;
     height: 100%;
-    border-bottom: 0.18em solid #ffffff;
+    border-bottom: 0.22em solid #ffffff;
     transform: translateX(-100%);
     transition: all 0.3s ease;
   }
   .text-nomb23 {
     position: absolute;
-    bottom: 0.22em;
+    bottom: -1.6em;
     left: 0;
     transition: all 0.3s ease;
-    color: rgb(0, 0, 0);
+    color: rgb(6, 6, 6);
   }
   .form23 .input23:focus + .lbl-nombre23 .text-nomb23,
   .form23 .input23:valid + .lbl-nombre23 .text-nomb23 {
     transform: translateY(-150%);
-    font-size: 0.875em;
+    font-size: 1.1rem;
     color: black;
+    position: relative;
   }
   .form23 .input23:focus + .lbl-nombre23:after,
   .form23 .input23:valid + .lbl-nombre23:after {

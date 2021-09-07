@@ -105,7 +105,7 @@ const Login = (props) => {
   return (
     <div className="vistaLogin">
       <div className="loginCard">
-        <h2 className="h2">Welcome Back!</h2>
+        <h2 className="h2">Welcome &nbsp;&nbsp; Back!</h2>
         <br />
         <div className="box1">
           <div className="errorsText">{msgError.eEmail}</div>
