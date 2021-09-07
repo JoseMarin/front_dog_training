@@ -27,7 +27,7 @@ const About_us = () => {
       </header>
       <main className="containerAbout">
         <section className="card cardAbout" data-aos="flip-right">
-          <img className="fondo" src={pataText} alt="institutoPatitas" />
+          <img className="fondo" Style="height:100%;" src={pataText} alt="institutoPatitas" />
           <div>
             <h3 className="tlf">Adiestramiento Canino</h3>
             <p id="parrAbout">
@@ -40,7 +40,7 @@ const About_us = () => {
         </section>
 
         <section className="card cardAbout" data-aos="fade-left">
-          <img className="imgAbout" src={adies} alt="trainers" />
+          <img className="imgAbout" Style="height:100%;" src={adies} alt="trainers" />
           <div>
             <h3 className="tlf">Objetivos</h3>
             <p id="parrAbout">
@@ -70,7 +70,7 @@ const About_us = () => {
         </section>
 
         <section className="card cardAbout" data-aos="fade-left">
-          <img className="imgAbout" src={adiestramiento} alt="adiestramiento" />
+          <img className="imgAbout" Style="height:100%;" src={adiestramiento} alt="adiestramiento" />
           <div>
             <h3 className="tlf">Entrenamiento</h3>
             <p id="parrAbout">
