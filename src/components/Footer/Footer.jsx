@@ -10,10 +10,10 @@ const Footer = () => {
         <div className="containerAll bg-light">
           <div className="footerBody">
             <div className="column1">
-              <h3 className="linkLogout h3" Style="cursor:initial;">
+              <h3 className="linkLogout h3 text-center" Style="cursor:initial;">
                 A D I E S T R A M I E N T O &nbsp; C A N I N O
               </h3>
-              <p className="parFooter">
+              <p className="parFooter text-center">
                 Con más de 10 años de experiencia
               </p>
             </div>
