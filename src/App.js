@@ -9,7 +9,6 @@ import Login from "./containers/Login/Login.jsx";
 import ObedienciaBasica from "./containers/Obediencia_basica/ObedienciaBasica.jsx";
 import BuenosModales from "./containers/Buenos_modales/BuenosModales.jsx";
 import Ejercicios from "./containers/Ejercicios/Ejercicios.jsx";
-import PerroNuevo from "./containers/Perro_nuevo/PerroNuevo.jsx";
 import Admin from "./containers/Admin/AdminProfile/Admin.jsx";
 import AllUsers from "./containers/Admin/AllUsers/AllUsers.jsx";
 import Profile from "./containers/Profile/Profile.jsx";
@@ -22,6 +21,7 @@ import Comments from "./containers/Comments/Comments";
 import EditPost from "./components/EditPost/EditPost";
 import Footer from "./components/Footer/Footer";
 import About_us from './containers/About_us/About_us';
+import Alimentacion from './containers/Alimentacion/Alimentacion';
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
           <Route path="/buenosmodales" exact component={BuenosModales} />
           <Route path="/aboutus" exact component={About_us} />
           <Route path="/ejercicios" exact component={Ejercicios} />
-          <Route path="/perronuevo" exact component={PerroNuevo} />
+          <Route path="/alimentacion" exact component={Alimentacion} />
           <Route path="/admin" exact component={Admin} />
           <Route path="/allusers" exact component={AllUsers} />
           <Route path="/profile" exact component={Profile} />
