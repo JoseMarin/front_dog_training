@@ -22,6 +22,7 @@ import EditPost from "./components/EditPost/EditPost";
 import Footer from "./components/Footer/Footer";
 import About_us from './containers/About_us/About_us';
 import Alimentacion from './containers/Alimentacion/Alimentacion';
+import Trainers from './containers/Trainers/Trainers';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/buenosmodales" exact component={BuenosModales} />
           <Route path="/aboutus" exact component={About_us} />
           <Route path="/ejercicios" exact component={Ejercicios} />
+          <Route path="/trainers" exact component={Trainers} />
           <Route path="/alimentacion" exact component={Alimentacion} />
           <Route path="/admin" exact component={Admin} />
           <Route path="/allusers" exact component={AllUsers} />
