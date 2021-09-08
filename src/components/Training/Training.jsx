@@ -21,7 +21,7 @@ const Training = (props) => {
             data-hover="dropdown"
             aria-expanded="false"
           >
-            TRAINING
+            ADIESTRAMIENTO
           </div>
           <ul
             className="dropdown-menu text-center dropdown-menu-dark"
@@ -56,7 +56,7 @@ const Training = (props) => {
                 className="dropdown-item"
                 onClick={() => history.push("/perronuevo")}
               >
-                Perro Nuevo
+                Salud
               </div>
             </li>
           </ul>

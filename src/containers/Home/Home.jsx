@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <div className="homeContainer">
       <div className="postHome">
-        <div className="contenedorTexto">
-          <h1>D O G T R A I N I N G</h1>
+        <div className="contenedorTexto text-center">
+          <h1>ADIESTRAMIENTO  CANINO</h1>
           <p className="parrHome">
             Somos una comunidad dedicada al cuidado de nuestras mascotas,
             tenemos más e 10 años de experiencia en el adiestramiento canino,
@@ -32,14 +32,14 @@ const Home = () => {
 
       <div className="optionsHome">
         <div className="option">
-          <p>TRAINERS</p>
+          <p>ADIESTRADORES</p>
           <p className="parrafos">
             Contacta libremente con cualquiera de nuestros trainers.
           </p>
           <div className="buttonOption" onClick={() => goTo("/trainers")}></div>
         </div>
         <div className="option">
-          <p>CONTACT</p>
+          <p>CONTÁCTANOS</p>
           <p className="parrafos">
             Estaremos encantado de aclararte las dudas respecto a nuestra
             comunidad.
@@ -47,7 +47,7 @@ const Home = () => {
           <div className="buttonOption" onClick={() => goTo("/contact")}></div>
         </div>
         <div className="option">
-          <p>ABOUT US</p>
+          <p>SOBRE NOSOTROS</p>
           <p className="parrafos">
             Conocenos más a fondo y comperte tus experiencias con nosotos
           </p>

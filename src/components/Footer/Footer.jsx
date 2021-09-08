@@ -11,10 +11,10 @@ const Footer = () => {
           <div className="footerBody">
             <div className="column1">
               <h3 className="linkLogout h3" Style="cursor:initial;">
-                D O G T R A I N I N G
+                A D I E S T R A M I E N T O &nbsp; C A N I N O
               </h3>
               <p className="parFooter">
-                With more than 10 years of experience
+                Con más de 10 años de experiencia
               </p>
             </div>
             <div className="column2">

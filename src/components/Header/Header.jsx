@@ -32,10 +32,10 @@ const Header2 = (props) => {
           <div className="collapse navbar-collapse" id="toggleMobileMenu">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 text-center" Style="cursor:pointer;">
               <li className="nav-item" Style="cursor:pointer;">
-              <div className="text-center linkLogout mt-2 header" onClick={() => history.push("/commonwall")}>COMMON WALL&nbsp; &nbsp;</div>
+              <div className="text-center linkLogout mt-2 header" onClick={() => history.push("/commonwall")}>COMUNIDAD&nbsp; &nbsp;</div>
               </li>
               <li className="nav-item text" Style="cursor:pointer;">
-              <div className="text-center linkLogout mt-2" onClick={() => history.push("/contact")}>CONTAC US&nbsp; &nbsp;</div>
+              <div className="text-center linkLogout mt-2" onClick={() => history.push("/contact")}>CONTÁCTANOS&nbsp; &nbsp;</div>
               </li>
               <li className="nav-item">
               </li>
@@ -68,14 +68,14 @@ const Header2 = (props) => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav text-center me-auto mb-2 mb-lg-0">
               <li className="nav-item" Style="cursor:pointer;">
-              <div className="text-center mt-3" onClick={() => history.push("/aboutus")}>ABOUT US&nbsp; &nbsp;</div>
+              <div className="text-center mt-3" onClick={() => history.push("/aboutus")}>SOBRE NOSOTROS&nbsp; &nbsp;</div>
               </li>
               <li><a href="{}"><div id="google_translate_element"></div></a></li>
               <li className="nav-item" Style="cursor:pointer;">
-              <div className="text-center mt-3" onClick={() => history.push("/contact")}>CONTAC US&nbsp; &nbsp;</div>
+              <div className="text-center mt-3" onClick={() => history.push("/contact")}>CONTÁCTANOS&nbsp; &nbsp;</div>
               </li>
               <li className="nav-item" Style="cursor:pointer;">
-                <div className="text-center mt-3" onClick={() => history.push("/trainers")}>TRAINERS</div>
+                <div className="text-center mt-3" onClick={() => history.push("/trainers")}>ADIESTRADORES</div>
               </li>
 
             </ul>
