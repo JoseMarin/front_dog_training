@@ -11,50 +11,106 @@ const Home = () => {
   };
 
   return (
-    <div className="homeContainer">
-      <div className="postHome">
-        <div className="contenedorTexto text-center">
-          <h1 className="h1Home">ADIESTRAMIENTO  CANINO</h1>
-          <p className="parrHome">
-            Somos una comunidad dedicada al cuidado de nuestras mascotas,
-            tenemos más e 10 años de experiencia en el adiestramiento canino,
-            apoyando a la comunidad durante el crecimiento de tu cachorro.
-            Actualmente somos alrededor de 2mil usuarios registrados en nuestra
-            aplicación, en la cual puedes encontrar apoyo por parte de los
-            usuarios o entrenadores especilizados en el adiestrmiento canino.
-          </p>
-          <div className="buttonHome" onClick={() => goTo("/contact")}>
-            Escríbenos
+    <>
+      <div
+        className="card text-center"
+        id="homeContainer"
+        Style="max-width: auto; min-width:auto; height: auto;"
+      >
+        <div className="row g-0">
+          <div className="col-md-4">
+            <img
+              className="fondo img-fluid rounded-start position-relative mt-lg-5"
+              src={home}
+              alt="home"
+            />
+          </div>
+          <div className="col-md-8">
+            <div className="card-body position-relative mt-lg-5">
+              <h1 className="card-title" id="h1Home">
+                ADIESTRAMIENTO CANINO
+              </h1>
+              <p className="card-text" id="parrHome">
+                Somos una comunidad dedicada al cuidado de nuestras mascotas,
+                tenemos más e 10 años de experiencia en el adiestramiento
+                canino, apoyando a la comunidad durante el crecimiento de tu
+                cachorro. Actualmente somos alrededor de 2mil usuarios
+                registrados en nuestra aplicación, en la cual puedes encontrar
+                apoyo por parte de los usuarios o entrenadores especilizados en
+                el adiestrmiento canino.
+              </p>
+              <div
+                id="buttonHome"
+                className="d-sm-inline-flex"
+                onClick={() => goTo("/contact")}
+              >
+                Escríbenos
+              </div>
+            </div>
           </div>
         </div>
-        <img className="fondo" src={home} alt="home"  />
       </div>
 
-      <div className="optionsHome">
-        <div className="option">
-          <p className="home-parr">ADIESTRADORES</p>
-          <p className="parrafos text-center">
-            Contacta libremente con cualquiera de nuestros trainers.
-          </p>
-          <div className="buttonOption" onClick={() => goTo("/trainers")}></div>
-        </div>
-        <div className="option">
-          <p className="home-parr">CONTÁCTANOS</p>
-          <p className="parrafos text-center">
-            Estaremos encantado de aclararte las dudas respecto a nuestra
-            comunidad.
-          </p>
-          <div className="buttonOption" onClick={() => goTo("/contact")}></div>
-        </div>
-        <div className="option">
-          <p className="home-parr">SOBRE NOSOTROS</p>
-          <p className="parrafos text-center">
-            Conocenos más a fondo y comperte tus experiencias con nosotos
-          </p>
-          <div className="buttonOption" onClick={() => goTo("/aboutus")}></div>
+      <div className="bg-transparent" id="homeContainer" Style="max-width: auto; min-width:auto; height: auto;">
+        <div className="row row-cols-md-6 justify-content-evenly">
+          <div className="card text-center" Style="width: 16.8em; height:27.5em;">
+            <div className="card-body">
+              <h5 className="card-title text-center" id="home-parr">
+                ADIESTRADORES
+              </h5>
+              <p className="card-text text-center" id="parrHome">
+                Contacta libremente con cualquiera de nuestros trainers sobre cualquier consulta.
+              </p>
+              <div
+                className="offset-1 mt-5 position-relative"
+                id="buttonOption"
+                onClick={() => goTo("/trainers")}
+              ></div>
+            </div>
+          </div>
+          <div className="options">
+            <div className="row justify-content-center">
+              <div className="card" Style="width: 16.8em; height:27.5em;">
+                <div className="card-body">
+                  <h5 className="card-title text-center" id="home-parr">
+                    CONTÁCTANOS
+                  </h5>
+                  <p className="card-text text-center" id="parrHome">
+                    Estaremos encantado de aclararte las dudas respecto a
+                    nuestra comunidad.
+                  </p>
+                  <div
+                    className="offset-1 mt-5 position-relative"
+                    id="buttonOption"
+                    onClick={() => goTo("/contact")}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="option">
+            <div className="row justify-content-center">
+              <div className="card" Style="width: 16.8em; height:27.5em;">
+                <div className="card-body">
+                  <h5 className="card-title text-center" id="home-parr">
+                    SOBRE NOSOTROS
+                  </h5>
+                  <p className="card-text text-center" id="parrHome">
+                    Conócenos más a fondo, contacta con nosotros y conoce como nace la idea de nuestra
+                    comunidad.
+                  </p>
+                  <div
+                    className="offset-1 mt-5 position-relative"
+                    id="buttonOption"
+                    onClick={() => goTo("/aboutus")}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default connect((state) => ({
