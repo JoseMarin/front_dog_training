@@ -19,7 +19,7 @@ const AllUsers = (props) => {
   if (users[0]?.id) {
     return (
       <div className="returnPosts container">
-        <table className="table table-bordered table-hover border-0 align-items-center flex-column ">
+        <table className="table table-responsive table-bordered border-0">
           <thead className="thead-dark border-1 bg-dark text-white">
             <tr>
               <th scope="col">Id</th>
