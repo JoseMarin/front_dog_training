@@ -7,7 +7,7 @@ import solo from "../../assets/Buenos_modales/solo.png";
 
 const BuenosModales = () => {
   return (
-    <div className="row row-cols-1 row-cols-md-2 g-4 cards">
+    <div className="row row-cols-1  mt-5 row-cols-md-2 g-4 cards">
       <div className="col">
         <div className="card-border-0">
           <div className="card-body">
@@ -184,7 +184,7 @@ const BuenosModales = () => {
           <pre>
           &nbsp; &nbsp; &nbsp;
           </pre>
-          <img src={solo} className=" img-fluid solo" alt="..." />
+          <img src={solo} className=" img-fluid solo solo-mobile" id="solo-mobil" alt="..." />
         </div>
       </div>
     </div>

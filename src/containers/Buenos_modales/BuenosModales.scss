@@ -18,18 +18,22 @@ body {
   font-size: 2em;
   margin: 0;
   padding: 0;
-  top: 5.1em;
+  top: 3.5em;
   margin-bottom: 0.54em;
 
   p {
-    color: rgb(0, 0, 0);
-    font-size: x-large;
+    color: #1b1316;
+    font-size: 2rem;
+    font-weight: bold;
   }
   h4 {
     font-weight: bold;
+    color: #1b1316;
+    font-size: 1.4rem;
   }
   .h1Modales {
-    color: rgba(213, 31, 116, 1);
+    color: rgb(226, 24, 122);
+    font-size: 3rem;
     font-weight: bold;
   }
 
@@ -37,13 +41,32 @@ body {
     display: flex;
     justify-content: center;
     position: relative;
-    top: -4.5em;
+    top: -0.9em;
   }
+  .solo-mobil {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 0.55em;
+    top: 4.35em;
+  }
+}
+
+@media (max-width: 1024px) {
   .solo {
     display: flex;
     justify-content: center;
     position: relative;
-    top: 0.54em;
+    top: 13.2em;
+  }
+  .cards {
+    height: 100%;
+  }
+  .lobo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -5.1em;
   }
 }
 
@@ -52,31 +75,24 @@ body {
     display: flex;
     justify-content: center;
     position: relative;
-    top: -3.7em;
+    top: 0.55em;
   }
 
   .cards {
     height: 100%;
-    top: 1.4em;
+    top: 1.45em;
   }
 }
-
-@media (min-width: 1024px) {
+@media (max-width: 2560px) {
   .solo {
     display: flex;
     justify-content: center;
     position: relative;
-    top: 3.9em;
+    top: 6.42em;
   }
 
   .cards {
     height: 100%;
-    // top: 5em;
-  }
-  .lobo {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: -5.1em;
+    top: 1.45em;
   }
 }
