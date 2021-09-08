@@ -128,9 +128,26 @@
     display: block;
   }
 }
-@media (max-width: 1339px) {
-  .cardAbout {
-    display: block;
+@media (max-width: 1024px) {
+  .mainAbout,
+  .aboutTitle,
+  .spanTitle {
+    color: rgb(226, 24, 122);
+    .spanTitle:after,
+    .spanTitle:before {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 2px;
+      background-color: currentColor;
+      top: 0.6em;
+    }
+    .spanTitle:before {
+      right: 480px;
+    }
+    .spanTitle:after {
+      right: -240px;
+    }
   }
 }
 @media (max-width: 414px) {
