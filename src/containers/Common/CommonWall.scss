@@ -7,7 +7,9 @@
   font-size: 3rem;
   font-family: 'Montserrat', sans-serif;
 }
-
+.commonWall {
+  overflow: hidden;
+}
 .btn:focus {
   box-shadow: none !important;
 }
