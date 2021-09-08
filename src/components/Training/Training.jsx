@@ -30,6 +30,14 @@ const Training = (props) => {
             <li>
               <div
                 className="dropdown-item"
+                onClick={() => history.push("/trainers")}
+              >
+                Adiestradores
+              </div>
+            </li>
+            <li>
+              <div
+                className="dropdown-item"
                 onClick={() => history.push("/buenosmodales")}
               >
                 Buenos Modales
@@ -38,17 +46,17 @@ const Training = (props) => {
             <li>
               <div
                 className="dropdown-item"
-                onClick={() => history.push("/obedienciabasica")}
+                onClick={() => history.push("/ejercicios")}
               >
-                Obediencia Básica
+                Ejercicios
               </div>
             </li>
             <li>
               <div
                 className="dropdown-item"
-                onClick={() => history.push("/ejercicios")}
+                onClick={() => history.push("/obedienciabasica")}
               >
-                Ejercicios
+                Obediencia Básica
               </div>
             </li>
             <li>
