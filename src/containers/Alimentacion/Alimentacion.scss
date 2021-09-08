@@ -1,0 +1,50 @@
+.span-title-salud {
+    display: inline-block;
+    position: relative;
+  }
+  .mainAbout,
+  .aboutTitle,
+  .span-title-salud {
+    color: rgb(226, 24, 122);
+    .span-title-salud:after,
+    .span-title-salud:before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 2px;
+      background-color: currentColor;
+      top: 0.6em;
+    }
+    .span-title-salud:before {
+      right: 480px;
+    }
+    .span-title-salud:after {
+      right: -440px;
+    }
+  }
+
+
+  .span-title-salud-R {
+    display: inline-block;
+    position: relative;
+  }
+  .mainAbout,
+  .aboutTitle,
+  .span-title-salud-R {
+    color: rgb(226, 24, 122);
+    .span-title-salud-R:after,
+    .span-title-salud-R:before {
+      content: "";
+      position: absolute;
+      width: 410px;
+      height: 2px;
+      background-color: currentColor;
+      top: 0.6em;
+    }
+    .span-title-salud-R:before {
+      right: 705px;
+    }
+    .span-title-salud-R:after {
+      right: -440px;
+    }
+  }
