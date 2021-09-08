@@ -48,12 +48,6 @@
 }
 
 /*================ animation=============*/
-.area {
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  display: flex;
-}
 
 .circles {
   position: absolute;
@@ -307,10 +301,17 @@ h6 {
     width: 100%;
     height: 100%;
   }
+
+  .profile-img {
+    width: fit-content;
+  }
 }
 @media (max-width: 1024px) {
   .area {
     width: 100%;
     height: 100%;
+  }
+  .profile-img {
+    width: fit-content;
   }
 }
