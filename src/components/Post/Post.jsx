@@ -49,18 +49,19 @@ const Post = ({ post }) => {
                     src=".../100px180/"
                     alt="100x100"
                   />
-                  <h2 className="card-title">{title}</h2>
+                  <h2 className="card-title title-post">{title}</h2>
                   <hr />
                   <p className="card-text parPost">{content}</p>
                   <hr />
-                  <small>
-                    <FontAwesomeIcon icon={faUser} /> &nbsp; {userName} &nbsp;{" "}
-                    {lastName} &nbsp; &nbsp;
+                  <small className="">
+                    <FontAwesomeIcon icon={faUser} /> &nbsp;
+                    <span className="user"> {userName}</span> &nbsp;{" "}
+                    <span className="user"> {lastName}</span> &nbsp; &nbsp;
                   </small>{" "}
                   &nbsp;
                   <small>
-                    <FontAwesomeIcon icon={faClock} />{" "}
-                    {moment(date).format("LLL")}
+                    <FontAwesomeIcon icon={faClock} /> &nbsp;&nbsp;
+                    <span className="user">{moment(date).format("LLL")}</span>
                   </small>{" "}
                   &nbsp; &nbsp;
                   <span
@@ -68,14 +69,14 @@ const Post = ({ post }) => {
                     className=" m-xxl-5"
                     // onClick={() => doComment(id)}
                   >
-                    <FontAwesomeIcon icon={faComment} /> COMMENT
+                    <FontAwesomeIcon icon={faComment} />&nbsp; &nbsp;<span className="user">COMMENT</span>
                   </span>
                   <Link
                     Style="cursor:pointer; color:black;"
                     className=" m-xxl-5"
                     onClick={() => postToEdit(post)}
                   >
-                    <FontAwesomeIcon icon={faEdit} /> EDIT
+                    <FontAwesomeIcon icon={faEdit} />&nbsp; &nbsp;<span className="user">EDIT</span>
                   </Link>
                   &nbsp; &nbsp;
                   <span
@@ -83,7 +84,7 @@ const Post = ({ post }) => {
                     onClick={() => confirmRemove(id, userId)}
                     className="updateButton"
                   >
-                    <FontAwesomeIcon icon={faTrash} /> REMOVE
+                    <FontAwesomeIcon icon={faTrash} />&nbsp; &nbsp;<span className="user">REMOVE</span>
                   </span>
                 </div>
               </div>
