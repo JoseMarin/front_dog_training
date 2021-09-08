@@ -1,4 +1,4 @@
-.mainBasic {
+.mainAbout {
   height: 75vh;
   padding: 2rem;
   display: flex;
@@ -26,7 +26,7 @@
   }
 }
 
-.mainBasic,
+.mainAbout,
 .aboutTitle {
   font-size: 4rem;
   margin-bottom: 2rem;
@@ -36,7 +36,7 @@
   display: inline-block;
   position: relative;
 }
-.mainBasic,
+.mainAbout,
 .aboutTitle,
 .spanTitle {
   color: rgb(226, 24, 122);
@@ -57,7 +57,7 @@
   }
 }
 
-.mainBasic p {
+.mainAbout p {
   font-size: 2rem;
 }
 #parrAbout {
@@ -123,22 +123,21 @@
   }
 }
 
+
+
+/*MOBILE*/
 @media (max-width: 600px) {
   .cardAbout {
     display: block;
   }
 }
-@media (max-width: 1339px) {
-  .cardAbout {
-    display: block;
-  }
-}
-@media (max-width: 414px) {
+
+@media (min-width: 1024px) {
   .cardAbout {
     display: block;
   }
 
-  .mainBasic {
+  .mainAbout {
     top: 3em;
     height: 100vh;
     padding: 0rem;
@@ -167,7 +166,7 @@
     }
   }
 
-  .mainBasic,
+  .mainAbout,
   .aboutTitle {
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -177,7 +176,85 @@
     display: inline-block;
     position: relative;
   }
-  .mainBasic,
+  .mainAbout,
+  .aboutTitle,
+  .spanTitle {
+    color: rgb(226, 24, 122);
+    .spanTitle:after,
+    .spanTitle:before {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: currentColor;
+      top: 0.6em;
+    }
+    .spanTitle:before {
+      right: -225px;
+    }
+    .spanTitle:after {
+      right: 474px;
+    }
+  }
+
+  .mainAbout p {
+    font-size: 1rem;
+  }
+  #parrAbout {
+    color: rgb(0, 0, 0);
+  }
+
+  .spanTitle {
+    display: inline-block;
+    position: relative;
+  }
+}
+
+@media (max-width: 414px) {
+  .cardAbout {
+    display: block;
+  }
+
+  .mainAbout {
+    top: 3em;
+    height: 100vh;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+
+    .vinculo {
+      font-size: 1rem;
+    }
+  }
+
+  .containerAbout {
+    max-width: 414px;
+    margin: auto;
+    overflow: auto;
+    padding: 0rem;
+
+    .tlf {
+      color: rgba(213, 31, 116, 1);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .mainAbout,
+  .aboutTitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .spanTitle {
+    display: inline-block;
+    position: relative;
+  }
+  .mainAbout,
   .aboutTitle,
   .spanTitle {
     color: rgb(226, 24, 122);
@@ -198,7 +275,7 @@
     }
   }
 
-  .mainBasic p {
+  .mainAbout p {
     font-size: 1rem;
   }
   #parrAbout {
