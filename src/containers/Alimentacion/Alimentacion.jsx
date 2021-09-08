@@ -1,16 +1,20 @@
 import React from "react";
+import meet from "../../assets/Buenos_modales/meet.png";
+import nutricion from "../../assets/Buenos_modales/nutricion.png";
+import braco from "../../assets/Buenos_modales/braco.jpeg";
+import food from "../../assets/Buenos_modales/food.jpeg";
 
 const Alimentacion = () => {
   return (
     <>
       <header className="mainAbout">
         <h1 className="aboutTitle">
-          <span className="spanTitle">Tu perro nuevo</span>
+          <span className="span-title-salud">Nutricion clave</span>
         </h1>
         <h2 className="vinculo">
-          El ejercicio le aportará una forma de mantener su peso ideal
+          La alimentación tiene un papel clave en la salud de tu perro
         </h2>
-        <span className="spanTitle">Estilo&nbsp; de&nbsp; vida</span>
+        <span className="span-title-salud-R">Alimentación a medida</span>
       </header>
       <main className="containerAbout">
         <section
@@ -22,17 +26,17 @@ const Alimentacion = () => {
           <img
             className="fondo"
             Style="height:100%; width:100%;"
-            // src={jugando}
+            src={meet}
             alt="institutoPatitas"
           />
           <div>
-            <h3 className="tlf text-center">Bienestar</h3>
+            <h3 className="tlf text-center">Apóyate en profesionales</h3>
             <p id="parrAbout">
-              Controlar el estado físico desde cachorro nos ayudara a mantener a
-              nuestros peludos en buena forma física. Hay diferentes maneras de
-              ejercitar a tu perro, y en función de su raza, necesitará más o
-              menos actividad física. En este apartado te daremos unos tips a
-              seguir según su edad.
+              Para favorecer su salud a través de una nutrición pensada
+              específicamente para él, visita a tu veterinario regularmente,
+              para prevenir problemas de salud durante los primeros meses de
+              vida. La salud de tu perro depende en gran medida a un desarrollo
+              de crecimiento sin problemas.
             </p>
           </div>
         </section>
@@ -46,21 +50,18 @@ const Alimentacion = () => {
           <img
             className="imgAbout"
             Style="height:100%;"
-            // src={cachorro}
+            src={nutricion}
             alt="trainers"
           />
           <div>
-            <h3 className="tlf text-center">Ejercicio para cachorros</h3>
+            <h3 className="tlf text-center">Nutrición a medida</h3>
             <p id="parrAbout">
-              Los cachorros ¡están llenos de energía! lo sabemos, si nuestro
-              cachorro no hace suficiente deporte, puede volverse un poco
-              salvaje y generar malos hábitos. Por eso es bueno dedicarle tiempo
-              a juegos para quemar toda esa energía que quiere descargar. Busca
-              una pelota y lánzasela hasta agotar su energía. Busca a un amigo
-              cachorro con el que pueda jugar y quemar las energías juntos. Sal
-              a pasear, jugar y juega a perseguirlo, recuerda, tu cachorro esta
-              en crecimiento y un exceso de ejericicios puede afectar a sus
-              articulaciones.
+              Proporciona a tu perro los nutrientes indispensables. Elegidos
+              rigurosamente y cantidades específicas, le ayudarán a una
+              digestión y salud óptima. No le des comida de personas, si
+              comparamos la fisiología canina con la nuestra podemos observar
+              que sus mandíbulas han sido creadas para cortar y no para
+              masticar.
             </p>
           </div>
         </section>
@@ -74,19 +75,23 @@ const Alimentacion = () => {
           <img
             className="imgAbout"
             Style="height:100%;"
-            // src={jovenes}
+            src={braco}
             alt="trainers"
           />
           <div>
-            <h3 className="tlf text-center">Ejercicio para adultos jóvenes</h3>
+            <h3 className="tlf text-center">Conoce a tu perro</h3>
             <p id="parrAbout">
-              Ya no es el tierno peludo que llego a casa, sus dientes ya duelen
-              más cuando nos muerde y sus patas grandes. Tiene entre 10 y 24
-              meses, dependiendo de la raza de tu perro, tienes que saber cuál
-              es su límite para hacer ejercicios, recuerda jugar con otro perro
-              te puede enseñar cuál es su límite con el ejercicio. En este punto
-              puedes añadirle al entrenamiento de tu perro, nadar, ya que no le
-              perjudica a las articulaciones en crecimiento.
+              Tu pulgoso posee: 42 dientes, 12 colmillos y 26 muelas carniceras.
+              Pocas papilas gustativas, pocas enzimas digestivas en la saliva
+              canina: los alimentos no son predigeridos. El estómago tiene una
+              gran pacadidad hasta 8 litros en el caso de perros grandes, la
+              acidez es mucho más elevada que la de un humano esto le facilita
+              la digestión y combatir contra las bacterias, el intestino grueso
+              es corto, tienen menos flora intestinal y es menos diversa que la
+              de los humanos. Por eso, una dieta variada no es adecuada para
+              ellos. La digestión es rápida entre 20 y 30 minutos y en la
+              materia fecal expulsan grandes cantidades de alimentos no
+              digeridos.
             </p>
           </div>
         </section>
@@ -100,19 +105,21 @@ const Alimentacion = () => {
           <img
             className="imgAbout"
             Style="height:100%;"
-            // src={adulto}
+            src={food}
             alt="adiestramiento"
           />
           <div>
-            <h3 className="tlf text-center">Ejercicios para perros adultos</h3>
+            <h3 className="tlf text-center">¿Qué alimentos debo escoger?</h3>
             <p id="parrAbout">
-              Cuando tu perro sea adulto notarás que ya no tiene tanta energía,
-              esto dependerá de cada perro. Para mantener una vida sana, los
-              paseos son una manera estupenda para mantener a tu perro alegre y
-              evitar que se aburra, realiza excursiones con él, llevarlos a
-              sitios nuevos es una buena forma de estimular a un perro con pocas
-              ganas de hacer ejercicio. Si tu perro esta sano y le gusta correr,
-              prueba a correr juntos y llevarle a un Agility.
+              Adquiere productos de máxima calidad en tiendas especializadas o
+              en tu clínica veterinaria, ya que te pueden garantizar una
+              alimentación equilibrada, con todos los nutrientes necesarios. Si
+              tu perro recibe un alimento casero es complicado valorar si recibe
+              todos los nutrientes que necesita. La alta variedad de productos
+              adaptados a las características de cada perro desde: edad, tamaño,
+              raza o sensibilidades, se conoce como una nutrición a medida.
+              Escoge un alimento seco o húmedo, en función de las preferencis de
+              tu perro.
             </p>
           </div>
         </section>
