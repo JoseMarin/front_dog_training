@@ -28,16 +28,16 @@ const Home = () => {
           <div className="col-md-8">
             <div className="card-body position-relative mt-lg-5">
               <h1 className="card-title" id="h1Home">
-                ADIESTRAMIENTO CANINO
+                D O G T R A I N I N G
               </h1>
               <p className="card-text" id="parrHome">
                 Somos una comunidad dedicada al cuidado de nuestras mascotas,
-                tenemos más e 10 años de experiencia en el adiestramiento
-                canino, apoyando a la comunidad durante el crecimiento de tu
-                cachorro. Actualmente somos alrededor de 2mil usuarios
+                tenemos más de 10 años de experiencia en el adiestramiento
+                canino, apoyando a la comunidad durante el crecimiento de sus
+                cachorros. Actualmente somos alrededor de mil usuarios
                 registrados en nuestra aplicación, en la cual puedes encontrar
                 apoyo por parte de los usuarios o entrenadores especilizados en
-                el adiestrmiento canino.
+                adiestramiento canino.
               </p>
               <div
                 id="buttonHome"
@@ -76,7 +76,7 @@ const Home = () => {
                     CONTÁCTANOS
                   </h5>
                   <p className="card-text text-center" id="parrHome">
-                    Estaremos encantado de aclararte las dudas respecto a
+                    Estaremos encantados de aclararte las dudas respecto a
                     nuestra comunidad.
                   </p>
                   <div
@@ -96,8 +96,7 @@ const Home = () => {
                     SOBRE NOSOTROS
                   </h5>
                   <p className="card-text text-center" id="parrHome">
-                    Conócenos más a fondo, contacta con nosotros y conoce como nace la idea de nuestra
-                    comunidad.
+                    Conócenos más a fondo y descubre como nace la idea de crear esta comunidad.
                   </p>
                   <div
                     className="offset-1 mt-5 position-relative"

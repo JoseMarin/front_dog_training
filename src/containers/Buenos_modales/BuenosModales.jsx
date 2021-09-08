@@ -62,7 +62,7 @@ const BuenosModales = () => {
             <br />
             <p className="card-text">
               <h4 className="text-center">
-                &nbsp; &nbsp; Cuando regañar a nuestro cachorro
+                &nbsp; &nbsp; Cuándo regañar a nuestro cachorro
               </h4>
               <br />
               - Los castigos generan estrés y ansiedad a los cachorros, y es
@@ -78,7 +78,7 @@ const BuenosModales = () => {
               lo cogeria por la nuca si se porta mal.
               <br />
               <br />
-              - Tú deberás repetir la palabra "NO" con firmeza y partarlo del
+              - Tú deberás repetir la palabra "NO" con firmeza y apartarlo del
               objeto en el que centra su atención.
               <br />
               <br />

@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="footerBody">
             <div className="column1">
               <h3 className="linkLogout h3 text-center" Style="cursor:initial;">
-                A D I E S T R A M I E N T O &nbsp; C A N I N O
+                D O G T R A I N I N G
               </h3>
               <p className="parFooter text-center">
                 Con más de 10 años de experiencia

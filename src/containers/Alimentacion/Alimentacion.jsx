@@ -9,7 +9,7 @@ const Alimentacion = () => {
     <>
       <header className="mainAbout">
         <h1 className="aboutTitle">
-          <span className="span-title-salud">Nutricion clave</span>
+          <span className="span-title-salud">Nutrición clave</span>
         </h1>
         <h2 className="vinculo">
           La alimentación tiene un papel clave en la salud de tu perro
@@ -56,8 +56,8 @@ const Alimentacion = () => {
           <div>
             <h3 className="tlf text-center">Nutrición a medida</h3>
             <p id="parrAbout">
-              Proporciona a tu perro los nutrientes indispensables. Elegidos
-              rigurosamente y cantidades específicas, le ayudarán a una
+              Proporciona a tu perro los nutrientes indispensables elegidos
+              rigurosamente y en cantidades específicas. Esto le ayudara a una
               digestión y salud óptima. No le des comida de personas, si
               comparamos la fisiología canina con la nuestra podemos observar
               que sus mandíbulas han sido creadas para cortar y no para
@@ -84,9 +84,9 @@ const Alimentacion = () => {
               Tu pulgoso posee: 42 dientes, 12 colmillos y 26 muelas carniceras.
               Pocas papilas gustativas, pocas enzimas digestivas en la saliva
               canina: los alimentos no son predigeridos. El estómago tiene una
-              gran pacadidad hasta 8 litros en el caso de perros grandes, la
-              acidez es mucho más elevada que la de un humano esto le facilita
-              la digestión y combatir contra las bacterias, el intestino grueso
+              gran capacidad de hasta 8 litros en el caso de perros grandes. La
+              acidez es mucho más elevada que la de un humano, esto le facilita
+              la digestión y le ayuda a combatir contra las bacterias. El intestino grueso
               es corto, tienen menos flora intestinal y es menos diversa que la
               de los humanos. Por eso, una dieta variada no es adecuada para
               ellos. La digestión es rápida entre 20 y 30 minutos y en la
@@ -113,12 +113,12 @@ const Alimentacion = () => {
             <p id="parrAbout">
               Adquiere productos de máxima calidad en tiendas especializadas o
               en tu clínica veterinaria, ya que te pueden garantizar una
-              alimentación equilibrada, con todos los nutrientes necesarios. Si
+              alimentación equilibrada con todos los nutrientes necesarios. Si
               tu perro recibe un alimento casero es complicado valorar si recibe
               todos los nutrientes que necesita. La alta variedad de productos
               adaptados a las características de cada perro desde: edad, tamaño,
               raza o sensibilidades, se conoce como una nutrición a medida.
-              Escoge un alimento seco o húmedo, en función de las preferencis de
+              Escoge un alimento seco o húmedo, en función de las preferencias de
               tu perro.
             </p>
           </div>
