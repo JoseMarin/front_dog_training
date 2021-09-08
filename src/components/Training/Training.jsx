@@ -54,7 +54,7 @@ const Training = (props) => {
             <li>
               <div
                 className="dropdown-item"
-                onClick={() => history.push("/perronuevo")}
+                onClick={() => history.push("/alimentacion")}
               >
                 Salud
               </div>
