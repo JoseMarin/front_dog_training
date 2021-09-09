@@ -1,0 +1,30 @@
+.edit {
+  position: relative;
+  display: flex;
+  top: 15em;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 22em;
+
+  .edit-post {
+    color: rgb(226, 24, 122);
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .title-edit {
+    color: rgb(226, 24, 122);
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .text-edit {
+    color: #1b1316;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 1024px) {
+    #edit {
+      margin-bottom: 51.35em;
+    }
+  }

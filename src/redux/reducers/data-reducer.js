@@ -31,13 +31,13 @@ const dataReducer = (state = initialState, action) => {
     case GET_POST:
     case GET_USER:
     case ADD_POST:
-      return { ...state, loading: action.payload }
+      return { ...state, loading: action.payload };
 
     case ADD_POST_SUCCE:
       return {
         ...state,
         loading: false,
-        post: [ ...state.post, action.payload ] //DotPost if to add the new post
+        post: [...state.post, action.payload], //DotPost if to add the new post
       };
 
     case ADD_POST_ERROR:
@@ -60,7 +60,7 @@ const dataReducer = (state = initialState, action) => {
     case REMOVE_POST_SUCCE:
       return {
         ...state,
-        post: state.post.filter( post => post.id !== state.removepost),
+        post: state.post.filter((post) => post.id !== state.removepost), //.filter remove a post
         removepost: null,
       };
 
@@ -75,9 +75,7 @@ const dataReducer = (state = initialState, action) => {
         ...state,
         editpost: null,
         post: state.post.map((posts) =>
-          posts.id === action.payload.id
-            ? (posts = action.payload)
-            : posts
+          posts.id === action.payload.id ? (posts = action.payload) : posts
         ),
       };
 
