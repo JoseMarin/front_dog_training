@@ -1,0 +1,183 @@
+.vistaRegister2 {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 16.5em;
+
+
+  .formulario2 {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    align-items: center;
+    height: 58.7em;
+    top: 5em;
+
+    .updateButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      margin-top: 1em;
+      transition: 0.2s;
+      height: 3em;
+      width: 8em;
+      border-radius: 0.7em;
+      background-color: rgba(235, 234, 234, 255);
+
+      &:hover {
+        background: linear-gradient(
+          343deg,
+          rgba(96, 101, 105, 1) 0%,
+          rgba(213, 31, 116, 1) 75%,
+          rgba(169, 57, 112, 1) 83%,
+          rgba(108, 94, 106, 1) 100%,
+          rgba(223, 25, 117, 1) 100%,
+          rgba(96, 101, 105, 1) 100%
+        );
+        transition: all 900ms ease;
+        color: #fff;
+      }
+    }
+    .errors-text-update {
+      display: flex;
+      position: relative;
+      font-size: 0.9em;
+      top: -0.99em;
+      left: 4em;
+      color: red;
+      width: 28em;
+    }
+    .errors-text-update-mail {
+      top: -0.3em;
+
+    }
+    .form24 {
+      display: flex;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 3.3em;
+      max-width: 25em;
+      top: -2em;
+      height: 3.3em;
+    }
+    .form24 .input24 {
+      width: 100%;
+      height: 150%;
+      background: none;
+      color: #fd478f;
+      font-size: 1.3rem;
+      padding: 1.25em;
+      border: none;
+      outline: 0px;
+    }
+    .form24 .lbl-nombre24 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      border-bottom: 0.0625em solid #c7c7c7;
+    }
+    .form24 .lbl-nombre24:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.0625em;
+      width: 100%;
+      height: 100%;
+      border-bottom: 0.18em solid #474a4a;
+      transform: translateX(-100%);
+      transition: all 0.3s ease;
+    }
+    .text-nomb24 {
+      position: absolute;
+      left: 0;
+      bottom: -0.2em;
+      transition: all 0.5s ease;
+      color: #fd478f;
+    }
+    .form24 .input24:focus + .lbl-nombre24 .text-nomb24,
+    .form24 .input24:valid + .lbl-nombre24 .text-nomb24 {
+      transform: translateY(-150%);
+      color: rgb(0, 0, 0);
+      font-size: 1.1em;
+      height: 1.2em;
+    }
+    .form24 .input24:focus + .lbl-nombre24:after,
+    .form24 .input24:valid + .lbl-nombre24:after {
+      transform: translateX(0%);
+    }
+  }
+}
+
+
+
+.form26 {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 25em;
+  bottom: 1.1em;
+  height: 4.9em;
+  max-width: 25em;
+  top: -3.4em;
+}
+.form26 .input26 {
+  width: 100%;
+  height: 150%;
+  background: none;
+  color: #fd478f;
+  font-size: 1.3rem;
+  padding: 2.35em;
+  border: none;
+  outline: 0px;
+}
+.form26 .lbl-nombre26 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 0.0625em solid #c7c7c7;
+}
+.form26 .lbl-nombre26:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.0625em;
+  width: 100%;
+  height: 100%;
+  border-bottom: 0.18em solid #474a4a;
+  transform: translateX(-100%);
+  transition: all 0.4s ease;
+}
+.text-nomb26 {
+  position: absolute;
+  bottom: 0.14em;
+  left: 0;
+  transition: all 0.4s ease;
+  color: #fd478f;
+}
+.form26 .input26:focus + .lbl-nombre26 .text-nomb26,
+.form26 .input26:valid + .lbl-nombre26 .text-nomb26 {
+  transform: translateY(-150%);
+  color: rgb(0, 0, 0);
+  font-size: 1.1em;
+  height: 1.1em;
+}
+.form26 .input26:focus + .lbl-nombre26:after,
+.form26 .input26:valid + .lbl-nombre26:after {
+  transform: translateX(0%);
+}
