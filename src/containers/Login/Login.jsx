@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { connect } from "react-redux";
@@ -22,18 +22,6 @@ const Login = (props) => {
     const updateCredentials = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     };
-
-    useEffect(() => {
-        //Este useEffect corresponde a una vez
-        //el componente se HA montado. Sólo se ejecuta una vez.
-        // templateLogin();
-    }, []);
-
-    useEffect(() => {
-        //Este useEffect sin el array vacio como segundo argumento,
-        //corresponde al estado de cada actualización del componente. Se ejecutará
-        //tantas veces como se cambie el estado del componente
-    });
 
     const checkError = async (arg) => {
         switch (arg) {
