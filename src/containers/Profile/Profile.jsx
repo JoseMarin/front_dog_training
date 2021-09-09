@@ -32,7 +32,7 @@ const Profile = (props) => {
                   <div className="row m-l-0 m-r-0">
                     <div className="col-sm-12 bg-c-lite-green user-profile">
                       <div className="card-block text-center text-black">
-                        <div class="profile-img perfil">
+                        <div class="profile-img perfil img-center" id="img-center">
                           <img
                             src={Pensando}
                             className="profile-img"
