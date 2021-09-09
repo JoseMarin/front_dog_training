@@ -70,7 +70,7 @@ const MakePost = (props) => {
             <input
               type="text"
               autoFocus="autoFocus"
-              className="form-control mb-2 border"
+              className="form-control mb-2 border title-post"
               name="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -80,7 +80,7 @@ const MakePost = (props) => {
             />
             <div className="form-floating">
               <textarea
-                className="form-control border"
+                className="form-control border parPost"
                 name="content"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
