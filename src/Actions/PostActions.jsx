@@ -141,7 +141,7 @@ const removeError = () => ({
   payload: true,
 });
 
-//Put product on edition
+// Put product on edition
 export function editPost(post) {
   return (dispatch) => {
     dispatch(getPostRemove(post));
@@ -154,17 +154,16 @@ const getPostRemove = (post) => ({
 });
 
 //Edit a record in the API and status
-export function editPostAction(post) {
+export function editPostAction(body) {
   const  token = store.getState().credentials.token;
   return async (dispatch) => {
-    dispatch(startEdit(post));
+    dispatch(startEdit() );
     await axios
-      .put("https://jaug-dog-training.herokuapp.com/post/updatepost", post, {
+      .put("https://jaug-dog-training.herokuapp.com/post/updatepost", body, {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {
-        console.log("put-->", res);
-        dispatch(downloadPostSucce(res.data)); //Put dispatch if the call is succe
+        dispatch(editSucce(body) ); //Put dispatch if the call is succe
       })
       .catch((err) => {
         // console.log(err);
@@ -181,7 +180,12 @@ export function editPostAction(post) {
   };
 }
 
-const startEdit = (post) => ({
+const startEdit = () => ({
   type: START_EDIT_POST,
-  payload: post,
+
+});
+
+const editSucce = (body) => ({
+  type: EDIT_POST_SUCCE,
+  payload: body
 });
