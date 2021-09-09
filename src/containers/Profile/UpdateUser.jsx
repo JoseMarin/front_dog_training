@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { UPDATE_USER } from "../../redux/types";
 import { notification } from "antd";
-// import spinner from '../../assets/spinner2.gif';
+import Spinner from '../../components/Spinner/Spinner';
 
 const UpdateUser = (props) => {
   let history = useHistory();
@@ -158,7 +158,7 @@ const UpdateUser = (props) => {
       <div className="vistaRegister2">
         <div className="formulario2">
           <div className="box1">
-            <div className="errorsText">{errors.ePassword}</div>
+            <div className="errors-text-update">{errors.ePassword}</div>
             <form className="form3">
               <input
               autoFocus="autofocus"
@@ -175,7 +175,7 @@ const UpdateUser = (props) => {
           </div>
 
           <div className="box1">
-            <div className="errorsText">{errors.ePassword2}</div>
+            <div className="errors-text-update">{errors.ePassword2}</div>
             <form className="form3">
               <input
                 className="input3"
@@ -192,7 +192,7 @@ const UpdateUser = (props) => {
           </div>
 
           <div className="box1">
-            <div className="errorsText">{errors.ePassword2}</div>
+            <div className="errors-text-update">{errors.ePassword2}</div>
             <form className="form3">
               <input
                 className="input3"
@@ -207,29 +207,29 @@ const UpdateUser = (props) => {
               </label>
             </form>
           </div>
-          <div className="errorsText">{errors.eValidate}</div>
+          <div className="errors-text-update">{errors.eValidate}</div>
             <div className="updateButton" onClick={() => updatePassword()}>
                 UPDATE
             </div>
         <br/><br/><br/>
           <div className="box1">
-            <div className="errorsText">{errors.eEmail}</div>
-            <form className="form2">
+            <div className="errors-text-update-mail errors-text-update">{errors.eEmail}</div>
+            <form className="form26">
               <input
-                className="input2"
+                className="input26"
                 name="email"
                 type="email"
                 onChange={updateInfoClient}
                 onBlur={() => checkError("email")}
                 required
               />
-              <label className="lbl-nombre2">
-                <span className="text-nomb2">Email</span>
+              <label className="lbl-nombre26">
+                <span className="text-nomb26">Email</span>
               </label>
             </form>
           </div>
           <div className="box1">
-            <div className="errorsText">{errors.eCity}</div>
+            <div className="errors-text-update">{errors.eCity}</div>
             <form className="form24">
               <input
                 className="input24"
@@ -252,10 +252,8 @@ const UpdateUser = (props) => {
     );
   } else {
     return (
-      <div className="spinnerContainer">
-        <div className="spinner">
-          <img src={{}} alt="spinner" width="60" />
-        </div>
+      <div className="">
+        <Spinner />
       </div>
     );
   }

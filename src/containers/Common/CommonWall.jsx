@@ -23,7 +23,7 @@ const CommonWall = () => {
   const loading = useSelector((state) => state.data.loading);
 
   return (
-    <div>
+    <div className="commonWall">
       <MakePost />
       {loading ? (
         <div className="spinnerContainer">

@@ -18,12 +18,12 @@ const ObedienciaBasica = () => {
         <section className="card cardAbout" data-aos="zoom-in">
           <img
             className="fondo"
-            Style="height:100%;"
+            Style="height:100%; width:100%;"
             src={sit}
             alt="institutoPatitas"
           />
           <div>
-            <h3 className="tlf">Sentarse</h3>
+            <h3 className="tlf text-center">Sentarse</h3>
             <p id="parrAbout">
               Para enseñar a tu perro a sentarse cuando se lo pidas, puedes usar
               como señuelo un premio y sostenerlo encima del perro. Cuando
@@ -43,10 +43,10 @@ const ObedienciaBasica = () => {
             alt="trainers"
           />
           <div>
-            <h3 className="tlf">Quedarse quieto</h3>
+            <h3 className="tlf text-center">Quedarse quieto</h3>
             <p id="parrAbout">
               Para enseñar a tu perro a quedarse quieto, tanto en casa como
-              cuando estas paseando con él. Posicionate delante de tu perro con
+              cuando estas paseando con él posicionate delante de tu perro con
               la palma extendida dando la orden de "Quieto", una vez consigas
               que se quede quieto, aléjate de él y cuando le llames para que
               acuda a ti, dale su recompensa y una caricia. Asi lo memoriza
@@ -63,14 +63,14 @@ const ObedienciaBasica = () => {
             alt="trainers"
           />
           <div>
-            <h3 className="tlf">Caminar a tu lado</h3>
+            <h3 className="tlf text-center">Caminar a tu lado</h3>
             <p id="parrAbout">
               Cuando nuestros perros son grandes o pequeños pero juguetones,
               suelen tirar de la correa e ir más rápido que nosotros. Para
               enseñarles que deben ir tranquilos, con calma y centrados durante
-              el camino. Debes de estar atento a si el perro se adelanta o
+              el camino debes de estar atento a si el perro se adelanta o
               atrasa para darle un tirón de la correa, asi volverá a caminar a
-              tu lado, mantén la corre holgada, esto le trasmitirá serenidad a
+              tu lado. Mantén la corre holgada, esto le trasmitirá serenidad a
               tu perro. No olvides premiarlo por seguir caminando a tu lado.
             </p>
           </div>
@@ -84,7 +84,7 @@ const ObedienciaBasica = () => {
             alt="adiestramiento"
           />
           <div>
-            <h3 className="tlf">Consejos</h3>
+            <h3 className="tlf text-center">Consejos</h3>
             <p id="parrAbout">
               Recuerda que este es un entrenamiento positivo, ¡basado en las
               recompensas! De esta manera tu perro estará motivado para hacer

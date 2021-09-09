@@ -21,7 +21,7 @@ const Training = (props) => {
             data-hover="dropdown"
             aria-expanded="false"
           >
-            TRAINING
+            ADIESTRAMIENTO
           </div>
           <ul
             className="dropdown-menu text-center dropdown-menu-dark"
@@ -30,17 +30,17 @@ const Training = (props) => {
             <li>
               <div
                 className="dropdown-item"
-                onClick={() => history.push("/buenosmodales")}
+                onClick={() => history.push("/trainers")}
               >
-                Buenos Modales
+                Adiestradores
               </div>
             </li>
             <li>
               <div
                 className="dropdown-item"
-                onClick={() => history.push("/obedienciabasica")}
+                onClick={() => history.push("/buenosmodales")}
               >
-                Obediencia Básica
+                Buenos Modales
               </div>
             </li>
             <li>
@@ -54,9 +54,17 @@ const Training = (props) => {
             <li>
               <div
                 className="dropdown-item"
-                onClick={() => history.push("/perronuevo")}
+                onClick={() => history.push("/obedienciabasica")}
               >
-                Perro Nuevo
+                Obediencia Básica
+              </div>
+            </li>
+            <li>
+              <div
+                className="dropdown-item"
+                onClick={() => history.push("/alimentacion")}
+              >
+                Salud
               </div>
             </li>
           </ul>

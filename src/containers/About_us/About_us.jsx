@@ -27,9 +27,9 @@ const About_us = () => {
       </header>
       <main className="containerAbout">
         <section className="card cardAbout" data-aos="flip-right">
-          <img className="fondo" Style="height:100%;" src={pataText} alt="institutoPatitas" />
+          <img className="fondo" Style="height:100%; width:80%;" src={pataText} alt="institutoPatitas" />
           <div>
-            <h3 className="tlf">Adiestramiento Canino</h3>
+            <h3 className="tlf text-center">Adiestramiento Canino</h3>
             <p id="parrAbout">
               Somos un equipo de jóvenes entusiasmados y apasionados por el
               mundo de la programación y nuestros perros, de ahí nace la fusión
@@ -42,7 +42,7 @@ const About_us = () => {
         <section className="card cardAbout" data-aos="fade-left">
           <img className="imgAbout" Style="height:100%;" src={adies} alt="trainers" />
           <div>
-            <h3 className="tlf">Objetivos</h3>
+            <h3 className="tlf text-center">Objetivos</h3>
             <p id="parrAbout">
               Dog training es una plataforma creada con el cariño que le tenemos
               a nuestros pulgosos, en la cual puedes compartir y aprender
@@ -57,7 +57,7 @@ const About_us = () => {
         <section className="card cardAbout" data-aos="fade-right">
           <img className="imgAbout" src={instructor} alt="trainers" />
           <div>
-            <h3 className="tlf">Parte del equipo</h3>
+            <h3 className="tlf text-center">Parte del equipo</h3>
             <p id="parrAbout">
               Conoce a una parte de nuestro equipo e interactua con ellos sobre
               cualquier duda que te pueda surguir, conocéles y comparte tu
@@ -72,7 +72,7 @@ const About_us = () => {
         <section className="card cardAbout" data-aos="fade-left">
           <img className="imgAbout" Style="height:100%;" src={adiestramiento} alt="adiestramiento" />
           <div>
-            <h3 className="tlf">Entrenamiento</h3>
+            <h3 className="tlf text-center">Entrenamiento</h3>
             <p id="parrAbout">
               Nuestros programas para el entrenamiento y educación de tu
               mascota, son desarrollados por profesionales y amantes del mundo

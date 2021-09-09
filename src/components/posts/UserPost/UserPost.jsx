@@ -59,31 +59,32 @@ const userPost = (props) => {
                 alt="100x100"
               />
               <div className="card-body" key={index}>
-                <h2 className="card-title">Title {mjs.title}</h2>
+                <h2 className="card-title" id="title-post">{mjs.title}</h2>
                 <hr/>
-                <h4 className="card-text">Post {mjs.content}</h4>
+                <h4 className="card-text" id="parPost">{mjs.content}</h4>
                 <hr/>
                 <small>
-                  <FontAwesomeIcon icon={faUser} /> &nbsp; {mjs.userName}
+                  <FontAwesomeIcon icon={faUser} /> &nbsp;
+                  <span id="user"> {mjs.userName}</span> &nbsp;{" "}
                 </small>
-                &nbsp; &nbsp; &nbsp;
+                &nbsp;
                 <small>
-                  <FontAwesomeIcon icon={faClock} />{" "}
-                  {moment(mjs.date).format("LLL")}
+                  <FontAwesomeIcon icon={faClock} /> {" "} &nbsp;
+                  <span id="user">{moment(mjs.date).format("LLL")}</span>
                 </small>
                 <Link
                   Style="cursor:pointer; color:black;"
                   className=" m-xxl-5"
                   onClick={() => postToEdit(userPost)}
                 >
-                  <FontAwesomeIcon icon={faEdit} /> EDIT
+                  <FontAwesomeIcon icon={faEdit} />&nbsp; <span id="user">EDIT</span>
                 </Link>
                 <span
                   Style="cursor:pointer;"
                   onClick={() => confirmRemove(mjs, mjs.userId)}
                   className="updateButton"
                 >
-                  <FontAwesomeIcon icon={faTrash} /> Remove
+                  <FontAwesomeIcon icon={faTrash} />&nbsp; <span id="user">REMOVE</span>
                 </span>
               </div>
             </div>

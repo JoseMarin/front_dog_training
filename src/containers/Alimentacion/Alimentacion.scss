@@ -1,0 +1,276 @@
+.span-title-salud {
+  display: inline-block;
+  position: relative;
+}
+.mainAbout,
+.aboutTitle,
+.span-title-salud {
+  color: rgb(226, 24, 122);
+  .span-title-salud:after,
+  .span-title-salud:before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 2px;
+    background-color: currentColor;
+    top: 0.6em;
+  }
+  .span-title-salud:before {
+    right: 480px;
+  }
+  .span-title-salud:after {
+    right: -440px;
+  }
+}
+
+.span-title-salud-R {
+  display: inline-block;
+  position: relative;
+}
+.mainAbout,
+.aboutTitle,
+.span-title-salud-R {
+  color: rgb(226, 24, 122);
+  .span-title-salud-R:after,
+  .span-title-salud-R:before {
+    content: "";
+    position: absolute;
+    width: 410px;
+    height: 2px;
+    background-color: currentColor;
+    top: 0.6em;
+  }
+  .span-title-salud-R:before {
+    right: 705px;
+  }
+  .span-title-salud-R:after {
+    right: -440px;
+  }
+}
+
+/*MOBILE*/
+@media (min-width: 1024px) {
+  .cardAbout {
+    display: block;
+  }
+
+  .mainAbout {
+    top: 3em;
+    height: 100vh;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+
+    .vinculo {
+      font-size: 1rem;
+    }
+  }
+
+  .containerAbout {
+    max-width: 414px;
+    margin: auto;
+    overflow: auto;
+    padding: 0rem;
+
+    .tlf {
+      color: rgba(213, 31, 116, 1);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .mainAbout,
+  .aboutTitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .span-title-salud {
+    display: inline-block;
+    position: relative;
+  }
+  .mainAbout,
+  .aboutTitle,
+  .span-title-salud {
+    color: rgb(226, 24, 122);
+    .span-title-salud:after,
+    .span-title-salud:before {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 2px;
+      background-color: currentColor;
+      top: 0.6em;
+    }
+    .span-title-salud:before {
+      right: -225px;
+    }
+    .span-title-salud:after {
+      right: 474px;
+    }
+  }
+
+  .mainAbout p {
+    font-size: 1rem;
+  }
+  #parrAbout {
+    color: rgb(0, 0, 0);
+  }
+
+  .span-title-salud-R {
+    display: inline-block;
+    position: relative;
+  }
+  .mainAbout,
+  .aboutTitle,
+  .span-title-salud-R {
+    color: rgb(226, 24, 122);
+    .span-title-salud-R:after,
+    .span-title-salud-R:before {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 2px;
+      background-color: currentColor;
+      top: 0.6em;
+    }
+    .span-title-salud-R:before {
+      right: 694px;
+    }
+    .span-title-salud-R:after {
+      right: -152px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .cardAbout {
+    display: block;
+  }
+  .span-title-salud-R {
+    display: inline-block;
+    position: relative;
+  }
+  .mainAbout,
+  .aboutTitle,
+  .span-title-salud-R {
+    color: rgb(226, 24, 122);
+    .span-title-salud-R:after,
+    .span-title-salud-R:before {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 2px;
+      background-color: currentColor;
+      top: 0.6em;
+    }
+    .span-title-salud-R:before {
+      right: 194px;
+    }
+    .span-title-salud-R:after {
+      right: -107px;
+    }
+  }
+}
+
+@media (max-width: 414px) {
+  .cardAbout {
+    display: block;
+  }
+
+  .mainAbout {
+    top: 3em;
+    height: 100vh;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fff;
+
+    .vinculo {
+      font-size: 1rem;
+    }
+  }
+
+  .containerAbout {
+    max-width: 414px;
+    margin: auto;
+    overflow: auto;
+    padding: 0rem;
+
+    .tlf {
+      color: rgba(213, 31, 116, 1);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .mainAbout,
+  .aboutTitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  .span-title-salud {
+    display: inline-block;
+    position: relative;
+  }
+  .mainAbout,
+  .aboutTitle,
+  .span-title-salud {
+    color: rgb(226, 24, 122);
+    .span-title-salud:after,
+    .span-title-salud:before {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 2px;
+      background-color: currentColor;
+      top: 0.6em;
+    }
+    .span-title-salud:before {
+      right: -110px;
+    }
+    .span-title-salud:after {
+      right: 127px;
+    }
+  }
+
+  .mainAbout p {
+    font-size: 1rem;
+  }
+  #parrAbout {
+    color: rgb(0, 0, 0);
+  }
+
+  .span-title-salud-R {
+    display: inline-block;
+    position: relative;
+  }
+  .mainAbout,
+  .aboutTitle,
+  .span-title-salud-R {
+    color: rgb(226, 24, 122);
+    .span-title-salud-R:after,
+    .span-title-salud-R:before {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 2px;
+      background-color: currentColor;
+      top: 0.6em;
+    }
+    .span-title-salud-R:before {
+      right: 194px;
+    }
+    .span-title-salud-R:after {
+      right: -107px;
+    }
+  }
+}

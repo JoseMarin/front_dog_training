@@ -7,7 +7,7 @@ import solo from "../../assets/Buenos_modales/solo.png";
 
 const BuenosModales = () => {
   return (
-    <div className="row row-cols-1 row-cols-md-2 g-4 cards">
+    <div className="row row-cols-1  mt-5 row-cols-md-2 g-4 cards">
       <div className="col">
         <div className="card-border-0">
           <div className="card-body">
@@ -62,7 +62,7 @@ const BuenosModales = () => {
             <br />
             <p className="card-text">
               <h4 className="text-center">
-                &nbsp; &nbsp; Cuando regañar a nuestro cachorro
+                &nbsp; &nbsp; Cuándo regañar a nuestro cachorro
               </h4>
               <br />
               - Los castigos generan estrés y ansiedad a los cachorros, y es
@@ -78,7 +78,7 @@ const BuenosModales = () => {
               lo cogeria por la nuca si se porta mal.
               <br />
               <br />
-              - Tú deberás repetir la palabra "NO" con firmeza y partarlo del
+              - Tú deberás repetir la palabra "NO" con firmeza y apartarlo del
               objeto en el que centra su atención.
               <br />
               <br />
@@ -184,7 +184,7 @@ const BuenosModales = () => {
           <pre>
           &nbsp; &nbsp; &nbsp;
           </pre>
-          <img src={solo} className=" img-fluid solo" alt="..." />
+          <img src={solo} className=" img-fluid solo solo-mobile" id="solo-mobil" alt="..." />
         </div>
       </div>
     </div>
