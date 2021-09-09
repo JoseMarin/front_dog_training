@@ -1,7 +1,7 @@
 import "./App.scss";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Fragment } from "react";
-
+import './Utils/scss/Util.scss';
 import Home from "./containers/Home/Home.jsx";
 import Header from "./components/Header/Header.jsx";
 import Register from "./containers/Register/Register";
