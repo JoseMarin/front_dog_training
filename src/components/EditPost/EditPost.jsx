@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
 import { editPostAction } from "../../Actions/PostActions";
-const EditPost = () => {
+
+const EditPost = (props) => {
   const [post, setPost] = useState({
+    userId: props.credentials?.user,
     title: "",
     content: "",
   });
@@ -11,7 +13,8 @@ const EditPost = () => {
 
   //Access to the states
   const postEdit = useSelector((state) => state.data.editpost);
-  // if (!postEdit) return null;
+  const editPost = (body) => dispatch(editPostAction(body));
+
   useEffect(() => {
     setPost(postEdit);
   }, [postEdit]);
@@ -28,8 +31,14 @@ const EditPost = () => {
   const submitEditPost = (e) => {
     e.preventDefault();
 
-    //Pass the post to the action
-    dispatch(editPostAction(post));
+    editPost({
+      title,
+      content,
+      postId: post.id,
+      userId: post.userId,
+    });
+    // //Pass the post to the action
+    // dispatch(editPostAction(body));
   };
   return (
     <>
@@ -63,8 +72,7 @@ const EditPost = () => {
               <button
                 className="btn btn-outline-dark"
                 type="submit"
-                //   onClick={(e) => SubmitPost(e)}
-                onClick={submitEditPost}
+                onClick={(e) => submitEditPost(e)}
               >
                 Edit Post
               </button>
