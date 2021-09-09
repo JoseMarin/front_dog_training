@@ -4,8 +4,10 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { useHistory } from "react-router";
 import { notification } from "antd";
+import Swal from "sweetalert2";
 
 const Register = () => {
+
   let history = useHistory();
   // Hook
   const [datosUser, setDatosUser] = useState({
@@ -54,7 +56,15 @@ const Register = () => {
       .post("https://jaug-dog-training.herokuapp.com/users ", body)
       .then((res) => {
         setDatosUser(res.data.results);
-        notification.success({ message: "Registered User.", style: {top: 76,}, description: "We have sent you an email to activate the account.",});
+        Swal.fire({
+          title: 'Registered User, We have sent you an email to activate the account.',
+          showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+          },
+          hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+          }
+        })
         history.push("/login");
       })
       .catch((err) => {
@@ -265,38 +275,6 @@ const Register = () => {
         <div className="registerButton" onClick={() => applyRegister()}>
           GET STARTED
         </div>
-      </div>
-      <div id="particle-container">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
       </div>
     </div>
   );
