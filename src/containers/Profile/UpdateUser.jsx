@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { UPDATE_USER } from "../../redux/types";
 import { notification } from "antd";
-// import spinner from '../../assets/spinner2.gif';
+import Spinner from '../../components/Spinner/Spinner';
 
 const UpdateUser = (props) => {
   let history = useHistory();
@@ -252,10 +252,8 @@ const UpdateUser = (props) => {
     );
   } else {
     return (
-      <div className="spinnerContainer">
-        <div className="spinner">
-          <img src={{}} alt="spinner" width="60" />
-        </div>
+      <div className="">
+        <Spinner />
       </div>
     );
   }
