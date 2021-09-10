@@ -144,11 +144,11 @@ const removeError = () => ({
 // Put product on edition
 export function editPost(post) {
   return (dispatch) => {
-    dispatch(getPostRemove(post));
+    dispatch(getPostEdit(post));
   };
 };
 
-const getPostRemove = (post) => ({
+const getPostEdit = (post) => ({
   type: GET_POST_EDIT,
   payload: post,
 });
@@ -159,17 +159,16 @@ export function editPostAction(body) {
   return async (dispatch) => {
     dispatch(startEdit() );
     await axios
-      .put("https://jaug-dog-training.herokuapp.com/post/updatepost", body, {
+      .put("http://localhost:5000/post/updatepost", body, {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {
         dispatch(editSucce(body) ); //Put dispatch if the call is succe
       })
       .catch((err) => {
-        // console.log(err);
+        console.log(err);
         console.log(err.response.data);
-        //But if there is an error, change the state
-        dispatch(downloadPostError());
+        dispatch(editError() );
         //Alert error
         Swal.fire({
           icon: "error",
@@ -179,13 +178,17 @@ export function editPostAction(body) {
       });
   };
 }
-
+//To show the edition
 const startEdit = () => ({
   type: START_EDIT_POST,
-
 });
 
 const editSucce = (body) => ({
   type: EDIT_POST_SUCCE,
   payload: body
+});
+
+const editError = () => ({
+  type: EDIT_POST_ERROR,
+  payload: true
 });
