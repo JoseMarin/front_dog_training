@@ -60,12 +60,9 @@ const dataReducer = (state = initialState, action) => {
     case REMOVE_POST_SUCCE:
       return {
         ...state,
-        post: state.post.filter((post) => post.id !== state.removepost), //.filter remove a post
+        post: state.post.filter( post => post.id !== state.removepost), //.filter remove a post
         removepost: null,
       };
-
-    // case EDIT_POST:
-    //   return {...state,post: action.payload};
 
     case GET_POST_EDIT:
       return { ...state, editpost: action.payload };
@@ -74,9 +71,9 @@ const dataReducer = (state = initialState, action) => {
       return {
         ...state,
         editpost: null,
-        post: state.post.map((posts) =>
-          posts.id === action.payload.id ? (posts = action.payload) : posts
-        ),
+        post: state.post.map( posts =>
+          posts.id === action.payload.id ? posts = action.payload : posts
+        )
       };
 
     default:
