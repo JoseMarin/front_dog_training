@@ -19,7 +19,7 @@ export const START_EDIT_POST = 'start_edit_post';
 export const EDIT_POST_SUCCE = 'edit_post_succe';
 export const EDIT_POST_ERROR = 'edit_post_error';
 
-export const REMOVE_POST = 'remove_post';
+export const GET_REMOVE_POST = 'get_remove_post';
 export const REMOVE_POST_SUCCE = 'remove_post_succe';
 export const REMOVE_POST_ERROR = 'remove_post_error';
 
