@@ -3,15 +3,14 @@ import React, { useEffect } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import moment from "moment";
-import { faUser,faClock,faTrash,faEdit } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Spinner from "../../Spinner/Spinner";
 import Swal from "sweetalert2";
 
 //ACTIONS OF RDX
 import { removePostAction, editPost, getPostAction } from "../../../Actions/PostActions";
 
-const userPost = (props) => {
+const userPost = () => {
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -22,10 +21,10 @@ const userPost = (props) => {
     //Consult the API
     const findPost = (props) => dispatch(getPostAction(props));
     findPost();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
-  const confirmRemove = (body, userId) => {
+  const confirmRemove = (postId, userId) => {
+    console.log('post',postId, 'user--->',userId)
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -38,7 +37,7 @@ const userPost = (props) => {
     }).then((result) => {
       if (result.isConfirmed) {
         //Take it into action
-        dispatch(removePostAction(body, userId));
+        dispatch(removePostAction(postId, userId));
       }
     });
   };
@@ -64,12 +63,12 @@ const userPost = (props) => {
                 <h4 className="card-text" id="parPost">{mjs.content}</h4>
                 <hr/>
                 <small>
-                  <FontAwesomeIcon icon={faUser} /> &nbsp;
+                <span className="social"><i className="fa fa-user" color="black"></i></span>&nbsp;
                   <span id="user"> {mjs.userName}</span> &nbsp;{" "}
                 </small>
                 &nbsp;
                 <small>
-                  <FontAwesomeIcon icon={faClock} /> {" "} &nbsp;
+                <span className="social"><i className="fa fa-clock" color="black"></i></span>&nbsp;&nbsp;{" "}
                   <span id="user">{moment(mjs.date).format("LLL")}</span>
                 </small>
                 <Link
@@ -77,14 +76,16 @@ const userPost = (props) => {
                   className=" m-xxl-5"
                   onClick={() => postToEdit(userPost)}
                 >
-                  <FontAwesomeIcon icon={faEdit} />&nbsp; <span id="user">EDIT</span>
+                  <span className="social"><i className="fas fa-edit" color="black"></i></span>&nbsp;&nbsp;
+                  <span id="user">EDIT</span>
                 </Link>
                 <span
                   Style="cursor:pointer;"
-                  onClick={() => confirmRemove(mjs, mjs.userId)}
+                  onClick={() => confirmRemove(mjs.id, mjs.userId) }
                   className="updateButton"
                 >
-                  <FontAwesomeIcon icon={faTrash} />&nbsp; <span id="user">REMOVE</span>
+                  <span className="social"><i className="far fa-trash-alt" color="black"></i></span>&nbsp;&nbsp;
+                  <span id="user">REMOVE</span>
                 </span>
               </div>
             </div>
