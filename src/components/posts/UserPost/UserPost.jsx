@@ -9,8 +9,7 @@ import Swal from "sweetalert2";
 //ACTIONS OF RDX
 import { removePostAction, editPost, getPostAction } from "../../../Actions/PostActions";
 
-const userPost = () => {
-
+const userPost = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -21,10 +20,10 @@ const userPost = () => {
     //Consult the API
     const findPost = (props) => dispatch(getPostAction(props));
     findPost();
-  }, [dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const confirmRemove = (postId, userId) => {
-    console.log('post',postId, 'user--->',userId)
+  const confirmRemove = (body, userId) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -37,7 +36,7 @@ const userPost = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         //Take it into action
-        dispatch(removePostAction(postId, userId));
+        dispatch(removePostAction(body, userId));
       }
     });
   };
@@ -63,7 +62,7 @@ const userPost = () => {
                 <h4 className="card-text" id="parPost">{mjs.content}</h4>
                 <hr/>
                 <small>
-                <span className="social"><i className="fa fa-user" color="black"></i></span>&nbsp;
+                  <span className="social"><i className="fa fa-user" color="black"></i></span>&nbsp;
                   <span id="user"> {mjs.userName}</span> &nbsp;{" "}
                 </small>
                 &nbsp;
@@ -81,7 +80,7 @@ const userPost = () => {
                 </Link>
                 <span
                   Style="cursor:pointer;"
-                  onClick={() => confirmRemove(mjs.id, mjs.userId) }
+                  onClick={() => confirmRemove(mjs, mjs.userId)}
                   className="updateButton"
                 >
                   <span className="social"><i className="far fa-trash-alt" color="black"></i></span>&nbsp;&nbsp;

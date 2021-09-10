@@ -23,7 +23,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div className="phone">
-                <span className="social"><i className="fa fa-envelope"></i></span>&nbsp;
+                  <span className="social"><i className="fa fa-envelope"></i></span>&nbsp;
                   <a className="mail" href="mailto:info@trident.com">
                     info@dogtraining.com
                   </a>

@@ -5,7 +5,7 @@ import {
   GET_POST,
   GET_POST_SUCCE,
   GET_POST_ERROR,
-  GET_REMOVE_POST,
+  REMOVE_POST,
   REMOVE_POST_SUCCE,
   REMOVE_POST_ERROR,
   GET_POST_EDIT,
@@ -103,12 +103,11 @@ const downloadPostError = () => ({
   payload: true,
 });
 
-//Select && remove a post
 export function removePostAction(postId, userId) {
   const token = store.getState().credentials.token;
   return async (dispatch) => {
     //Here we collect the identifiers
-    dispatch(get_remove_post(postId, userId));
+    dispatch(removePost(postId, userId));
 
     await axios
       .put("https://jaug-dog-training.herokuapp.com/post/deletepost", { postId, userId }, {
@@ -116,28 +115,25 @@ export function removePostAction(postId, userId) {
       })
       .then((res) => {
         //If it is eliminated show alert
-        dispatch(removeSucce() );
+        dispatch(removeSucce(postId, userId) );
         Swal.fire("Deleted!", "Your post has been deleted.", "success");
       })
       .catch((err) => {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'You are not the owner of this post.',
-        });
+        // console.log(err.response.data);
         console.log(err);
         dispatch(removeError());
       });
   };
 };
 
-const get_remove_post = (postId, userId) => ({
-  type: GET_REMOVE_POST,
-  payload: postId, userId
+const removePost = (postId, userId) => ({
+  type: REMOVE_POST,
+  payload: { postId, userId },
 });
 
-const removeSucce = () => ({
-  type: REMOVE_POST_SUCCE
+const removeSucce = (postId, userId) => ({
+  type: REMOVE_POST_SUCCE,
+  payload: { postId, userId },
 });
 
 const removeError = () => ({
@@ -148,11 +144,11 @@ const removeError = () => ({
 // Put product on edition
 export function editPost(post) {
   return (dispatch) => {
-    dispatch(getPostEdit(post));
+    dispatch(getPostRemove(post));
   };
 };
 
-const getPostEdit = (post) => ({
+const getPostRemove = (post) => ({
   type: GET_POST_EDIT,
   payload: post,
 });
@@ -163,36 +159,33 @@ export function editPostAction(body) {
   return async (dispatch) => {
     dispatch(startEdit() );
     await axios
-      .put("http://localhost:5000/post/updatepost", body, {
+      .put("https://jaug-dog-training.herokuapp.com/post/updatepost", body, {
         headers: { authorization: "Bearer " + token },
       })
       .then((res) => {
         dispatch(editSucce(body) ); //Put dispatch if the call is succe
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         console.log(err.response.data);
-        dispatch(editError() );
+        //But if there is an error, change the state
+        dispatch(downloadPostError());
         //Alert error
         Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'You don\'t have authorization.',
+          icon: "error",
+          title: "Was a mistake",
+          text: "Try again.",
         });
       });
   };
 }
-//To show the edition
+
 const startEdit = () => ({
   type: START_EDIT_POST,
+
 });
 
 const editSucce = (body) => ({
   type: EDIT_POST_SUCCE,
   payload: body
-});
-
-const editError = () => ({
-  type: EDIT_POST_ERROR,
-  payload: true
 });

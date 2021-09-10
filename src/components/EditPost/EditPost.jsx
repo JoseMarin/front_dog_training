@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
 import { editPostAction } from "../../Actions/PostActions";
-import { useHistory } from "react-router-dom";
 
 const EditPost = (props) => {
-  const [body, setPost] = useState({
+  const [post, setPost] = useState({
     userId: props.credentials?.user,
     title: "",
     content: "",
   });
 
-  //To call the action
   const dispatch = useDispatch();
-  const history = useHistory();
 
   //Access to the states
   const postEdit = useSelector((state) => state.data.editpost);
-  // const body = (body) => dispatch(editPostAction(body));
+  const editPost = (body) => dispatch(editPostAction(body));
 
   useEffect(() => {
     setPost(postEdit);
@@ -25,72 +22,76 @@ const EditPost = (props) => {
   //Read the data of the form
   const onChangeForm = (e) => {
     setPost({
-      ...body,
+      ...post,
       [e.target.name]: e.target.value,
     });
   };
-  const { title, content } = body;
+  const { title, content } = post;
 
   const submitEditPost = (e) => {
     e.preventDefault();
 
-    // body({
-    //   title,
-    //   content,
-    //   postId: post.id,
-    //   userId: post.userId,
-    // });
+    editPost({
+      title,
+      content,
+      postId: post.id,
+      userId: post.userId,
+    });
     // //Pass the post to the action
-    dispatch(editPostAction(body));
-
-    history.push("/commonwall");
+    // dispatch(editPostAction(body));
   };
   return (
     <>
-      <div className="container edit" id="edit">
-        <div className="card carta col-md-6 offset-md-3">
-          <h1 className="edit-post common">You post to edit</h1>
-          <div className="card-body">
-            <div className="commonWall">
-              <input
-                type="text"
-                className="form-control mb-2 border title-edit"
-                name="title"
-                value={title}
+    <div className="container edit" id="edit">
+      <div className="card carta col-md-6 offset-md-3">
+        <h1 className="edit-post common">You post to edit</h1>
+        <div className="card-body">
+          <div className="commonWall">
+            <input
+              type="text"
+              className="form-control mb-2 border title-edit"
+              name="title"
+              value={title}
+              onChange={onChangeForm}
+              placeholder="Title"
+              aria-label="Username"
+              aria-describedby="addon-wrapping"
+            />
+            <div className="form-floating">
+              <textarea
+                className="form-control border text-edit"
+                name="content"
+                value={content}
                 onChange={onChangeForm}
-                placeholder="Title"
-                aria-label="Username"
-                aria-describedby="addon-wrapping"
+                placeholder="Leave a comment here"
+                id="floatingTextarea"
+              ></textarea>
+              <label for="floatingTextarea">Post</label>
+            </div>
+            <div class="input-group mt-4">
+              <button
+                className="btn btn-outline-dark"
+                type="submit"
+                onClick={(e) => submitEditPost(e)}
+              >
+                Edit Post
+              </button>
+              {/* <div className="errorsText">{errors.eValidate}</div> */}
+              <input
+                type="file"
+                className="form-control"
+                id="inputGroupFile02"
+                aria-label="Upload"
               />
-              <div className="form-floating">
-                <textarea
-                  className="form-control border text-edit"
-                  name="content"
-                  value={content}
-                  onChange={onChangeForm}
-                  placeholder="Leave a comment here"
-                  id="floatingTextarea"
-                ></textarea>
-                <label for="floatingTextarea">Post</label>
+              {/* {loading ? (
+               <div className="spinnerContainer">
+                <Spinner />
               </div>
-              <div class="input-group mt-4">
-                <button
-                  className="btn btn-outline-dark"
-                  type="submit"
-                  onClick={(e) => submitEditPost(e)}
-                >
-                  Edit Post
-                </button>
-                <input
-                  type="file"
-                  className="form-control"
-                  id="inputGroupFile02"
-                  aria-label="Upload"
-                />
-              </div>
+            ) : null} */}
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
