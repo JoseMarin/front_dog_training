@@ -1,7 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -20,13 +17,13 @@ const Footer = () => {
             <div className="column2">
               <div className="support">
                 <div className="phone">
-                  <FontAwesomeIcon color="black" icon={faPhone} />
                   <a className="tlf" href="tel:+34963323555">
+                  <span className="social"><i className="fa fa-phone"></i></span>&nbsp;
                     963345555
                   </a>
                 </div>
                 <div className="phone">
-                  <FontAwesomeIcon color="black" icon={faEnvelope} />
+                <span className="social"><i className="fa fa-envelope"></i></span>&nbsp;
                   <a className="mail" href="mailto:info@trident.com">
                     info@dogtraining.com
                   </a>
@@ -39,8 +36,7 @@ const Footer = () => {
                   className="redes"
                   rel="noreferrer"
                 >
-                  <FontAwesomeIcon color="black" icon={faTwitter} />
-                  <p className="social">Twitter</p>
+                  <p className="social"><i className="fa fa-twitter" color="black">&nbsp;</i> Twitter</p>
                 </a>
 
                 <a
@@ -49,8 +45,7 @@ const Footer = () => {
                   className="redes"
                   rel="noreferrer"
                 >
-                  <FontAwesomeIcon color="black" icon={faInstagram} />
-                  <p className="social">Instagram</p>
+                  <p className="social"><i className="fab fa-instagram" color="black">&nbsp;</i> Instagram</p>
                 </a>
               </div>
             </div>

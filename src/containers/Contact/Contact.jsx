@@ -58,7 +58,9 @@ const Contact = () => {
       <div className="col">
         <div className="card-border-0">
           <div className="card-body text-center ">
-            <h1 className="card-title text-center h1Contact">¿Cómo podemos ayudarte?</h1>
+            <h1 className="card-title text-center h1Contact">
+              ¿Cómo podemos ayudarte?
+            </h1>
             <br />
             <br />
             <div className="card-text text-center">
@@ -120,20 +122,28 @@ const Contact = () => {
       <div className="col">
         <div className="card-border-0">
           <div className="card-body text-center">
-            <h1 className="card-title h1Contact text-center">Contacta con nosotros</h1>
+            <h1 className="card-title h1Contact text-center">
+              Contacta con nosotros
+            </h1>
             <br />
             <p className="card-text">
               <br />
               <div className="contactInfo h1Contact">
                 <a className="tlf" href="tel:+34963345555">
-                  963345555
+                  <span className="social" Style="color:black;">
+                    <i className="fa fa-phone"></i>
+                  </span>
+                  &nbsp; 963345555
                 </a>
-                <br/>
+                <br />
                 <a className="mail" href="mailto:info@dogtraining.com">
-                  info@dogtraining.com
+                  <span className="social" Style="color:black;">
+                    <i className="fa fa-envelope"></i>
+                  </span>
+                  &nbsp; info@dogtraining.com
                 </a>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <h2 className="h1Contact">Oficinas</h2>
                 <p className="tlf">Lunes a Viernes: 7am a 5:15 pm.</p>
               </div>
