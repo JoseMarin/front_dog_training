@@ -5,7 +5,7 @@ import {
   GET_POST,
   GET_POST_SUCCE,
   GET_POST_ERROR,
-  REMOVE_POST,
+  GET_REMOVE_POST,
   REMOVE_POST_SUCCE,
   REMOVE_POST_ERROR,
   GET_POST_EDIT,
@@ -103,11 +103,12 @@ const downloadPostError = () => ({
   payload: true,
 });
 
+//Select && remove a post
 export function removePostAction(postId, userId) {
   const token = store.getState().credentials.token;
   return async (dispatch) => {
     //Here we collect the identifiers
-    dispatch(removePost(postId, userId));
+    dispatch(get_remove_post(postId, userId));
 
     await axios
       .put("https://jaug-dog-training.herokuapp.com/post/deletepost", { postId, userId }, {
@@ -115,7 +116,7 @@ export function removePostAction(postId, userId) {
       })
       .then((res) => {
         //If it is eliminated show alert
-        dispatch(removeSucce(postId, userId) );
+        dispatch(removeSucce() );
         Swal.fire("Deleted!", "Your post has been deleted.", "success");
       })
       .catch((err) => {
@@ -130,14 +131,13 @@ export function removePostAction(postId, userId) {
   };
 };
 
-const removePost = (postId, userId) => ({
-  type: REMOVE_POST,
-  payload: { postId, userId },
+const get_remove_post = (postId, userId) => ({
+  type: GET_REMOVE_POST,
+  payload: postId, userId
 });
 
-const removeSucce = (postId, userId) => ({
-  type: REMOVE_POST_SUCCE,
-  payload: { postId, userId },
+const removeSucce = () => ({
+  type: REMOVE_POST_SUCCE
 });
 
 const removeError = () => ({
