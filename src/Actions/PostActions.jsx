@@ -119,7 +119,11 @@ export function removePostAction(postId, userId) {
         Swal.fire("Deleted!", "Your post has been deleted.", "success");
       })
       .catch((err) => {
-        // console.log(err.response.data);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'You are not the owner of this post.',
+        });
         console.log(err);
         dispatch(removeError());
       });
@@ -171,9 +175,9 @@ export function editPostAction(body) {
         dispatch(editError() );
         //Alert error
         Swal.fire({
-          icon: "error",
-          title: "Was a mistake",
-          text: "Try again.",
+          icon: 'error',
+          title: 'Oops...',
+          text: 'You don\'t have authorization.',
         });
       });
   };
