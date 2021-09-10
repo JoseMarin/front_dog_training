@@ -1,11 +1,10 @@
 import React from "react";
-import { faUser,faClock,faComment,faTrash,faEdit } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { connect, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import { removePostAction, editPost } from "../../Actions/PostActions";
 import moment from "moment";
 import Swal from "sweetalert2";
+//RDX
+import { connect, useDispatch } from "react-redux";
+import { removePostAction, editPost } from "../../Actions/PostActions";
 
 const Post = ({ post }) => {
   const { title, content, lastName, date, userName, id, userId } = post;
@@ -13,7 +12,7 @@ const Post = ({ post }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const confirmRemove = (body, userId) => {
+  const confirmRemove = (postId, userId) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -26,7 +25,7 @@ const Post = ({ post }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         //Take it into action
-        dispatch(removePostAction(body, userId));
+        dispatch(removePostAction(postId, userId));
       }
     });
   };
@@ -54,13 +53,23 @@ const Post = ({ post }) => {
                   <p className="card-text parPost">{content}</p>
                   <hr />
                   <small className="">
-                    <FontAwesomeIcon icon={faUser} /> &nbsp;
+                    <span className="social">
+                      <i className="fa fa-user" color="black">
+                        &nbsp;&nbsp;
+                      </i>
+                    </span>
+                    &nbsp;
                     <span className="user"> {userName}</span> &nbsp;{" "}
                     <span className="user"> {lastName}</span> &nbsp; &nbsp;
                   </small>{" "}
                   &nbsp;
                   <small>
-                    <FontAwesomeIcon icon={faClock} /> &nbsp;&nbsp;
+                    <span className="social">
+                      <i className="fa fa-clock" color="black">
+                        &nbsp;&nbsp;
+                      </i>
+                    </span>
+                    &nbsp;
                     <span className="user">{moment(date).format("LLL")}</span>
                   </small>{" "}
                   &nbsp; &nbsp;
@@ -69,14 +78,21 @@ const Post = ({ post }) => {
                     className=" m-xxl-5"
                     // onClick={() => doComment(id)}
                   >
-                    <FontAwesomeIcon icon={faComment} />&nbsp; &nbsp;<span className="user">COMMENT</span>
+                    <span className="social">
+                      <i className="fa fa-comments" color="black"></i>
+                    </span>
+                    &nbsp; &nbsp;<span className="user">COMMENT</span>
                   </span>
                   <Link
                     Style="cursor:pointer; color:black;"
                     className=" m-xxl-5"
                     onClick={() => postToEdit(post)}
                   >
-                    <FontAwesomeIcon icon={faEdit} />&nbsp; &nbsp;<span className="user">EDIT</span>
+                    <span className="social">
+                      <i className="fa fa-edit" color="black"></i>
+                    </span>
+                    &nbsp; &nbsp;
+                    <span className="user">EDIT</span>
                   </Link>
                   &nbsp; &nbsp;
                   <span
@@ -84,7 +100,10 @@ const Post = ({ post }) => {
                     onClick={() => confirmRemove(id, userId)}
                     className="updateButton"
                   >
-                    <FontAwesomeIcon icon={faTrash} />&nbsp; &nbsp;<span className="user">REMOVE</span>
+                    <span className="social">
+                      <i className="fa fa-trash-alt" color="black"></i>
+                    </span>
+                    &nbsp; &nbsp;<span className="user">REMOVE</span>
                   </span>
                 </div>
               </div>
