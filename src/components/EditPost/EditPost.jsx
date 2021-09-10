@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
 import { editPostAction } from "../../Actions/PostActions";
+import { useHistory } from "react-router-dom";
+
 
 const EditPost = (props) => {
-  const [post, setPost] = useState({
+  const [body, setPost] = useState({
     userId: props.credentials?.user,
     title: "",
     content: "",
   });
 
+  //To call the action
   const dispatch = useDispatch();
+  const history = useHistory();
 
   //Access to the states
   const postEdit = useSelector((state) => state.data.editpost);
-  const editPost = (body) => dispatch(editPostAction(body));
+  // const body = (body) => dispatch(editPostAction(body));
 
   useEffect(() => {
     setPost(postEdit);
@@ -22,23 +26,25 @@ const EditPost = (props) => {
   //Read the data of the form
   const onChangeForm = (e) => {
     setPost({
-      ...post,
+      ...body,
       [e.target.name]: e.target.value,
     });
   };
-  const { title, content } = post;
+  const { title, content } = body;
 
   const submitEditPost = (e) => {
     e.preventDefault();
 
-    editPost({
-      title,
-      content,
-      postId: post.id,
-      userId: post.userId,
-    });
+    // body({
+    //   title,
+    //   content,
+    //   postId: post.id,
+    //   userId: post.userId,
+    // });
     // //Pass the post to the action
-    // dispatch(editPostAction(body));
+    dispatch(editPostAction(body));
+
+    history.push('/commonwall');
   };
   return (
     <>
